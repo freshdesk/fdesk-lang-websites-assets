@@ -1,0 +1,17 @@
+/* IE Styles
+---------------------------------------------------------------------- */
+.ie7 .scrolling-circle .movable, .ie8 .scrolling-circle .movable{ 
+	display: none;
+}
+
+.ie7 .tour_controls{
+	position: relative;
+	top: -100px;
+	height: 160px;
+	li{
+		margin: 0px 28px;
+		float: left;
+	}
+}
+
+.ie7 .tour_sticky, .ie8 .tour_sticky{ display: none !important; }

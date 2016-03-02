@@ -1,0 +1,178 @@
+/* Helper Classes
+---------------------------------------------------------------------- */
+
+// For image replacement
+.ir {
+  background-color: transparent;
+  border: 0;
+  color: transparent;
+  font: 0/0 a;
+  text-shadow: none;
+}
+.clear { clear: both; }
+// Contain floats: h5bp.com/q
+.clearfix, .group, .media, .item {
+  &:before, &:after {
+    content: "";
+    display: table;
+  }
+  &:after { clear: both; }
+  *zoom: 1;
+}
+// Visually hidden but available to screen readers
+.screen-reader {
+  display: block !important;
+  left: -9999px !important;
+  position: absolute !important;
+}
+
+// Extends
+// ============
+%debug-grid {
+  @include susy-grid-background;
+}
+
+%defaults{  
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+%breakword{
+  word-break: normal;
+  word-wrap: break-word;
+}
+
+// Global spacing and size settings
+.top-space-null{
+  padding-top: 0;
+  margin-top: 0;
+}
+.top-space-small{ 
+  padding-top: 10px; 
+}
+.top-space-medium{ 
+  padding-top: 20px; 
+}
+.top-space-large{ 
+  padding-top: 30px; 
+}
+.top-space-extralarge{ 
+  margin-top: 80px; display: inline-block; 
+}
+.bottom-space-small{
+  padding-bottom: 10px;
+}
+.bottom-space-medium{
+  padding-bottom: 20px;
+}
+.bottom-space-large{
+  padding-bottom: 30px;
+}
+
+.gutter-right-null{
+  margin-right: 0;
+}
+
+.icon-round{
+  background-color: #49a3df;
+  margin-bottom: 20px;
+  border-radius: $radius-round;
+  width: 84px;
+  height: 84px;
+}
+
+.no-margin{ 
+  margin: 0px; 
+}
+
+// UTILITY CLASSES
+// ---------------
+
+// Quick floats
+.pull-right {
+  float: right;
+}
+.pull-left {
+  float: left;
+}
+
+// Toggling content
+.hide {
+  display: none;
+}
+.show {
+  display: block;
+}
+
+// Visibility
+.invisible {
+  visibility: hidden;
+}
+
+// Alignment options
+.align-right{
+  text-align:right;
+}
+
+.align-left{
+  text-align:left;
+}
+
+.align-center, .text-center{
+  text-align: center;
+}
+
+.inline-block{
+  @include inline-block;
+}
+
+.hide-in-mobile{ 
+  display: none;
+}
+
+.show-in-tablet{
+  display: none; 
+}
+
+@include at-breakpoint($break-tablet){
+  // Some utility class that will be applicable from tablet to desktop
+  .pull-right-tablet{ float: right; }
+  .pull-left-tablet{ float: left; }
+  .hide-tablet{ display: none; }
+  .show-in-tablet{ display: block; }
+  .invisible-tablet { visibility: hidden; }
+  .align-right-tablet{ text-align:right; }
+  .align-left-tablet{ text-align:left; }
+  .hide-in-mobile{ display: block; }
+  .show-in-mobile{ display: none; }
+}
+
+// Text color helpers
+.muted {
+  color: $color-muted;
+}
+.text-highlight{
+  color: $color-primary; 
+}
+
+// Text weight utilites
+.ultra-light{ 
+  font-weight: $font-weight-ultralight; 
+}
+.light{ 
+  font-weight: $font-weight-light; 
+}
+.semi-bold{ 
+  font-weight: $font-weight-semibold; 
+}
+.bold{ 
+  font-weight: $font-weight-bold; 
+}
+.uppercase{ 
+  text-transform: uppercase; 
+}
+
+// Ellipsis
+.ellipsis{
+  @include ellipsis;
+}

@@ -1,0 +1,117 @@
+// Tour Page
+// ==================
+$tour-icon-bg-color: #3b5768 !default;
+
+@mixin icon-bg-gradient($color, $darkness: 0.05) {
+	$darness-color: rgba(0, 0, 0, $darkness);
+	$nilalpha: rgba(0, 0, 0, 0);
+	background-color: $color;
+	@include background-image(linear-gradient(left,$nilalpha 0%, $nilalpha 50%, $darness-color 51%, $darness-color 100%));
+}
+
+.valign-helper {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.tour_banner{ min-height: 208px; }
+
+.nav-tour-panel{
+	height: 110px;
+	li{
+		margin:0 2%;
+		width: 20%;
+		position: relative;
+		z-index: 2;
+		top:-95px;
+		display: inline-block;
+		text-align: center;
+		.tour-icon-wrapper{
+			width: 170px;
+			height: 170px;
+			border: 10px #fff solid;
+			display: inline-block;
+			position: relative;
+			@include icon-bg-gradient($tour-icon-bg-color);
+			@include border-radius($radius-round);
+			@include transition(background .35s linear, height .1s ease, width .1s ease); 
+		}		
+		.tour-icon-normal{ 
+			@include transition(opacity .0s linear); 
+		}
+		.tour-icon-active{ 
+			@include opacity(0);
+			@include transition(opacity .35s linear);
+		}
+		// Some specific code will be available in site css eg: freshdesk.scss		
+		a img {
+		    vertical-align: middle;
+		    max-height: 170px;
+		    max-width: 170px;
+		    position: absolute; 
+			left: 0; 
+			top: 0; 
+			width: 100%;
+		}
+		.tour-icon-title{
+			text-transform: uppercase;
+		    @extend .default;
+			display: block;
+			color: $color-black;
+		}		
+	}	
+}
+
+.sticky-wrapper .tour-sticky.stuck .l-page{ 
+	&:before, &:after{ @include box-shadow(none); }
+	position: static;
+}
+
+.sticky-wrapper .tour-sticky.stuck.in{
+	background-color: $color-white;
+	width: 100%;
+	top: 0;
+	height: 100px;
+	@include opacity(0.97);
+	@include box-shadow(0 0 15px #ccc);	
+	.nav-tour-panel{
+		position: relative;
+		li{ top: 0; }
+		.tour-icon-wrapper{
+			width:70px;
+			height:70px;
+			border-width:2px;
+		}
+		.inactive .tour-icon-wrapper{
+			width:60px;
+			height:60px;
+		}
+		.tour-icon-title{
+			@extend .small;
+		}
+	}
+	.milestone-line{ display: block; }
+}
+
+
+// Animated Fixed Strip
+.milestone-line{
+	border-top: 1px dotted #afafaf;
+	margin: 0 auto;
+	position: absolute;
+	top: 40px;
+	z-index: 1;
+	display: none;
+}
+
+.milestone-indicator{
+	position: absolute;	
+	top: 0;
+	left: 0;
+}
+
+.desktop-top-space
+{
+	margin-top: 70px;
+}

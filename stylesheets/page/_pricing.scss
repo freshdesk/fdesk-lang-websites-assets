@@ -1,0 +1,174 @@
+// New styles
+@import "gfx-price/*.png";
+$gfx-price-sprite-layout:horizontal;
+$gfx-price-sprite-dimensions: true;
+@include all-gfx-price-sprites;
+
+$price-border-color: #dddddd;
+$price-popular-bg: #faf9e2;
+$price-popular-color: #5d5636;
+$price-bg: #fff;
+$price-popular-title-bg: #c7782f;
+$popular_class: pl-c-g;
+
+// Styles for popular plan
+%price-popular{
+	color: $price-popular-color;
+	@include background-image(linear-gradient(right, $price-border-color 1%, $price-popular-bg 1%, $price-popular-bg 100%));	
+	.pl-p-s p{ color: darken($price-popular-color, 10%); }
+}
+
+// To hack the banner-inline in pricing page
+.pl-list{ margin-bottom: -20px; }
+
+.pl-row{
+	@include pie-clearfix;
+	border:1px solid $price-border-color;
+	border-width:0 1px;
+	.pl-c-e, .pl-c-b{
+		@include background-image(linear-gradient(right, $price-border-color 1%, $price-bg 1%, $price-bg 100%));
+	}
+	.pl-c-e, .pl-c-g, .pl-c-b, .pl-c-s{
+		width: 21%;
+		float: left;
+		padding-left: 2%;
+		padding-right: 2%;
+	}
+}
+
+.cm-row{
+	.pl-row{ border-width:0; text-align: center; }
+}
+
+
+.pl-s-b-g{
+	.pl-c-e, .pl-c-g, .pl-c-b, .pl-c-s{ padding-top: 20px; padding-bottom: 20px; }
+}
+.pl-last{
+	.pl-c-e, .pl-c-g, .pl-c-b, .pl-c-s{ padding-bottom: 50px; }
+}
+
+.pl-c-g{ @extend %price-popular; }
+
+.pl-intro{
+	margin-top: -50px;
+	text-align: center;
+	height: 460px;
+}
+
+.pl-p-s{
+	margin-top: 16px;
+	h6, p{ @extend .default; }
+	h6{
+		margin-top: 3px;
+		margin-bottom: 3px;	
+		font-weight: $font-weight-semibold;
+	}
+	p{ 
+		color: darken($color-primary, 10%);
+		line-height: 1.5;
+		font-weight: $font-weight-normal;
+	}
+}
+
+.pl-coin, .pl-free{
+	@include inline-block;	
+	/*@include border-radius(100%);*/
+	@include box-shadow(0 0 1px rgba(0, 0, 0, 0.3));
+	background-color: #f5f5ef;
+	width: 100px;
+	height: 75px;
+	padding: 4px;
+	text-align: center;
+	line-height: 2.5;
+	position: relative;
+	color: #333;
+	font-weight: $font-weight-semibold;
+	@include border-radius(100%);
+	&:after{
+		content: " ";
+		@include border-radius(100%);
+		border: 1px dotted #ccc;
+		height: 86%;
+		width: 86%;
+		position: absolute;
+		top: 6%;
+		left: 6%;
+	}
+}
+.pl-coin-pos{ margin-top: -70px; }
+.p-label{ 
+	margin-top: -30px;
+	position: relative;
+	.label{ margin-right: 0; }
+}
+.pl-coin-small{
+	width: 60px;
+	height: 60px;
+	line-height: 2.5;
+	/*@extend .delta;*/
+	font-size: 24px;
+	margin-right: 5px;
+	&:before{ @extend .zeta; }
+}
+.pl-free{ 
+	@extend .delta; 
+	line-height: 2.7;
+	text-transform: uppercase;
+}
+.pl-coin{
+	@extend .gamma;
+	/*&:before{
+		content:attr(USD);
+		margin-left: -4px;
+		color: #666;
+		@extend .epsilon;
+	}*/
+}
+.gfx-price{
+	@include inline-block;
+}
+.pl-d-p{ padding-top: 18px; padding-bottom: 18px; }
+.gfx-price-bullet-leaf, .gfx-price-bullet-leaf-red, .gfx-price-all-plans-free{ @include inline-block; }
+
+.pl-f-p:before{ @extend .gfx-price-bullet-leaf; }
+.pl-f-np:before{ @extend .gfx-price-bullet-leaf-red; }
+
+.pl-f-p, .pl-f-np{
+	position: relative;
+	border-bottom: 1px #efecec solid;
+	padding-top: 10px; 
+	padding-bottom: 10px; 
+	padding-left: 25px;
+	&:before{
+		content: " ";
+		position: absolute;
+		left: 0;
+		top: 17px;
+	}
+}
+
+.gfx-price-all-plans-free{
+	float: left;
+	margin-right: 15px;
+}
+
+.pl-f-np{ @include opacity(.6); }
+
+//
+
+.pl-c-e, .pl-c-g, .pl-c-b, .pl-c-s{
+		width: 21%;
+		float: left;
+		padding-left: 2%;
+		padding-right: 2%;
+	}
+
+.pl-c-e, .pl-c-b, .pl-c-s{
+	@include background-image(linear-gradient(right, $price-border-color 1%, $price-bg 1%, $price-bg 100%));
+}
+.coin-symbol{
+	font-weight: 300;
+	font-size: 22px;
+	color: #888;
+}

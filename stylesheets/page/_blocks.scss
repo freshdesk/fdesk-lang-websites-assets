@@ -1,0 +1,207 @@
+// Blocks
+.img-descrip{
+	font-size: .9rem;
+	font-weight: $font-weight-normal;
+	text-align: center;
+	margin-top: 10px;
+	line-height: 20px;
+}
+
+// Feature widget block 
+.feature-widget{
+	padding-bottom: 30px;
+	padding-top: 30px;
+	text-align: center;
+	.w-title{
+		@extend .zeta;
+		text-transform: uppercase;
+		letter-spacing: 0.1rem;
+		display: block;
+		margin-top: 15px;
+		margin-bottom: 10px;
+		padding-bottom: 15px;		
+		border-bottom: 1px solid $divider-color;
+	}
+	p{ 
+		margin-top: 0;
+		@extend .default;
+	}
+	.w-title-link{ 
+		display: block; 
+		color: #333333;
+		&:hover, &.visited{ color: $color-link-default; }
+	}
+}
+
+.banner-blocks h3{
+	text-align: center;
+	padding-bottom: 20px;
+}
+
+.media-widget{
+	border: 1px solid #ccc;
+	text-align: center;
+	height: 220px;
+	margin-bottom: 30px;
+	overflow: hidden;
+	cursor: pointer;
+	display: block;
+	&:hover, &.active {
+		.media-content{
+			margin-top:-15%;
+			@include box-shadow(0 -1px 15px rgba(0, 0, 0, 0.05));
+		}
+		.media-text{ margin-bottom: 0; }
+	} 
+}
+.media-image{
+	height: 125px;
+	display: block;
+	img{ width:auto; height: auto; }
+}
+.media-content{
+	background: #fff;
+	height: 100%;	
+	display: block;
+	@include transition-property(margin, box-shadow);
+	@include box-shadow(none);
+	@include transition-timing-function(ease-in);
+	@include transition-duration(0.165s);
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 1px;
+	position: relative;
+	z-index: 1;	
+}
+.media-text{ 
+	color: #333;
+	line-height: 1.35; 
+	@include min-height(75px); 
+	@extend .default;
+	margin-top: 8px;
+	margin-bottom: 15px;
+	@include transition-property(margin);
+	@include transition-duration(0.165s);
+}
+.whitepaper-widget, .casestudy-widget{
+	.media-widget{
+		height: 280px;
+		.media-image{ height: 210px; }
+		.media-text{ 
+			margin-top: 10px;
+			min-height: 50px;
+		}
+	}
+}  
+
+.youtube-widget, .slideshare-widget{
+	.media-widget{
+		height: 250px;
+		.media-image{ height: 180px; }
+		.media-text{ 
+			margin-top: 15px;
+			min-height: 55px;
+		}
+	}
+}
+
+// Zendesk vs Freshdesk Pricing - (HTML Block)
+.compare-price-tbl {
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	@extend .epsilon;
+	font-weight: 600;
+	line-height: 1.5;
+	margin-bottom: 20px;
+
+	table {
+		width: 100%;
+		text-align: center;
+	}
+	th {
+		border-bottom: 1px solid #ccc;
+		&.scenario { @extend .epsilon; }
+	}
+
+	td {
+		border-right: 1px solid #ccc;
+
+		&:last-child{ border-right: none; }
+	}
+
+	span {
+		display: block;
+		font-size: .9rem;
+		font-style: italic;
+		padding: 0 30px;
+	}
+
+	.scenario { 
+		width: 40%; 
+		text-align: left;
+		font-size: 1rem;
+		font-weight: 600;
+	}
+
+	.price-list-cell {  width: 30%; padding: 20px 0 10px 0; }
+}
+
+// Case study widget
+.casestudy-container{
+	margin-top: 30px;
+	padding-bottom: 30px;
+	border-bottom: 1px solid $color-med-gray;
+	h4{ 
+		font-weight: $font-weight-normal; 
+		border-bottom:1px solid $color-med-gray;
+		padding-bottom: 15px;
+	}
+	b{ font-weight: $font-weight-semibold; }
+	li{
+		margin-left: 12px;
+		font-weight: $font-weight-light;
+	}
+	li:before{
+		content: "\28";
+		font-family: 'icomoon';
+		position: relative;
+		left: -10px;
+		z-index: 100;
+	}
+}
+.casestudy-banner h2{
+	@extend .s-heading;
+	padding-top: 60px;
+}
+
+// Customer Feedback widget
+.cust-box{  }
+.cust-img{
+	margin-top: 20px; margin-bottom: 20px;
+	background-color: #f1f1f1;
+	overflow: hidden;
+	text-align: center;
+	@include border-radius($radius-round);
+	border: 1px solid #dfdfdf;
+	width: 100%;
+	max-width: 250px;
+}
+.cust-quote{
+	color: #999999;
+	font-style: italic;
+	font-weight: $font-weight-light;
+	border-left: 0;
+	padding-left: 0;
+	@extend .zeta;
+	&:before, &:after{ content: '"'; }
+	p{ display: inline; }
+}
+.cust-name{ 
+	color: $color-primary; 
+	font-style: italic;
+	@extend .zeta;
+}
+.cust-info{ 
+	text-align: right;
+	line-height: 1.5;
+}

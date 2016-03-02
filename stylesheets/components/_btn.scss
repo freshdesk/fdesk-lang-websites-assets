@@ -1,0 +1,138 @@
+/* Buttons
+---------------------------------------------------------------------- */
+// Btn sizes to generate various sizes of btn (default, small, medium, large)
+// class, size, top & bottom padding, Horizontal padding, bottom border size
+$btn-sizes:
+//	class		size  		vert-pad  	hori-pad 	bottom border  
+	default 	$zeta 		10px		25px		3px,
+	medium 		$zeta 		10px		30px		3px,
+  	mini		$small 		6px	 		10px		2px,
+  	small 		$default 	8px			12px		2px,  
+  	large 		$epsilon	13px 		30px		4px;
+
+// Btn color variations
+// class name, base-color, text color
+$btn-colors:
+  default 	$btn-color 				$color-white,
+  secondary	$btn-secondary-color 	$color-black-lite,
+  disabled 	$btn-disabled-color 	lighten($btn-disabled-color, 15%),
+  light		$btn-light-color		$color-white,
+  dark		$btn-dark-color			$color-white,
+  red		$color-red 				$color-white;
+
+
+$btn-letter-spacing: 0.1rem;
+
+@each $size in $btn-sizes{
+	#{get-class-name(nth($size, 1), btn)}{
+	  	@include modular-scale(nth($size, 2), $font-base, '#{$type-scale-unit-value}');
+	  	padding-top: nth($size, 3);
+	  	padding-bottom: nth($size, 3);
+	  	padding-left: nth($size, 4);
+	  	padding-right: nth($size, 4) - 3;
+	  	border-bottom-width: nth($size, 5);
+	  	&:active:not(.btn-disabled){
+			/*border-bottom: 0;*/
+			/*margin-top: nth($size, 5);*/
+		}
+  	}
+}
+
+@each $color in $btn-colors{
+	#{get-class-name(nth($color, 1), btn)}{
+		&, &:visited{
+			background-color: nth($color, 2);
+			border-color: rgba(darken(nth($color, 2), 10%), 0.4);
+			color: nth($color, 3);
+		}
+		
+		&:hover{
+			background-color: darken(nth($color, 2), 10%);
+			border-color: darken(nth($color, 2), 100%);
+			color: nth($color, 3);
+		}
+
+		@if nth($color, 1) == disabled{
+			&:hover{ cursor:default; }
+		}
+	}
+}
+
+.btn{
+	@include inline-block;
+	@include ie7-inline-block();
+	letter-spacing: $btn-letter-spacing;
+	font-weight: $font-weight-normal;
+	text-transform: uppercase;
+	border-style: solid;
+	border-width: 1px;
+	/*border-top: 0;
+	border-left: 0;
+	border-right: 0;*/
+	text-align: center;
+	margin-bottom: 0; // For input.btn
+	vertical-align: middle;
+	line-height: 1;
+	cursor: pointer;
+  	*border: 0; // Remove the border to prevent IE7's black border on input:focus
+  	@include box-shadow(0 1px 2px rgba(0,0,0,.05));
+	@include border-radius(5px);
+	@include ie7-restore-left-whitespace(); // Give IE7 some love
+	@include transition-property(background, border);
+	@include transition-duration(0.25s);
+	&:hover, &:active, &:visited{ text-decoration: none; }
+}
+
+.btn-block{
+	display: block;
+	width: 100%;
+	padding-right: 0;
+	padding-left: 0;
+	@include border-box-sizing;
+}
+
+.btn-loading{
+	background-image: linear-gradient( -45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, 
+	      								transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, 
+	      								transparent 75%, transparent);	
+	z-index: 1;
+	@include background-size(50px 50px);
+	@include animation(btn-loading 1.3s linear infinite);
+	overflow: hidden;
+}
+
+.btn.btn-flat{
+	border-color: rgba(#fff, 0.6);	
+	font-weight: $font-weight-normal;
+}
+
+.btn.btn-banner{
+	background-color: rgba(0, 0, 0, 0.5);
+	@include transition-duration(0.55s);
+	&:hover{
+		background-color: rgba(0, 0, 0, 0.8);
+		border-color: #000;
+	}
+}
+
+.btn-banner.btn-light{
+	background-color: rgba(0, 0, 0, 0.1);
+	color: #fff;
+	&:hover{
+		background-color: rgba(0, 0, 0, 0.3);
+		color:#fff;
+	}
+}
+
+@include keyframes(btn-loading) {
+	0% {
+       background-position: 0 0;
+    }
+    100% {
+       background-position: 50px 50px;
+    }
+}
+
+// Extending marketo buttons
+#mktFrmButtons input[type=submit], .signup_btn{ @extend .btn; }
+.signup_btn_block{ @extend .btn-block; }

@@ -1,0 +1,29 @@
+@mixin pull-quotes($font-size, $opacity) {
+  padding: ems($font-size, $font-size);
+  position: relative;
+  &:before,
+  &:after {
+    @include opacity($opacity);
+    font-size: $font-size;
+    height: ems($font-size, $font-size);
+    position: absolute;
+  }
+  &:before {
+    content: '“';
+    top:  0;
+    left: 0;
+  }
+  &:after {
+    content: '”';
+    bottom: 0;
+    right: 0;
+  }
+}
+
+// <!-- E.G. USAGE: -->
+// .pull-quote { @include pull-quotes(4em, .15); }
+// <aside class="pull–quote">
+//   <blockquote>
+//     <p></p>
+//   </blockquote>
+// </aside>

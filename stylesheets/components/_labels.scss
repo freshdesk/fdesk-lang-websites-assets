@@ -1,0 +1,38 @@
+// LABELS
+// ------
+
+// Base
+.f-label {
+  padding-left: 8px;
+  padding-right: 8px;
+  @extend .small;
+  font-weight: $font-weight-semibold;
+  text-transform: uppercase;
+  color: $color-white;
+  vertical-align: middle;
+  white-space: nowrap;
+  margin-right: 5px;  
+  background-color: $color-gray;
+  line-height: 1.6;
+  height: 22px;
+  @include border-radius(3px);
+  @include inline-block;
+}
+
+// Hover state
+.f-label:hover {
+  color: $color-white;
+  text-decoration: none;
+}
+
+// Colors
+
+// Labels & Label Colors
+// Add more colors with 1st value as class name and 2nd value as color
+$labels: 
+  popular #e18d40, 
+  implemented #597300;
+
+@each $label in $labels{
+  .f-label-#{nth($label, 1)}        { background-color: nth($label, 2); }
+}

@@ -1,0 +1,673 @@
+#landing-page{
+	padding: 0;
+}
+.poly-background {
+	background-image: url(#{$cdn_path}/images/polygon-bg.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-color: #437264 !important;
+}
+.landing-page-content h1, .l-content h1{
+	font-size: 34px;
+	font-weight: 500;
+	line-height: 2.8rem;
+}
+.landing-form{
+	width: 75%;
+	display: inline-block;
+}
+.landing-right-panel{
+	background-color: #16a085;
+	color: white;
+	padding-top: 20px;
+	padding-bottom: 35px;
+	position: fixed;
+	display: inline-block;
+	height: 100%;
+	.landing-signup-form{
+		position: relative;
+		margin-top: 50px;
+		margin-bottom: 30px;
+			.b-form{ 
+				#signup_button{font-size: 15px;}
+				.signup-big .b-form em.error, .signup-big .lpeRegForm em.error, .signup-big .lpeRegForm em.error{
+			    	left: -9999999px;
+			  	}
+			}
+	}
+	.landing-page-content{padding: 0 10px;}
+}
+.landing-terms{
+	font-size: 12px;
+	 a{ color: #395b54; }
+}
+.l-divider{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.l-contact{
+	float: right;
+	font-size: 18px;
+	margin-top: 12px;
+}
+.landing-left-panel{
+	padding-left: 20px;
+	padding-bottom: 40px;
+	margin-right: 0;
+	padding-right: 2%;
+	background-color: #fff;
+}
+.landing-customer-info {
+	width: 550px;
+	padding-top: 10px;
+	margin: 0 auto;
+	font-weight: 300;
+	.icon-envelope-alt,.icon-phone{ color:#ccc; vertical-align: middle; }
+	.icon-office{ color:#ccc; }
+	.l-mail{ margin-left: 10px;  opacity: .7; }
+	.l-phone{ margin-left: 15px; opacity: .7; }
+	.l-addr span{
+	 	display: block;
+	 	opacity: .7;
+	}
+}
+#img-slider{
+	display: inline-block;
+}
+.slider .img-frame-stack img.active{
+		-webkit-animation:0;
+		-moz-animation: 0;
+		-ms-animation: 0;
+		-o-animation: 0;
+		animation:0;
+	}
+.cnt{
+	width: 10px;
+	height: 10px;
+	border-radius: 100%;
+	display: inline-block;
+	border: 1px solid #4d9789;
+	cursor: pointer;
+	margin: 0 4px;
+}
+.cnt.active{ 
+	background-color: #7ddcc9;
+}
+
+/* Helpdesk-System */
+
+
+.banner-helpdesk{
+    background: url(#{$cdn_path}/images/landing-page/hepldesk-system/helpdesk-bg.jpg) no-repeat;
+    width: auto;
+    display: block;
+    background-size: cover;
+    background-position: 0% 37%;
+}
+
+
+.video-play-btn {
+    border: 0;
+    padding: 0;
+    border-radius: 0;
+}
+
+.banner-helpdesk {
+	.banner-content{
+		h1{
+		    font-size: 38px; 
+		    line-height: 1; 
+		    margin-top: 20px;
+		}
+	}
+	.banner-signup{
+		width: auto;
+		text-align: initial;
+	}
+}
+
+.banner-helpdesk .video-play {
+    width: 80px;
+    height: 80px;
+    line-height: 59px;
+    margin-right: 0;
+    display: inline-block;
+    line-height: 26px;
+    cursor: pointer;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+    border: 7px solid rgba(125,117,40,0.5);
+    background-color: transparent;
+    outline: none;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+    transition: 0.4s;
+    position: relative;
+    margin-top: 60px;
+    margin-right: 12px;
+    .icon-play {
+	    font-size: 32px;
+	    font-weight: normal;
+	    color: #f9fb29;
+	    position: relative;
+	    top: 22px;
+	    left: 3px;
+	}
+	&:hover{
+		background: rgba(125,117,40,0.5);
+		border-color: rgba(125,117,40,0.5);
+		-webkit-transform: scale(1.1);
+		-moz-transform: scale(1.1);
+		-ms-transform: scale(1.1);
+		-o-transform: scale(1.1);
+		transform: scale(1.1);
+	}
+}
+
+.video-txt{ 
+    color: #fff;
+    p{
+    	font-size: 14px;
+    }
+}
+
+.helpdesk-features h1,.helpdesk-pricing-feature h1{ font-weight: 400; }
+
+.helpdesk-features{
+	h1{ font-size: 38px; }
+	.helpdesk-features-content{
+		h4{
+			font-size: 24px;
+	    	display: inline-block;
+	    	font-weight: 400;
+	    	margin-left: 15px;
+		} 
+		p{ font-size: 18px;  }
+
+	}
+}
+
+.power-ticket,.helpdesk-self-service,.helpdesk-gamification{
+    background: url(#{$cdn_path}/images/landing-page/hepldesk-system/hepdesk-system.png)no-repeat;
+    display: inline-block;
+    vertical-align: sub;
+}
+
+.power-ticket{
+    background-position: -612px -335px;
+    width: 43px;
+    height: 24px;
+}
+
+.helpdesk-self-service{
+    background-position: -432px -325px;
+    width: 26px;
+    height: 26px;
+}
+
+.helpdesk-gamification{
+    background-position: -278px -311px;
+    width: 29px;
+    height: 27px;
+}
+
+.helpdesk-pricing-feature{
+    padding-bottom: 40px;
+
+    h1{ font-size: 38px;}
+
+    .helpdesk-pricing .fg-3{
+	    width: 19%;
+	    border: 1px solid #f3f3f3;
+	    margin-left: 0.8%;
+	    float: left;
+	    margin-right: 0;
+
+	    .hp-head{
+		    padding: 10px 0;
+		    text-align: center;
+		    background-color: #108770;
+		    color: #fff;
+		    margin-bottom: 20px;
+		}
+
+		.hp-head h4{
+		    font-size: 22px;
+		    font-weight: 400;
+		    letter-spacing: 1px;
+		}
+
+		.hp-c-list{
+		    background-color: #f9f9f9;
+		}
+
+		.hp-s-list,.hp-c-list{
+		    padding-left: 40px;
+		    padding-top: 5px;
+		    padding-bottom: 5px;
+		}
+		.hp-desc{
+		    text-align: center;
+		    padding: 20px 0;
+		    h2{
+			    font-weight: 400;
+			    font-size: 32px;
+			    padding-bottom: 10px;
+			    margin: 0;
+			}
+
+			p {
+			    font-size: 12px;
+			    line-height: 1.5;
+			    margin: 0;
+			}
+		}
+
+	}
+}
+.helpdesk-cust-feeds{
+    background-color:  #16a085;
+    padding-bottom: 30px;
+    .helpesk-cust-img{
+	    background: url(#{$cdn_path}/images/landing-page/hepldesk-system/cust-img.png) no-repeat;
+	    width: 100px;
+	    height: 100px;
+	    border: 3px solid #108770;
+	    border-radius:100%; 
+	    margin: 0 auto;
+	}
+	.cust-desc{
+	    color: #fff;
+	    width: 63%;
+	    margin: 0 auto;
+	    h4{
+		    padding-top: 10px;
+		    font-weight: 500;
+		}
+		p{
+		    line-height: 1.2;
+		    font-size: 14px;
+		    margin-top: 20px;
+		    font-style: italic;
+		}
+	}
+	hr.cust-hr{
+	    width: 80px;
+	    margin: 5px auto 0;
+	    border-top: 2px solid #fcfa44;
+	}
+}
+
+.feature-demo{
+    background-color:#282828;
+    padding: 30px 0;
+    color: #fff;
+    h4{ 
+	    color: #717171;
+	    display: inline-block;
+	    font-size: 22px;
+	    margin-right: 30px;
+	    vertical-align: middle;
+	}
+}
+
+.btn-signup{
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 7px 20px 7px 20px;
+    text-transform: uppercase;
+    background-color: #16a085;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    font-size: 18px;
+}
+.btn-signup:visited{ color:#fff;}
+.btn-signup:hover{
+    color: #fff;
+    background-color: #0d6151;
+}
+
+#demo-form .textfield {
+    text-align: center;
+    padding: 10px;
+}
+
+#demo-form .textfield #LastName, #demo-form .textfield #Email, #demo-form .textfield #Phone,.textfield .team {
+    outline: none;
+    border: none;
+    width: 230px;
+    padding: 7px 5px 7px 40px;
+    background-color: transparent;
+    font-size: 16px;
+    font-weight: 300;
+    border-bottom: 1px solid #ccc;
+}
+
+#demo-form .textfield .icon-envelope, #demo-form .textfield .icon-user, #demo-form .textfield .icon-mobile {
+    font-size: 18px;
+    margin-left: 1px;
+    position: absolute;
+    margin-top: 8px;
+}
+    
+#demo-form {
+    display: none;
+    width: 280px;
+}
+
+.form-invalid,.form-invalid-text,.form-valid{
+    display: none;
+    color: #a1605d;
+    font-size: 12px;
+}
+#landing-signupform{ 
+	display: none;
+	width: 320px;
+	.signup-big .b-form em.error{ display: none!important; }
+}
+
+/* Customer Care */
+
+.customer-care{
+	h1.k-heading{ @extend .default; }
+	
+	h1{ font-size: 32px; }
+
+	.mail, .forum,.social{
+		width: 60px;
+		height: 60px;
+		float: left;
+		margin-right: 15px;
+		display: inline-block; 
+	}
+	
+	.mail, .forum{
+		background: url(#{$cdn_path}/images/mob-landing-page.png) no-repeat;
+	}
+	
+	.mail {
+		background-position: 0px 0px;
+		width: 58px;
+		height: 58px;
+	}
+	.forum {
+		background-position: 0px -60px;
+		height: 59px;
+		width: 60px;
+	}
+
+	.social{
+		background: url('../images/mob-social-integration.png')no-repeat;
+		background-size: 57px 55px;
+		background-position: 3px 0px;
+	}
+
+	.support-content {
+		float: left;
+		width: 85%;
+	}
+}
+
+.banner.customer-care{ padding-top: 70px; }
+
+.lp-plans{
+
+	.plans-wrapper {
+		width: 17.41379%;
+		margin-right: 3.2%;
+		&:last-child{ margin-right: 0; }
+	}
+
+	h2 {
+		@extend .gamma;
+		font-weight: $font-weight-normal;
+	}
+
+	.f-sprout {
+		@extend .delta;
+		font-weight: $font-weight-light;
+	}
+
+	.sprout, .blossom, .garden, .estate {
+		width: 190px;
+		height: 185px;
+		margin: 0 auto;
+	}
+
+	.mail, .forum, .social, .sprout, .blossom, .garden, .estate{
+		background: url(#{$cdn_path}/images/mob-landing-page.png) no-repeat;
+		display: inline-block;
+	}
+
+	.forest{
+		width: 190px;
+		height: 185px;
+		background: url('../images/forest.png')no-repeat;
+		background-size: 185px;
+		margin: 7px auto 0;
+		display: block;
+	}
+	.sprout{
+		background-position: -138px 0px;
+		background-size: 330px;
+	}
+
+	.blossom{
+		background-position: -138px -202px;
+		background-size: 330px;
+	}
+
+	.garden{
+		background-position: -140px -415px;
+		background-size: 330px;
+	}
+
+	.estate{
+		background-position: -137px -619px;
+		background-size: 330px;
+	}
+
+	.plan-content{
+		text-align: center;
+		h4 {
+			@extend .zeta;
+			font-weight: $font-weight-semibold;
+			line-height: 1.3;
+		}
+		p{ @extend .default; }
+	}
+
+}
+
+.lp-customers-feedback{
+	h2 {
+		@extend .gamma;
+		padding-bottom: 20px;
+	}
+	.cust-image-wrapper {
+		width: 20%;
+		float: left;
+		margin-right: 20px;
+	}
+	.cus-quote {
+		float: left;
+		width: 75%;
+		h4 {
+			font-size: 24px;
+		}
+		h6 {
+			margin-top: 0;
+			display: inline-block;
+			color: #16a085;
+		}
+		h5 {
+			display: inline-block;
+			margin-left: 20px;
+		}
+	}
+
+	.cus-img1, .cus-img2, .cus-img3 {
+		width: 115px;
+		height: 120px;
+		display: inline-block;
+	}
+	.cus-img1, .cus-img2, .cus-img3 {
+		background: url(#{$cdn_path}/images/mob-landing-page.png) no-repeat;
+		display: inline-block;
+	}
+
+	.cus-img1 {
+		background-position: 0px -230px;
+	}
+	.cus-img2 {
+		background-position: -3px -348px;
+	}
+	.cus-img3 {
+		background-position: -3px -475px;
+	}
+
+}
+@media only screen and (min-width : 721px) and (max-width : 900px) {
+	
+	.customer-care{
+		.fg-8{ width: 56.89655%; }
+		
+		.lp-signup.fg-4{
+			width: 39.65517%;
+		}
+		h1{ font-size: 24px; }
+
+		.mail, .forum, .social{ margin-right: 12px; }
+
+		.support-content{ width: 80%; }
+
+		.lp-signup .b-form{ width: 270px; }
+	}
+
+	.lp-plans{
+		h2{ font-size: 30px; }
+		.f-sprout{ font-size: 24px; }
+
+
+		.plans-wrapper {
+			width: 30.41379%;
+			margin-right: 2.5%;
+		}
+
+		.sprout, .blossom, .garden, .estate {
+			width: 166px;
+			height: 155px;
+			background-size: 290px;
+			display: block;
+			margin: 0 auto;
+		}
+		.sprout {
+			background-position: -123px 0px;
+		}
+
+		.blossom {
+			background-position: -124px -179px;
+		}
+
+		.garden {
+			background-position: -124px -365px;
+		}
+
+		.estate{
+			background-position: -122px -544px;
+		}
+		.forest{
+			width: 160px;
+			height: 155px;
+			background-size: 160px;
+		}
+	}
+
+	.lp-customers-feedback{
+		.cus-quote{
+			width: 75%;
+		}
+
+		.cus-quote h4 {
+			font-size: 20px;
+		}
+	}
+
+}
+
+.banner.support-light {
+	background-image: url(#{$cdn_path}/images/white-background.jpg);
+    background-repeat: no-repeat;
+    background-color: #F1EFF0;
+    padding-top: 135px;
+    .banner-form {
+    	width: 355px;
+    	margin-top: -40px;
+	}
+	h1.b-heading {
+    	color: #4d4d4d;
+    	text-shadow: none;
+    	font-weight: 400;
+    	font-size: 38px;
+	}
+	h1.su-subtitle{
+		color: #4d4d4d;
+		font-size: 22px;
+		font-weight: 300;
+    	padding-top: 5px;
+    	text-shadow: none;
+	}
+	.ulcont {
+    	display: block;
+    	height: 95px;
+	}
+	.icons {
+    	width: 90px;
+    	height: 90px;
+    	float: left;
+	}
+	.contetfl {
+    	width: 550px;
+	    float: left;
+ 	   	padding-left: 30px;
+ 	   	a{
+    		color: #4d4d4d;
+    		font-size: 18px;
+		}
+		span.light {
+    		color: #4d4d4d;
+    		font-size: 15px;
+		}
+	}
+}
+.lp-testimonial{
+	.customerimg{
+	    margin-right: 26px;
+	    background-color: #eee;
+	    overflow: hidden;
+	    -webkit-border-radius: 2em;
+	    -moz-border-radius: 2em;
+	    -ms-border-radius: 2em;
+	    -o-border-radius: 2em;
+	    border-radius: 2em;
+	    margin-top:20px;
+	    width:61px;
+	    float:left;
+	}
+	.custcomment{
+	  width:400px;
+	  float:left;
+	}
+  	.custcomment h4 {
+    	font-size:20px;
+  	}
+    .heights{
+    	margin-top:20px;
+    	margin-bottom:20px;
+    	height:110px;
+    	display:block;
+  	}
+}

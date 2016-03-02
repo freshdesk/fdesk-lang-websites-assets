@@ -1,0 +1,43 @@
+/* Layout Styles
+---------------------------------------------------------------------- */
+/*@include border-box-sizing;*/
+
+@include at-breakpoint($break-tablet){ 
+  .l-page{ @include container; }
+
+  // Temp hack until we figure out why l-page is coming for all blocks when layout is added
+  .l-page .l-page { 
+    width: auto;
+    padding-left: 0;
+    padding-right: 0; 
+  }
+  
+  /*.l-page.debug-grid{ @include susy-grid-background; }*/
+}
+
+.no-clear.l-page:after{ clear: none; }
+
+.debug-grid{
+  /*@extend %debug-grid;*/  
+  .fc{ margin-top: 12px; }
+  [class^="fg-"],
+    [class*=" fg-"]{
+    /*border: 1px solid #666;*/
+    @include box-shadow(#000 0 0 1px inset);
+    overflow: hidden;
+    padding: 10px 0;
+    text-align: center;
+  }
+}
+
+/* Main
+---------------------------------------------------------------------- */
+[role="main"] {
+
+}
+
+/* Footer
+---------------------------------------------------------------------- */
+[role="contentinfo"] {
+
+}

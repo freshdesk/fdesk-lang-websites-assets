@@ -1,0 +1,19 @@
+/* States
+---------------------------------------------------------------------- */
+// Default Animated Transition
+.is-animated { @include transition; }
+// Hide from both screenreaders and browsers: h5bp.com/u
+.is-hidden { display: none !important; visibility: hidden; }
+// Hide only visually, but have it available for screenreaders: h5bp.com/v
+.is-visuallyhidden {
+  border: 0; 
+  clip: rect(0 0 0 0); 
+  height: 1px; 
+  margin: -1px; 
+  overflow: hidden; 
+  padding: 0; 
+  position: absolute; 
+  width: 1px;
+}
+// Hide visually and from screenreaders, but maintain layout
+.is-invisible { visibility: hidden; }

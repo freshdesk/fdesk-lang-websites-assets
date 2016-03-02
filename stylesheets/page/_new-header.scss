@@ -1,0 +1,246 @@
+.fd-header{ 
+	position: absolute;
+	top: 0;
+	z-index: 16;
+	width: 100%;
+	padding-top: 0;
+	.header{
+		height: 55px;
+	}
+	.site-nav > li{		
+		letter-spacing: 0.04em;
+		margin-left: 30px;
+	}
+	.site-nav{		
+		.nav-link:hover, .nav-link.active{ 
+			border-top: 2px solid #fff;
+			color: #fff;
+		}
+		.nav-link{			
+			color: #fff;
+			text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+		}
+		.nav-contact{ color: $color-white; border-left: 0; }
+		.landing-contact {
+			a {
+				color: $color-white; text-transform: uppercase;			
+			}
+		}
+	} 
+}
+
+.site-nav li:first-child{ cursor: pointer;}
+
+.banner.banner-404{
+	padding-top: 120px;
+	z-index: 10;
+}
+
+@include at-breakpoint($break-desktop){
+	.fd-header .header-signup{		
+		border-color: rgba(#fff, 0.6);
+		padding: 6px 15px 6px 16px;
+		font-size: 14px;
+		margin-top: -2px;
+		font-weight: 400;
+		text-transform: uppercase;
+		background-color: rgba(0,0,0,0.5);
+		&:hover{ background-color: rgba(0,0,0,0.8); border-color: #000; }
+		&:hover, &:visited{ color: #fff; }
+	}
+
+	.fd-home-sticky.stuck.in, .fd-page-sticky.stuck.in{
+		.header-signup{
+			border-color: rgba(darken($btn-color, 10%), 0.4);
+			background-color: $btn-color;
+			&:hover{
+				background-color: darken($btn-color, 10%);
+				border-color: darken($btn-color, 100%);
+			}
+		}
+	}
+}
+
+.fd-home-sticky.stuck .site-nav .nav-link{
+	text-shadow: none;
+	color: #000;
+}
+
+.fd-home-sticky .site-nav .nav-link.hearder-signup,
+.fd-page-sticky .site-nav .nav-link.hearder-signup{
+	padding: 3px 17px 6px; 
+}
+
+.fd-header .top-nav-strip{
+	border-bottom: 1px solid rgba(51, 51, 51, 0.1);
+	padding-top: 10px;
+	background-color: rgba(0, 0, 0, 0.1);
+	.nav-link{
+		color: rgba(255,255,255,0.5);
+	}
+	li{
+		border-left: 1px solid rgba(233,233,233,0.4); 
+		color: #fff;
+		&:first-child{ 
+			border-left:none;
+		}
+		&:hover .nav-link{ color: rgba(255, 255, 255, 0.8); }
+	}
+	.top-site-nav .top-nav-contact{
+		font-weight: 400;
+	}
+}
+.fd-home-sticky,.fd-page-sticky{
+	.site-nav .nav-link{
+		padding: 18px 5px 18px;
+		text-transform: uppercase;
+		font-weight: 300;
+	}
+	.sub-menu li{
+		padding-top: 0px;
+		padding-bottom: 0px;
+		padding-left: 0px;
+		width: 100%;
+		&:hover a{ color: #16a085; }
+		a{ 
+			display: block;
+			padding-top: 10px;
+			padding-bottom: 10px;
+			padding-left: 15px;
+		}
+	}
+	.h-head:hover:after{
+		content: "";
+		border: 7px solid transparent;
+		border-bottom-color: #fff;
+		font-size: 0;
+		line-height: 0;
+		display: inline-block;
+		top: 5.5rem;
+		margin-left: 25px;
+		position: absolute;
+		background-color: transparent;
+		-moz-transform: none;
+		-webkit-transform: none;
+	}
+}
+.fd-logo {
+	background-image: url(#{$cdn_path}/images/fd-logo.png);
+	background-repeat: no-repeat;
+	background-size: 175px;
+	width: 175px;
+	height: 46px;
+	display: inline-block;
+	margin-top: 3px;
+	margin-bottom: 3px;
+	outline: none;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader( src='../images/fd-logo.png', sizingMethod='scale');
+    -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader( src='../images/fd-logo.png', sizingMethod='scale')";
+}
+
+.fd-home-sticky.stuck.in,.fd-page-sticky.stuck.in{
+	height: 64px;
+	z-index: 999;
+	opacity: 1;
+	background-color: rgba(255,255,255,0.96);
+	@include box-shadow(0 0 15px -2px rgba(0, 0, 0, 0.2));
+	.fd-logo{
+		background-image: url(#{$cdn_path}/images/logo.png);
+		background-repeat: no-repeat;
+		background-size: 175px;
+		width: 175px;
+		height: 46px;
+		display: inline-block;
+		margin-top: 10px;
+		margin-bottom: 7px;
+		outline: none;
+	}
+
+	.site-nav{
+		margin-top: 20px; 
+		li{ 
+			color: #595959; 
+		}
+		.nav-link{ 
+			text-shadow: none;
+			color: #000;
+			padding: 20px 5px 28px; 
+		}
+		.nav-link:hover,.nav-link.active{
+			color: #16a085;
+			border-top: 2px solid #16a085;
+		}
+	}
+	.h-head:hover:before {
+		content: '';
+		display: block;
+		position: absolute;
+		top: 41px;
+		width: 0;
+		height: 0;
+		border-color: transparent transparent #fdfafa;
+		border-style: solid;
+		border-width: 13px;
+		margin-left: 17px;
+		z-index: 99999;
+	}
+	.sub-menu{
+		top: 64px;
+		border-top: 1px solid #16a085;
+		background-color: #fff;
+		li {
+			padding-top: 0px;
+			padding-bottom: 0px;
+			padding-left: 0px;
+			width: 100%;
+			&:hover{
+				background-color: #f7f7f7;
+				a{color: #16a085;}
+			}
+			a {
+				display: block;
+				padding-top: 10px;
+				padding-bottom: 10px;
+				padding-left: 15px;
+				color: #595959;
+			}
+		}	
+	} 
+
+	.h-head:hover:after {
+		content: "";
+		display: block;
+		width: 1em;
+		height: 1em;
+		border: 1px solid #16a085;
+		position: absolute;
+		top: 3.5em;
+		-moz-transform: rotate(45deg);
+		-webkit-transform: rotate(45deg);
+		margin-left: 21px;
+		background-color: #fff;
+		font-size: inherit;
+	}
+}
+
+.fd-home-sticky.load, .fd-page-sticky.load{
+	-webkit-animation: fadeInDown 0.25s; /* Safari and Chrome */
+       -moz-animation: fadeInDown 0.25s; /* Firefox */
+        -ms-animation: fadeInDown 0.25s; /* Internet Explorer */
+         -o-animation: fadeInDown 0.25s; /* Opera */
+	        animation: fadeInDown 0.25s;
+}
+
+
+
+@media only screen and (min--moz-device-pixel-ratio: 1.5),(-o-min-device-pixel-ratio: 3/2),(-webkit-min-device-pixel-ratio: 1.5),(min-device-pixel-ratio: 1.5) {
+	.fd-logo{
+		background-image: url(#{$cdn_path}/images/fd-logo.png);
+		filter: progid:DXImageTransform.Microsoft.AlphaImageLoader( src='../images/fd-logo.png', sizingMethod='scale');
+    	-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader( src='../images/fd-logo.png', sizingMethod='scale')";
+	}
+	.fd-home-sticky.stuck.in .fd-logo,.fd-page-sticky.stuck.in .fd-logo{
+		background-image: url(#{$cdn_path}/images/big-logo.png);
+		margin-top: 11px;
+	}
+}

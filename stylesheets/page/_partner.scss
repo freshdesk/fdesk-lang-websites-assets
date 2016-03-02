@@ -1,0 +1,97 @@
+.fp-us,.fp-eu,.fp-ap,.fp-me{
+	width: 25%;
+	float: left;
+}
+
+.fp-countries{
+	h4{
+		margin-left: 30px;
+		font-weight: $font-weight-light;
+	}
+	.fp-cr{
+		padding-top: 5px;
+		padding-bottom: 5px;
+		width: 80%;
+		display: block;
+		padding-left: 20px;
+		text-align: left;
+		font-size: 14px;
+		margin-left: 10px;
+		color: #333333;
+	}
+}
+
+.fd-loc{
+	.fp-c-name{
+		background-color: #f2f2f2;
+		border-top: 1px solid #96DCDC;
+		h2{
+			font-size: 32px;
+			margin: 0;
+			padding: 10px 20px;
+		}
+	}
+	.fp-c-addr{
+		padding-left: 30px;
+		h4{
+			@extend .epsilon;
+			margin: 0;
+		}
+		ul{
+			padding-top: 10px;
+			padding-bottom: 20px;
+			li{ 
+				padding-top: 5px;
+				color: #929292; 
+				a{
+					color: #929292; 
+					&:hover{ color: #395b54; }	
+				}
+			}
+		}
+		
+		i { 
+			color: #16a085;
+			margin-right: 10px; 
+		}
+		.icon-envelope-alt{ vertical-align: inherit; }
+
+		.icon-phone{ vertical-align: middle; }
+		.icon-globe{ margin-top: 2px; }
+		.f-location{ 
+			.icon-location{
+				vertical-align: top;
+				margin-top: 6px;
+			}
+			span{
+				width: 300px;
+				display: inline-block;
+				margin-left: -4px;
+			}
+		}
+	}
+}
+
+div#usa{ padding-bottom: 75px; }
+
+.scrollToTop{
+	width:60px; 
+	height:50px;
+	padding:10px; 
+	text-align:center; 
+	background: whiteSmoke;
+	font-weight: bold;
+	color: #444;
+	text-decoration: none;
+	position:fixed;
+	top: 240px;
+	left:30px;
+    right:auto;
+	display:none;
+	background: url('../images/back2top.png') no-repeat 0px 20px;
+	background-size: 35px;
+	opacity: 0.5;
+}
+.scrollToTop:hover{
+	text-decoration:none;
+}

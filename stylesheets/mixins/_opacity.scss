@@ -1,0 +1,7 @@
+@mixin opacity($level) {
+  -ms-filter      : "progid:DXImageTransform.Microsoft.Alpha(Opacity=#{(10 * $level)})"; // IE 8
+  filter          : alpha(opacity=($level * 100)); // IE 5-7
+  -khtml-opacity  : $level; // Safari 1.x
+  -moz-opacity    : $level; // Netscape
+  opacity         : $level; // Good browsers
+}

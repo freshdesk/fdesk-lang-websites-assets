@@ -1,0 +1,29 @@
+@charset "utf-8";
+
+// Initialize
+@import "compass"; 						// Load Compass plugins 	http://compass-style.org/
+@import "susy";							// Susy for grid system 	http://susy.oddbird.net/ 
+@import "animation";  					// Animation Helper 		https://github.com/ericam/compass-animation
+
+// !IMPORTANT try to handle all color, background, grid, font etc. using the variables file
+@import "settings/default";        		// Default settings for the theme
+@import "mixins/all";       			// Load custom mixins
+
+// Base, Layout, Module, State (SMACSS)
+@import "common/base";
+@import "components/all";
+
+// External plugins
+@import "plugins/fancybox";
+@import "plugins/select2";
+@import "plugins/flipster";
+@import "plugins/slider";
+
+// Utilities
+@import "common/helpers";
+
+// IE Fixes
+@import "misc/ie";
+
+// Print styles
+@import "misc/print";

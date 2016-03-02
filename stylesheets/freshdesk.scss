@@ -1,0 +1,17 @@
+@charset "utf-8";
+
+// !IMPORTANT try to handle all color, background, grid, font etc. using the variables file
+@import "settings/freshdesk";
+
+// Base template CSS that can shared accross all sites
+@import "main";        // Default settings for the theme
+
+// Page specific styles
+@import "page/all";
+
+// Site specific styles
+@import "site/freshdesk";
+
+// Responsive styles
+@import "responsive/tablet-desktop";
+@import "responsive/mobile";

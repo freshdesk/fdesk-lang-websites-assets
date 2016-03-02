@@ -1,0 +1,22 @@
+// Generic Grid classes
+$prefix: "fg";
+$pull-prefix: "fg-pull";
+$push-prefix: "fg-push";
+
+.fc, .grid-small{ @include pie-clearfix; }
+
+@include at-breakpoint($break-tablet){
+	// Base generic grid
+	@for $i from 1 through $total-columns {
+		.#{$prefix}-#{$i}{ @include span-columns($i); }
+	}
+	// Pull generic grid helpers
+	@for $i from 1 through $total-columns {
+		.#{$pull-prefix}-#{$i}{ @include push($i); }
+	}
+	// Push generic grid helpers
+	@for $i from 1 through $total-columns {
+		.#{$push-prefix}-#{$i}{ @include pull($i); }
+	}
+	.omega{ @include omega; }
+}

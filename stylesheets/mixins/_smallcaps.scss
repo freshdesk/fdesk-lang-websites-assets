@@ -1,0 +1,17 @@
+// Adapted from Typeplate
+
+@mixin smallcaps($color, $font-weight) {
+  // depends on the font family.
+  // some font-families don’t support small caps
+  // or don’t provide them with their web font.
+  font-variant: small-caps;
+  font-weight: $font-weight;
+  text-transform: lowercase;
+  color: $color;
+}
+
+// /* E.G. USAGE: */
+// abbr {
+// 	@include smallcaps(gray, $font-weight-semibold);
+// 	&:hover { cursor: help; }
+// }

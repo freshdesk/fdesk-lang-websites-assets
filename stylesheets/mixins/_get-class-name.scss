@@ -1,0 +1,10 @@
+@function get-class-name($suffix, $base) {
+  // Helper to get the class name if its not default
+  @if $suffix == default {
+  	@return #{ "." + $base};
+  } @else if $suffix == disabled {
+  	@return #{ "." + $base + "." + $suffix + ", ." + $base + "[" + $suffix + "]" };
+  } @else {
+  	@return #{ "." + $base + "-" + $suffix };
+  }  
+}

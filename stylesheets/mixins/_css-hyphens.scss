@@ -1,0 +1,13 @@
+// CSS hyphenation à la Trent Walton: http://trentwalton.com/2011/09/07/css-hyphenation
+@mixin css-hyphens($value) {
+  // Accepted valueues: [ none | manual | auto ]
+  -webkit-hyphens: $value;	// Safari 5.1-6, iOS 4.2-6
+  -moz-hyphens: $value;		// Firefox 16-20
+  -ms-hyphens: $value;		// IE10
+  hyphens: $value;			// W3C standard
+};
+
+// /* E.G. USAGE: */
+// body {
+//   @include css-hyphens(auto);
+// }

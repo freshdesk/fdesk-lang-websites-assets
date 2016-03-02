@@ -1,0 +1,360 @@
+.pl-page{
+	max-width: 1100px;
+	padding-left: 25px;
+	padding-right: 25px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.pl-c-sp,.pl-c-bl,.pl-c-ga,.pl-c-es,.pl-c-ft{
+		width: 19%;
+		border: 1px solid #f3f3f3;
+		float: left;
+		padding-bottom: 20px;
+		margin-left: 0.8%;
+	}
+
+.pl-c-sp{
+	margin-left: 0;
+}
+.pl-c-es{
+	background-color: #f7fafa;
+}
+.pl-c-intro{
+	text-align: center;
+	padding-top: 30px;
+
+	h4{
+		font-size: 22px;
+		text-transform: uppercase;
+		padding-bottom: 20px;
+	}
+	h6{
+		font-size: 14px;
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+	.agents{ 
+		padding-top: 35px;
+	}
+
+	h4,.agents span{ font-weight: 600;}
+
+	h6.annual{ color: $color-primary;}
+
+	img{ width: 60%;}
+}
+.pl-c-ft .pl-c-intro .agents{ padding-top: 27px;}
+.pl-p-list .pl-p-s{margin-top: 0;}
+.pl-p-f:before, .pl-p-s:before,.pl-np-f:before {
+	content: " ";
+	position: absolute;
+	left: 0;
+	top: 17px;
+}
+.pl-p-f:before,.pl-p-s:before {
+	background-position: 0 -1013px;
+	height: 16px;
+	width: 16px;
+}
+.pl-np-f:before,.pl-p-f:before,.pl-p-s:before {
+	display: inline-block;
+	vertical-align: middle;
+}
+.pl-np-f:before {
+	background-position: 0 -994px;
+	height: 19px;
+	width: 17px;
+	opacity: 0.7;
+}
+
+/*.pl-p-list{ padding-left: 15px;}*/
+
+.pl-p-f, .pl-p-s,.pl-np-f {
+	position: relative;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	width: 83%;
+	padding-left: 25px;
+	text-align: left;
+	margin-left: 14px;
+}
+.pl-c-list{
+	/*background-color: #fbfcfc;*/
+}
+.pl-c-es .pl-c-list{
+	/*background-color: #ecf2f2;*/
+}
+.pricing-attr{
+	color: #adadad;
+	font-size: 14px;
+}
+.pl-features p{
+	@extend .default;
+	font-weight: 400;
+	margin-bottom: 0;
+	margin-top: 5px;
+}
+.pricing-inner-banner{
+	background-color: #f7fafa;
+	color: #333333;
+	margin-top: 40px;
+	.signup .b-link{
+		font-size: 14px;
+		color: #adadad;
+		text-decoration: underline;
+		&:hover{
+			text-decoration:none;
+		}
+	}
+}
+.f-offer-label{
+	font-weight: 600;
+	padding: 7px 15px 7px 15px;
+	color: #ff9900;
+	background-color: #fff;
+	border-radius: 5px;
+	moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+	-o-border-radius: 5px;
+	webkit-border-radius: 5px;
+	line-height: 1.5;
+	box-shadow: 0px 1px 5px #ccc;
+	font-size: 16px;
+	text-transform: uppercase;
+}
+.pl-p-label{ margin-top: -15px;}
+
+/* New Pricing */
+
+.pricing-banner-img{ 
+	margin-top: 2px;
+}
+
+
+.pr-c-sp,.pr-c-bl,.pr-c-ga,.pr-c-es,.pr-c-ft{
+	width: 19.9%;
+	border-right: 1px solid #f3f3f3;
+	float: left;
+	padding-bottom: 50px;
+}
+
+.pr-c-es{ 
+	background-color: lighten(#d6ebe7, 8%); 
+	position: relative; 
+}
+.pr-c-ft{ border-right: none; }
+
+.pr-plan-list{ 
+	border: 1px solid #f3f3f3; 
+	border-radius: 3px;
+	background-color: #fff;
+}
+
+.pr-c-intro{
+	padding-top: 20px;
+	text-align: center;
+	padding-bottom: 30px;
+	/*border-bottom: 1px solid #f3f3f3;*/
+	h2{
+		@extend .beta;
+		font-weight: $font-weight-light;
+	}
+	h4{
+		font-weight: $font-weight-light;
+		@extend .delta;
+	}
+	h6{
+		@extend .small;
+		font-weight: $font-weight-normal;
+		margin: 0;
+	}
+}
+	
+.pr-p-f:before,.pr-np-f:before {
+	content: " ";
+	position: absolute;
+	left: 0;
+	top: 13px;
+	background: url("#{$cdn_path}/images/pricing/pricing-leaf.png") no-repeat;
+	height: 23px;
+	width: 22px;
+	background-size: 20px;
+}
+
+.pr-p-f, .pr-np-f {
+	position: relative;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	width: 80%;
+	padding-left: 30px;
+	text-align: left;
+	font-size: 14px;
+	margin-left: 20px;
+}
+
+.pr-day-pass{
+	h3{
+		display: inline-block;
+		@extend .delta;
+		font-weight: $font-weight-light;
+	}
+	.daypass-txt{ 
+		display: inline-block;
+		@extend .small;
+		vertical-align: text-bottom;
+	}
+}
+.pricing-inner-strip{
+	background-image: url(#{$cdn_path}/images/pricing/pricing-inner-image.jpg);
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+	background-position: 0 100%;
+	height: 300px;
+	display: block;
+	position: relative;
+	&:hover{
+		.pr-sign-link{ 
+			background-color:rgba(0, 0, 0, 0.15);
+			h5{ opacity: 0.9; }
+			.right-nav{ opacity: 0.7; }
+		}
+	}
+}
+.pricing-upper-link{
+	background-color: #ffffff;
+	height: 35px;
+	@include transform(rotate(1.2deg));
+	display: block;
+	position: relative;
+	left: -1px;
+	top: 25px;
+	z-index: 2;
+	@include box-shadow(-1px -6px 0px 6px #ffffff);
+}
+.pricing-inner-desc{
+	display: block;
+	position: absolute;
+	top: 120px;
+	margin: 0 auto;
+	left: 0;
+	color: #fff;
+	right: 14%;
+	h3{ font-weight: $font-weight-light; }
+}
+.pr-sign-link{
+	position: absolute;
+	right: 0;
+	color: #fff;
+	height: 300px;
+	background-color: rgba(0, 0, 0, 0.05);
+	@include transition(all ease 0.5s);
+	.prlink-text{
+		top: 125px;
+		position: relative;
+	}
+	h5{ 
+		display: inline-block; 
+		@extend .gamma;
+		font-weight: $font-weight-light;
+		vertical-align: bottom;
+	}
+	.right-nav{ 
+		background: url(#{$cdn_path}/images/home/tour-home.png) no-repeat;
+		display: inline-block;
+		margin-top: 0;
+		width: 51px;
+		opacity: 0.5;
+		background-size: 50px;
+		position: static;
+		margin-left: 30px;
+	}
+}
+
+.pricing-bottom-link{
+	background-color: #fff;
+	height: 30px;
+	transform: rotate(-1deg);
+	-moz-transform: rotate(-1deg);
+	-ms-transform: rotate(-1deg);
+	-webkit-transform: rotate(-1deg);
+	margin-top: -28px;
+	display: block;
+	position: relative;
+	left: -1px;
+	box-shadow: 7px 9px 0px 10px #fff;
+}
+
+.pricing-articles{
+	h5{ 
+		font-size: 24px; 
+		margin: 0;
+	}
+	p{
+		@extend .default;
+		line-height: 1.4;
+	}
+	a{ @extend .default; }
+}
+.pr-ribbon {
+	background-image: url(#{$cdn_path}/images/pricing/popular-board.png);
+	background-repeat: no-repeat;
+	width: 120px;
+	height: 40px;
+	background-size: 120px;
+	position: absolute;
+	top: -28px;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+}
+
+.estate-txt{
+	position: absolute;
+	top: -181px;
+	font-size: 13px;
+	line-height: 1.26;
+	color: rgba(0, 0, 0, 0.7);
+	padding:10px 10px 20px 65px;
+	@include background-image(linear-gradient(top,  rgba(255,255,255,0.6) 0%,rgba(255,255,255,0) 100%));	
+}
+
+.pr-ballon {
+	background: url(#{$cdn_path}/images/pricing/pricing-hot-air-balloon.png) -40px 0px / 155px no-repeat;
+	width: 75px;
+	height: 90px;
+	position: absolute;
+	top: -200px;
+	left: -5px;
+	animation: cloudy 5s ease-in-out infinite;
+	-webkit-animation: cloudy 5s ease-in-out infinite;
+	-moz-animation: cloudy 5s ease-in-out infinite;
+	-ms-animation: cloudy 5s ease-in-out infinite;
+	-o-animation: cloudy 5s ease-in-out infinite;
+}
+.banner.poly-pricing-banner{
+	padding-top: 120px;
+	padding-bottom: 40px;
+	h2{
+		@extend .beta;
+	}
+}
+
+.pr-p-list{ min-height: 157px; }
+
+
+p.pl-features-link{
+	font-size: 20px;
+	font-weight: 300;
+	a{ 
+		font-weight: 400;
+		line-height: 2;
+	}
+}
+
+@media only screen and (min--moz-device-pixel-ratio: 1.5),(-o-min-device-pixel-ratio: 3/2),(-webkit-min-device-pixel-ratio: 1.5),(min-device-pixel-ratio: 1.5) {
+	.pricing-inner-strip{
+		background-image: url(#{$cdn_path}/images/pricing/pricing-inner-image@2x.jpg); 
+		background-size:cover;
+		background-color: #5d8376;
+	}	
+}

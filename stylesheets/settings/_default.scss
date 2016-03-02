@@ -1,0 +1,170 @@
+// Variables/Parameters
+
+// Site settings
+// =============
+$responsive					  : false 							!default;
+$cdn_path					: returnCDNPath();
+
+// Color Scheme
+// =============
+$color-white                  : #fff 							!default;
+$color-black                  : #333 							!default;
+$color-black-dark             : darken($color-black, 10%) 		!default;
+$color-black-lite             : lighten($color-black, 15%) 		!default;
+$color-gray                   : #eee 							!default;
+$color-med-gray				  : #ccc 							!default;
+$color-gray-dark			  : #adadad 						!default;
+$color-aqua                   : #41B18C 						!default;
+$color-light-green            : #16a085 						!default;
+$color-dark-green			  : #195b50 						!default;
+$color-aqualite 	          : #e7fffa 						!default;
+$color-font-teal			  :	#54877f 						!default;
+$color-indigo				  : #c8c6d5 						!default;
+
+$color-red 					  : #E74C3C 						!default;
+
+// Flat ui colors
+// =============
+$color-midnight-blue 		  : #2C3E50 						!default;
+$color-wet-asphalt 			  : #34495E 						!default;
+$color-pumpkin 				  : #D35400							!default;
+$color-carrot 				  : #E67E22 						!default;
+
+$color-primary                : $color-light-green 				!default;
+$color-primary-lite			  : lighten($color-primary, 40%) 	!default;
+$color-secondary			  : darken($color-primary, 10%) 	!default;
+
+// Component colors
+// =============
+$footer-link				  : #666 							!default;
+$footer-link-hover			  : lighten($footer-link, 30%) 		!default;
+$footer-background	  		  : #323232 						!default;
+$footer-strip-background	  : darken($footer-background, 5%)	!default;
+$footer-section-heading		  : lighten($color-black, 40%)		!default;
+
+$btn-color		  			  : $color-primary 					!default;
+$btn-secondary-color		  : #eee 							!default;
+$btn-disabled-color			  : #888 							!default;
+$btn-light-color			  :	lighten($btn-color, 5%) 		!default;
+$btn-dark-color				  : darken($btn-color, 5%) 			!default;
+
+$banner-bg					  : $color-primary 					!default;
+$banner-bg-dark 			  : $color-secondary 				!default;
+$banner-border-color		  : $btn-color 						!default;
+
+// Font colors
+$font-color					  : $color-black 					!default;
+$banner-font-color 			  : if(lightness($banner-bg) > 50, $color-black, $color-white) !default;
+$banner-font-dark-color		  : #6aada0 !default;
+
+// Main color palette
+$color-highlight              : #FEAD9A 						!default;
+$color-muted                  : #999 							!default;
+$color-text                   : $color-black 					!default;
+
+// Link colors
+$color-link-default           : lighten($color-primary, 3%) 	!default;
+$color-link-visited           : lighten($color-primary, 3%) 	!default;
+$color-link-hover             : scale_color($color-link-default, $lightness: -25%, $saturation: -70%) !default;
+$color-link-active            : darken($color-link-default,2%) 	!default;
+
+// Base Sizes
+// ==========
+$font-base                    : 16 								!default;
+$base-font-size               : 16px 							!default;
+$base-line-height             : 28px 							!default;
+$relative-font-sizing         : true 							!default;
+
+// Shorthands
+// ===========
+$base-fs                      : $base-font-size 				!default;
+$base-lh                      : $base-line-height				!default;
+
+// Grid Layout
+// ===========
+$total-columns                : 12;
+$column-width                 : 60px;
+$gutter-width                 : 40px;
+$grid-padding                 : 25px;
+
+@if $responsive == true{
+	$container-style		  : magic;
+}
+@else{
+	$container-style		  : static;
+}
+
+$default-container-width	  : 1140px 							!default;
+$container-width 			  : $default-container-width;
+
+$gridColumns				  : $total-columns 					!default;
+$gridColumnWidth			  : $column-width 					!default;
+$gridGutterWidth			  : $gutter-width 					!default;
+$gridRowWidth				  : ($gridColumns * $gridColumnWidth) + ($gridGutterWidth * ($gridColumns - 1)) !default;
+
+// Breakpoints
+// ===========
+$media-mobile				  : 0 45em 			!default; // Applying styles only for mobile
+$media-tablet				  : 45em 65em 12 	!default; // Applying styles only for tablet
+$break-tablet				  : 45em 12 		!default; // Applying styles for Tablets to Medium & Large desktops 
+$break-desktop				  :	65em 12			!default; // Applying styles for Medium & Large desktops 
+$break-large				  :	75em 16 		!default; // Applying styles for Large desktops and above
+
+// Font Stacks
+// ===========
+$ampersand                    : Baskerville, Palatino, "Book Antiqua", serif  !default;
+$font-family-sans             : 'Source Sans Pro', sans-serif !default;
+$font-family-serif            : "Source Sans Pro", "Helvetica Neue", "Lucida Grande", sans-serif !default;
+$font-family-display          : "Source Sans Pro", "Helvetica Neue", "Lucida Grande", sans-serif !default;
+$font-family-caption          : "Source Sans Pro", "Helvetica Neue", Helvetica, "Lucida Grande", sans-serif !default;
+$font-family-monospace        : Menlo, "Bitstream Vera Sans", Monaco, "Andale Mono", "Lucida Console", "Droid Mono", monospace !default;
+$font-family-default          : $font-family-sans !default;
+
+// Font Weights
+// ============
+$font-weight-ultralight       : 200 !default;
+$font-weight-light            : 300 !default;
+$font-weight-normal           : 400 !default;
+$font-weight-semibold         : 600 !default;
+$font-weight-bold             : 700 !default;
+
+// Typographic Scale
+// Adapt`ed from Typeplate <http://typeplate.com>
+// Change to your liking. See <http://modularscale.com>
+$tera                         : 117 	!default; 	//  117 = 18 × 6.5
+$giga                         : 90 		!default;  	//  90  = 18 × 5
+$mega                         : 72 		!default; 	//  72  = 18 × 4
+$alpha                        : 60 		!default; 	//  60  = 18 × 3.3333
+$beta                         : 48 		!default; 	//  48  = 18 × 2.6667
+$gamma                        : 36 		!default; 	//  36  = 18 × 2
+$delta                        : 28 		!default; 	//  24  = 18 × 1.4444
+$epsilon                      : 21 		!default; 	//  21  = 18 × 1.1667
+$zeta                         : 18 		!default; 	//  18  = 18 × 1
+$default                      : 16 		!default;
+$small						  : 14 		!default;
+$mini						  : 10 		!default;
+
+//Border Radius
+$radius-round                 : 50% 	!default;
+$radius-simple                : 2px 	!default;
+$radius-medium                : 4px 	!default;
+$radius-large                 : 7px 	!default;
+
+// Type Scale Unit
+$type-scale-unit-value        : rem 	!default;
+
+// URLS
+// ============
+$logo                         : "logo.png" 	!default;
+
+// Divider
+// ============
+$divider-color 				  : #e5e5e5 	!default;
+
+// the first value is the name of the class
+// the second value ($) is the size variable
+$greek-sizes: tera $tera, giga $giga, mega $mega, alpha $alpha, 
+			  beta $beta, gamma $gamma, delta $delta, epsilon $epsilon, 
+			  zeta $zeta, default $default, small $small, mini $mini;
+
+

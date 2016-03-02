@@ -1,0 +1,24 @@
+// Page full length Wrappers & Backgrounds
+
+$wrapper-padding: 18px;
+$wrapper-secondary: #f9f9f9;
+$wrapper-secondary-border: #f3f3f3;
+
+.w-grey{ 
+	background-color: $wrapper-secondary; 
+	border-bottom: 1px solid $wrapper-secondary-border;
+	@include pie-clearfix;
+	padding-bottom: $wrapper-padding;
+}
+
+.w-price-seperator{ height: 55px; }
+
+.w-grey-features{
+	/*background-color: $wrapper-secondary;	*/
+	/*border: 1px solid $wrapper-secondary-border;*/
+	margin-top: 60px;
+	padding-top: 20px;
+	padding-bottom: 10px;
+	border-width: 1px 0;
+	margin-bottom: -30px;
+}

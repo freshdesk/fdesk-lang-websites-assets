@@ -1,0 +1,180 @@
+/* Tour Page */
+
+.tour_banner{ min-height: 208px; }
+
+.tour_controls, .tour_sticky{
+	position: relative;
+	top: -100px;
+	height: 160px;
+	li{
+		margin: 0px 28px;
+		display: inline-block;
+		a{
+			background-color: #3b5768;
+			@include background-image(linear-gradient(left,  #3b5768 0%,#3b5768 50%,#334d5d 51%,#334d5d 100%));
+			width: 170px;
+			height: 170px;
+			border-radius: $radius-round;
+			border: 10px #fff solid;
+			display: inline-block;
+		}
+		p{
+			color: $color-primary;
+		}
+	}
+	.active{
+		.tour-mail{background-image: url(#{$cdn_path}/images/icons/tour-mail-hover.png);		}		
+		.tour-ticket{background-image: url(#{$cdn_path}/images/icons/tour-ticket-hover.png); }
+		.tour-globe{background-image: url(#{$cdn_path}/images/icons/tour-globe-hover.png);}
+		.tour-report{background-image: url(#{$cdn_path}/images/icons/tour-report-hover.png);}
+	}
+
+	.tour-mail{
+		background-image: url(#{$cdn_path}/images/icons/tour-mail.png);
+		background-repeat: no-repeat;
+		width: 108px;
+		height: 116px;
+		display: inline-block;
+		margin-top: 10px;
+		-webkit-transition: all .15s linear;
+		&:hover{
+			background-image: url(#{$cdn_path}/images/icons/tour-mail-hover.png);
+		}
+	}
+	.tour-ticket{
+		background-image: url(#{$cdn_path}/images/icons/tour-ticket.png);
+		background-repeat: no-repeat;
+		width: 112px;
+		height: 116px;
+		display: inline-block;
+		margin-top: 30px;
+		-webkit-transition: all .15s linear;
+		&:hover, &.active{
+			background-image: url(#{$cdn_path}/images/icons/tour-ticket-hover.png);
+		}
+	}
+	.tour-globe{
+		background: url(#{$cdn_path}/images/icons/tour-globe.png) no-repeat;
+		background-repeat: no-repeat;
+		width: 132px;
+		height: 142px;
+		display: inline-block;
+		margin-top: 7px;
+		margin-left: 7px;
+		-webkit-transition: all .15s linear;
+		&:hover, &.active{
+			background-image: url(#{$cdn_path}/images/icons/tour-globe-hover.png);
+		}
+	}
+	.tour-report{
+		background: url(#{$cdn_path}/images/icons/tour-report.png) no-repeat;
+		background-repeat: no-repeat;
+		width: 132px;
+		height: 142px;
+		display: inline-block;
+		margin-top: 28px;
+		margin-left: 12px;
+		-webkit-transition: all .15s linear;
+		&:hover, &.active{
+			background-image: url(#{$cdn_path}/images/icons/tour-report-hover.png);
+		}
+	}
+}
+/*Animated Fixed Strip*/
+.scrolling-circle{
+	position: absolute;
+	top: 41px;
+	width:178px;
+	left:306px;
+	height: 12px;
+	
+	.movable{
+		position: absolute;
+		background: url(#{$cdn_path}/images/icons/cablecar.png);
+		width: 21px;
+		height: 23px;
+		/*border-radius: $radius-round;*/
+		top: 2px;
+		left: 0;
+		z-index: 8;
+	}
+}
+.tour_sticky .tour_controls li a.inactive{
+	background: #ccc;
+	span{
+		@include opacity(0.5);
+	}
+	&:hover{
+		background: #3b5768;
+		span{
+			@include opacity(1);
+		}
+	}
+}
+
+.tour_sticky{
+	position: fixed;
+	z-index: 10;
+	display: none;
+	background-color: #fff;
+	width: 100%;
+	top: 0px;
+	height: 114px;
+	padding-top: 10px;
+	@include box-shadow(0px 0px 15px #ccc);
+	.line{
+		border-top: 1px #ccc solid;
+		width: 758px;
+		margin: 0 auto;
+		position: relative;
+		top: 36px;
+		z-index:7;
+	}
+	ul{ width: 1000px; }
+	li{
+		box-sizing: content-box;
+		margin: 0 60px;
+		display: inline-block;
+		position: relative;		
+		top: 100px;
+		z-index: 10;
+		min-width: 113px;
+		&:last-child{ left: -5px; }
+		a{
+			width: 70px;
+			height: 70px;
+			border: 1px #fff solid;
+			margin-right: -3px;
+		}
+		p{
+			margin: 0px 0px;
+			text-transform: uppercase;
+		}
+		.tour-mail{
+			margin-left: 1px;
+			margin-top: 5px;
+		}
+		.tour-ticket{
+			margin-left: 1px;
+			margin-top: 5px;
+		}
+		.tour-globe{
+			margin-left: 1px;
+			margin-top: 5px;
+		}
+		.tour-report{
+			margin-left: 1px;
+			margin-top: 5px;
+			background-position: 0px 4px;
+		}
+		.tour-mail, .tour-globe, .tour-ticket, .tour-report{
+			background-size: 100%;
+			width: 41px;
+			height: 60px;
+			position: relative;
+			top: 5px;
+		}
+
+	}
+
+}

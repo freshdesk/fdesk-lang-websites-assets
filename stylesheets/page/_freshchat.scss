@@ -1,0 +1,123 @@
+.chat-banner{
+	/*background: url(#{$cdn_path}/images/banner-pattern.png)repeat;*/
+	padding-top: 145px;
+	h2{
+		font-size: 36px;
+		font-weight: 300;
+		letter-spacing: 1px;
+		span.rotate{ font-weight: 600;}
+	}
+	.bounce{
+		padding-top: 15px;
+	}
+	.chat-title{
+	 /*height: 100px;*/
+	 /*overflow: hidden;*/
+	}
+}
+.chat-icons-wrapper{
+	padding: 30px 0;
+	background-color: #f7f7f7;
+	.chat-icons{
+		border: 2px solid #0c7d66;
+		border-radius: 100%;
+		width: 300px;
+	}
+	.fg-5{
+		width: 47.65517%;
+	}
+	.fg-6{
+		display: inline-block;
+		float: none;
+	}
+	.chat-icon-title{ font-size: 24px;}
+}
+.type-wrap{
+	margin:10px auto;
+	padding:20px;
+	background:#f0f0f0;
+	border-radius:5px;
+	border:#CCC 1px solid;
+}
+#typed-cursor{
+			font-size: 24px;
+			opacity: 1;
+			font-weight: 100;
+			-webkit-animation: blink 0.7s infinite;
+			-moz-animation: blink 0.7s infinite;
+			-ms-animation: blink 0.7s infinite;
+			-o-animation: blink 0.7s infinite;
+			animation: blink 0.7s infinite;
+		}
+		@-keyframes blink{
+			0% { opacity:1; }
+			50% { opacity:0; }
+			100% { opacity:1; }
+		}
+		@-webkit-keyframes blink{
+			0% { opacity:1; }
+			50% { opacity:0; }
+			100% { opacity:1; }
+		}
+		@-moz-keyframes blink{
+			0% { opacity:1; }
+			50% { opacity:0; }
+			100% { opacity:1; }
+		}
+		@-ms-keyframes blink{
+			0% { opacity:1; }
+			50% { opacity:0; }
+			100% { opacity:1; }
+		}
+		@-o-keyframes blink{
+			0% { opacity:1; }
+			50% { opacity:0; }
+			100% { opacity:1; }
+		}
+		#target{
+			font-size: 36px;
+			letter-spacing: 2px;
+		}
+
+.chat-mac{
+	background: url("#{$cdn_path}/images/freshchat/chat_macbook.png") no-repeat;
+	width: 740px;
+	height: 420px;
+	display: block;
+	background-size: 740px;
+	margin: 40px auto 0;
+	video.chat-video{
+		width: 545px;
+		margin-top: 30px;
+	}
+}
+
+.chat-features{
+	border-bottom: 1px solid #5bbca9;
+	.l-page{
+		max-width: 980px;
+	}
+	.chat-icon-wrapper{
+		p.chat-features-icon:first-child{margin-left: 0;}
+	}
+	.chat-features-icon{
+		position: relative;
+		display: inline-block;
+		margin-left: 2%;
+		padding-left: 35px;
+		margin-bottom: 20px;
+		width: 28%;
+		&:before{
+			content: " ";
+			position: absolute;
+			left: 0;
+			top: 5px;
+			background: url("#{$cdn_path}/images/pricing/pricing-leaf.png") no-repeat;
+			height: 23px;
+			width: 22px;
+			background-size: 20px;
+		}
+	}
+}
+
+.banner.chat-banner{ padding-top: 135px; }

@@ -1,0 +1,378 @@
+/* Home page banner */
+.banner{
+	background-color: $color-primary;
+	color: $color-white;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+#gcs-images{
+	margin-top: -15px; 
+	img{ max-width: none; }
+} 
+
+.customer-feedback{
+	font-style: italic;
+	@extend .default;
+	img{
+		border-radius: $radius-round;
+		background-color: rgba(0,0,0,.2);
+	}
+	p{ color: $color-primary-lite; }
+	p+p{ color: white; }
+}
+
+/* Content part*/
+.multi_channel_support{
+	background: url(#{$cdn_path}/images/multi-channel-support.png) no-repeat center top;
+	height: 236px;
+	width: 100%;
+}
+
+#theme-support-center, #theme-customization{
+	cursor: pointer;
+	opacity: 0.6;
+	&.active{
+		opacity: 1;
+	}
+}
+
+.content-strip{
+	padding: 30px 0px;
+
+	h3{
+		@extend .delta;
+	}
+	.fc{
+		padding: 50px 0px;
+	}
+}
+
+.teelbg{
+	color: $color-white;
+	background-color: $color-primary;
+	z-index: 10;
+	position: relative;
+	
+	h3{
+		@extend .delta;
+		color: $color-white;
+	}
+	p{
+		color: $color-white;
+	}
+}
+
+.whitebg{
+	color: $color-black;
+	background-color: $color-white;
+	h2,p{
+		color: $color-black;
+	}
+	h3{
+		color: $color-black;
+		@extend .delta;
+	}
+}
+
+.content-seperator{
+	 border-top: 1px solid $divider-color; 
+	 border-bottom: 1px solid $divider-color; 
+	 margin-top: 45px; 
+	 padding-bottom: 45px; 
+}
+
+.screen-controls{
+	img{
+		position: relative;
+		left: -40px;
+	}
+
+	h3{
+		background-repeat: no-repeat;
+		padding: 0px 0px 18px 70px;
+		&.ticketing{
+			background-image: url(#{$cdn_path}/images/icons/powerful-ticketing.png);
+			background-position: 0px 2px;
+		}
+		&.self-service{
+			background-image: url(#{$cdn_path}/images/icons/self-service.png);
+			background-position: 0px 2px;
+		}
+		&.team-inbox{
+			background-image: url(#{$cdn_path}/images/icons/team-inbox.png);
+		}
+		&.theme-lab{
+			background-image: url(#{$cdn_path}/images/icons/lab-beaker.png);
+			padding-bottom: 26px;
+		}
+		&.theme-brush{
+			background-image: url(#{$cdn_path}/images/icons/theme-brush.png);
+		}
+	}
+	p{
+		padding-top: 0px;
+		padding-left: 70px;
+		margin-top: -32px;
+	}
+
+	.sc-unit{
+		display: inline-block;
+		margin-bottom: 30px;
+		opacity: 0.5;
+		cursor: pointer;
+		&:hover{
+			opacity: 1;
+		}
+		&.active{
+			opacity: 1;
+			@include transition(all 1s ease);
+		}
+	}
+}
+
+.space-bg{
+	background-image: url(#{$cdn_path}/images/gamification-pattern.png);
+	background-repeat: repeat-x;
+	background-position: center bottom;
+	min-height: 586px;
+	position: relative;
+	@include animation(spacebgmove 40s infinite linear);
+	.space-man{
+		background: url(#{$cdn_path}/images/space-man.png) no-repeat;
+		width: 279px;
+		height: 96px;
+		position: absolute;
+		bottom: 30px;
+		left: 10px;
+		@include animation(space_ship_hover 1s infinite ease-in-out alternate);
+	}
+	.game-coins{
+		width: 1006px;
+		height: 74px;
+		background: url(#{$cdn_path}/images/game-coins.png) no-repeat;
+		position: absolute;
+		right: 0px;
+		bottom: 0px;
+	}
+}
+
+
+/* Home page animation */
+.hpk-c{ height: 700px; }
+
+.hpk{
+	margin-top: 40px;
+	height: 780px;
+	position: relative;	
+}
+
+.hpk-circle{
+	width: 780px;
+	height: 780px;
+	border: 1px dashed $color-med-gray;
+	border-radius: $radius-round;
+	position: absolute;	
+	left: 0;
+	right: 0;
+	margin-left: auto;
+	margin-right: auto;
+
+
+	@include opacity(0);
+	@include transition(opacity 1s ease);
+}
+
+.animate .hpk-circle{ @include opacity(1); }
+
+.knob{
+	position: absolute;
+	width: 180px;
+	height: 180px;
+	opacity:1;
+	border-radius: $radius-round;
+	text-align: center;
+	z-index: 10;
+	&:hover{ box-shadow:0 0 0 6px rgba(0, 0, 0, 0.1); }
+	&.active{
+		box-shadow:0 0 0 6px rgba(0, 0, 0, 0.1), 0 0 0 12px rgba(0, 0, 0, 0.1);
+		@include animation(blink 1.6s infinite ease-in-out);
+	}
+	img{ height: auto; }
+}
+
+.animate .knob{
+	margin-left: 0;
+	width: 100px;
+	height: 100px;
+}
+
+// Having a circular settings
+$knob-setting:
+//  bg-color 	ani-bottom	ani-left	class		img-width	img-top
+	#e35252 	43% 		9.8%		mail 		70% 		24%,
+  	#455479		73% 		17%			globe   	66%			16%,
+  	#006a83 	93% 		46.5%		comments  	66%			21%,
+  	#537cc9		73%			74%			social 		68%			17%,
+  	#1abc9c		43%			81%			mobile  	40%			15%;
+
+$transition-speed: 0.46s;
+
+$knob-start-dim: 180px;
+
+.knob{
+	width:$knob-start-dim;
+	height:$knob-start-dim;
+
+	// Setting offset to help align center
+	margin-left: (($container-width / length($knob-setting))-$knob-start-dim)/2;
+}
+
+@for $i from 1 through length($knob-setting){	
+	$knob: nth($knob-setting, $i);
+	$animation-delay: 0;
+	$animation-ease: ease-out;
+	$start-pos-left: percentage(($i - 1) / length($knob-setting));
+
+	.gfx-v-#{nth($knob, 4)}{
+		left: $start-pos-left;
+		bottom: 70%;
+		background-color: nth($knob, 1); // Old browsers
+		@include background-image(linear-gradient(left, nth($knob, 1) 0%, 
+									nth($knob, 1) 50%, 
+									rgba(0, 0, 0, 0.1) 50%, 
+									rgba(0, 0, 0, 0.1) 100%));
+		img{ 
+			width: nth($knob, 5); 
+			margin-top: nth($knob, 6); 
+		}
+	}
+
+
+	.animate .gfx-v-#{nth($knob, 4)}{
+		@include transition(bottom 	$transition-speed $animation-ease #{$animation-delay}s, 
+							left 	$transition-speed $animation-ease #{$animation-delay}s,
+							width 	$transition-speed $animation-ease #{$animation-delay}s,
+							height 	$transition-speed $animation-ease #{$animation-delay}s,
+							margin 	$transition-speed $animation-ease #{$animation-delay}s,
+							box-shadow 0.12s linear);
+		bottom: nth($knob, 2);
+		left: nth($knob, 3);
+	}
+	.knob-message:nth-child(#{$i}){	
+		background-color: nth($knob, 1);
+	}
+}
+
+.mail-icon, .globe-icon, .comments-icon, .mobile-icon, .social-icon{
+	background-repeat: no-repeat;
+	display: inline-block;
+	position: relative;
+}
+
+.mail-icon{
+	background-image: url(#{$cdn_path}/images/icons/mail-icon.png);
+	background-image: url(#{$cdn_path}/images/icons/mail-icon.svg);
+	width: 63px;
+	height: 45px;
+	top: 88px;
+	left: 185px;
+}
+.globe-icon{
+	background-image: url(#{$cdn_path}/images/icons/globe-icon.png);
+	background-image: url(#{$cdn_path}/images/icons/globe-icon.svg);
+	width: 64px;
+	height: 66px;
+	top: 64px;
+	left: 180px;
+}
+.comments-icon{
+	background-image: url(#{$cdn_path}/images/icons/comments-icon.png);
+	background-image: url(#{$cdn_path}/images/icons/comments-icon.svg);
+	width: 63px;
+	height: 58px;
+	top: 75px;
+	left: 198px;
+}
+.social-icon{
+	background-image: url(#{$cdn_path}/images/icons/social-icon.svg);
+	background-image: url(#{$cdn_path}/images/icons/social-icon.svg);
+	width: 63px;
+	height: 58px;
+	top: 70px;
+	left: 185px;
+}
+.mobile-icon{
+	background-image: url(#{$cdn_path}/images/icons/mobile-icon.png);
+	background-image: url(#{$cdn_path}/images/icons/mobile-icon.svg);
+	width: 40px;
+	height: 68px;
+	top: 65px;
+	left: 196px;
+}
+
+$kmsg-dom: 428px;
+.knob-message{
+	width: $kmsg-dom;
+	height: $kmsg-dom;
+	text-align: center;
+	border-radius: $radius-round;
+	position: absolute;
+	z-index: 1;
+	top: 50%;
+	left: 50%;
+	margin-left: -$kmsg-dom/2;
+	margin-top: -$kmsg-dom/2;
+	z-index: 99;
+	@include opacity(0);
+	@include box-shadow(0 0 0.9px 10px #ffffff);
+	@include transition(opacity $transition-speed ease-in, top $transition-speed ease-in);
+	&.active{ 
+		@include opacity(1);
+		z-index: 100;
+	}
+}
+
+.knob-msg-item{
+	width: 350px;
+	margin: 0 auto;
+	padding-top: 170px;
+	h3, p, a{ color: #fff; }
+	a{ @include opacity(0.9); position: relative; z-index: 1; }
+	a:visited, a:active, a:hover{ color: #f3f3f3; }
+	i, em{
+		position: absolute;		
+		@include transform(scale(2));
+	}
+}
+
+
+/* Home page Animations - Keyframes */
+
+// Blink animation of active areas
+@include keyframes(blink) {
+	0% {
+    	@include transform(scale(0.9));
+    }
+    42% { 
+    	@include transform(scale(1));
+    }
+    100% {
+    	@include transform(scale(0.9));
+    }
+}
+
+@include keyframes(space_ship_hover) {
+	100% {
+		@include transform(translateY(20px));
+    }
+}
+
+@include keyframes(spacebgmove) {
+	from {
+		background-position: 5% bottom;
+	}
+	to { 
+		background-position: 100% bottom;
+	}
+}

@@ -1,0 +1,10 @@
+// Modular Scale <http://modularscale.com>
+
+@function modular-scale($scale, $base, $value) {
+  // divide a given font-size by base font-size & return a relative em value
+  @return ($scale/$base)#{$value};
+}
+@mixin modular-scale($scale, $base, $value) {
+  font-size: $scale#{px};
+  font-size: modular-scale($scale, $base, $value);
+}

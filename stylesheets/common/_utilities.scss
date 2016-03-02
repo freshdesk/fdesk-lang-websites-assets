@@ -1,0 +1,77 @@
+// UTILITY CLASSES
+// ---------------
+
+// Quick floats
+.pull-right {
+  float: right;
+}
+.pull-left {
+  float: left;
+}
+
+// Toggling content
+.hide {
+  display: none;
+}
+.show {
+  display: block;
+}
+
+// Visibility
+.invisible {
+  visibility: hidden;
+}
+
+// Alignment options
+.align-right{
+  text-align:right;
+}
+
+.align-left{
+  text-align:left;
+}
+
+.inline-block{
+	@include inline-block;
+}
+
+.hide-in-mobile{ 
+  display: none;
+}
+
+.show-in-tablet{
+  display: none; 
+}
+
+// Loading styles
+.loading, .loading-right, .loading-left{ 
+  background-image:image-url('/images/animated/ajax-loader.gif');   
+  background-repeat: no-repeat; 
+}
+
+.loading{ background-position: center; }
+.loading-right{ background-position: 98% center; }
+.loading-left{ background-position: 2% center; }
+
+
+@include at-breakpoint($break-tablet){
+  // Some utility class that will be applicable from tablet to desktop
+  .pull-right-tablet{ float: right; }
+  .pull-left-tablet{ float: left; }
+  .hide-tablet{ display: none; }
+  .show-in-tablet{ display: block; }
+  .invisible-tablet { visibility: hidden; }
+  .align-right-tablet{ text-align:right; }
+  .align-left-tablet{ text-align:left; }
+  .hide-in-mobile{ display: block; }
+  .show-in-mobile{ display: none; }
+}
+
+// Ellipsis
+. {
+	@include ellipsis;
+}
+
+@include at-breakpoint($break-desktop){
+  .min-desktop-height{ @include min-height(630px); }
+}

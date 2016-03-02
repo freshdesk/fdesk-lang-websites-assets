@@ -1,0 +1,162 @@
+// Freshdesk tour
+.nav-tour-panel{
+	height: 110px;
+	li{
+		a:hover, &.inactive, &.active{
+			.tour-icon-active{ @include opacity(1); @include transition(opacity .15s linear); }
+			.tour-icon-normal{ @include opacity(0); @include transition(opacity .15s linear 0.15s); }
+		}
+		&.inactive, &.inactive:hover{
+			.tour-icon-wrapper{ background-color:#eee; }
+			.tour-icon-active{ @include opacity(0.5); }
+		}
+	}
+}
+
+.milestone-indicator{
+	/*background-image: url(#{$cdn_path}/images/icons/cablecar.png);
+	width: 21px;
+	height: 23px;
+	margin-left: -10px;*/
+	width: 10px;
+	height: 10px;
+	background-color: #004c5c;
+	border-radius: 1em;
+	margin-top: -5px;
+	margin-left: -10px;
+}
+
+/* Widget Mute */
+.freshwidget-button{
+	top:-999999px !important;
+}
+
+/* New Widget */
+.support-widget,.chat-widget{
+	position: fixed;
+	z-index: 999;
+    background-color: rgba(0,0,0,0.5);
+	cursor: pointer;
+	transition-duration:0.25s; 
+}
+
+.chat-widget{
+	right: -89px;
+    top: 350px;
+	border-bottom-left-radius: 5px;
+	margin-top: -5px;
+}
+.support-widget{
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 0;
+	right: -60px;
+    border-bottom: 0;
+    top: 300px;
+}
+.support-widget:hover,.chat-widget:hover{ 
+	right: 0;
+	transition-duration:0.25s; 
+}
+.support-widget:hover{
+	border-bottom-left-radius: 5px;
+	padding-right: 32px;
+}
+.chat-widget:hover{
+	border-top-left-radius: 5px;
+}
+.chat-widget,.support-widget{
+	padding: 5px 5px;
+	span{ 
+		color: white;
+ 		padding-left: 5px;
+	}
+}
+.icon-support,.icon-chat{
+	font-size: 34px;
+	color: white;
+	vertical-align: middle;
+}
+
+/** loader CSS **/
+       
+    @keyframes rotate-loading {
+        0%  {transform: rotate(0deg);-ms-transform: rotate(0deg); -webkit-transform: rotate(0deg); -o-transform: rotate(0deg); -moz-transform: rotate(0deg);}
+        100% {transform: rotate(360deg);-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); -o-transform: rotate(360deg); -moz-transform: rotate(360deg);}
+    }
+
+    @-moz-keyframes rotate-loading {
+        0%  {transform: rotate(0deg);-ms-transform: rotate(0deg); -webkit-transform: rotate(0deg); -o-transform: rotate(0deg); -moz-transform: rotate(0deg);}
+        100% {transform: rotate(360deg);-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); -o-transform: rotate(360deg); -moz-transform: rotate(360deg);}
+    }
+
+    @-webkit-keyframes rotate-loading {
+        0%  {transform: rotate(0deg);-ms-transform: rotate(0deg); -webkit-transform: rotate(0deg); -o-transform: rotate(0deg); -moz-transform: rotate(0deg);}
+        100% {transform: rotate(360deg);-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); -o-transform: rotate(360deg); -moz-transform: rotate(360deg);}
+    }
+
+    @-o-keyframes rotate-loading {
+        0%  {transform: rotate(0deg);-ms-transform: rotate(0deg); -webkit-transform: rotate(0deg); -o-transform: rotate(0deg); -moz-transform: rotate(0deg);}
+        100% {transform: rotate(360deg);-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); -o-transform: rotate(360deg); -moz-transform: rotate(360deg);}
+    }
+
+    @keyframes rotate-loading {
+        0%  {transform: rotate(0deg);-ms-transform: rotate(0deg); -webkit-transform: rotate(0deg); -o-transform: rotate(0deg); -moz-transform: rotate(0deg);}
+        100% {transform: rotate(360deg);-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); -o-transform: rotate(360deg); -moz-transform: rotate(360deg);}
+    }
+
+    @-moz-keyframes rotate-loading {
+        0%  {transform: rotate(0deg);-ms-transform: rotate(0deg); -webkit-transform: rotate(0deg); -o-transform: rotate(0deg); -moz-transform: rotate(0deg);}
+        100% {transform: rotate(360deg);-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); -o-transform: rotate(360deg); -moz-transform: rotate(360deg);}
+    }
+
+    @-webkit-keyframes rotate-loading {
+        0%  {transform: rotate(0deg);-ms-transform: rotate(0deg); -webkit-transform: rotate(0deg); -o-transform: rotate(0deg); -moz-transform: rotate(0deg);}
+        100% {transform: rotate(360deg);-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); -o-transform: rotate(360deg); -moz-transform: rotate(360deg);}
+    }
+
+    @-o-keyframes rotate-loading {
+        0%  {transform: rotate(0deg);-ms-transform: rotate(0deg); -webkit-transform: rotate(0deg); -o-transform: rotate(0deg); -moz-transform: rotate(0deg);}
+        100% {transform: rotate(360deg);-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); -o-transform: rotate(360deg); -moz-transform: rotate(360deg);}
+    }
+
+    @keyframes loading-text-opacity {
+        0%  {opacity: 0}
+        20% {opacity: 0}
+        50% {opacity: 1}
+        100%{opacity: 0}
+    }
+
+    @-moz-keyframes loading-text-opacity {
+        0%  {opacity: 0}
+        20% {opacity: 0}
+        50% {opacity: 1}
+        100%{opacity: 0}
+    }
+
+    @-webkit-keyframes loading-text-opacity {
+        0%  {opacity: 0}
+        20% {opacity: 0}
+        50% {opacity: 1}
+        100%{opacity: 0}
+    }
+
+    @-o-keyframes loading-text-opacity {
+        0%  {opacity: 0}
+        20% {opacity: 0}
+        50% {opacity: 1}
+        100%{opacity: 0}
+    }
+    .tour-loader {
+        height: 30px;
+        position: absolute;
+        width: 30px;
+        top: 376px;
+        left: 50%;
+        margin-left: -17px;
+        z-index: 3;
+        border-radius: 100%;
+        border: 2px solid rgba(0, 0, 0, 0.5);
+        border-bottom-color: transparent;
+        @include animation(rotate-loading 1s linear 0.5s infinite normal);
+     //   @include transition(opacity 0.5s ease-in);
+    }

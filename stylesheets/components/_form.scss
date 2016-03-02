@@ -1,0 +1,232 @@
+/* Form styles
+---------------------------------------------------------------------- */
+
+/* ==== Newsletter form ==== */
+footer{
+	input, button{
+		background-color: rgba(86, 82, 82, 1);
+		font-size: 13px;
+		color: $color-white;
+		border: none;
+		padding: 10px 10px;
+	}
+	button{
+		background-color: rgba(46, 45, 45, 1);
+		color: $color-black;
+		padding: 10px 10px;
+		font-weight: $font-weight-semibold;
+		&:hover{
+			color: $color-black-dark;
+			background-color: rgba(46, 45, 45, 0.7);
+		}
+	}
+}
+
+$form-highlight-color: lighten($color-primary, 8%);
+$form-error-color: rgb(211, 136, 136);
+
+%text-field {
+  	width: 100%;
+	@extend .default;
+	padding: 15px 10px 15px 10px;
+	border: none;
+	border-bottom:1px solid rgb(224, 224, 224);
+	font-weight: $font-weight-light;
+	@include transition-property(border, color);
+	@include transition-duration(0.3s);
+	&:focus, &:active{ border-color:$form-highlight-color; }
+	outline: none;
+}
+
+/* === Banner Form === */
+.b-form{
+	background-color:#fff;
+	padding: 10px 20px 20px 20px;
+	@include box-shadow(0 1px 4px rgba(0, 0, 0, 0.25));
+	@include border-radius(6px);
+	@include border-box-sizing;	
+	position: relative;
+	z-index: 10;
+	color:#000;
+
+	input.text, input[type=email]{ 
+		@extend %text-field; 
+		padding-left: 32px;
+	}
+
+	textarea{
+		width: 100%;
+		@extend .default;
+		border: 0;
+		border-bottom:1px solid rgb(224, 224, 224);
+		font-weight: $font-weight-light;
+		resize:none;
+		padding-left: 10px;
+		padding-top: 10px;
+		display: block;
+		outline: none;
+	}
+
+	[class^="icon-"],
+	[class*=" icon-"], .required{
+		position: absolute;
+		z-index: 1;
+	}
+
+	[class^="icon-"],
+	[class*=" icon-"]{
+		top: 15px; left: 2px;
+		@extend .epsilon;
+		color: inherit;
+	}
+	.required{
+		top: 12px; right: 0;
+		@extend .mini;
+	    color: #ddd;
+	    text-transform: uppercase;
+	}
+	.presence .required{ display: none; }
+	.textfield, .mktField{ 
+		position: relative;
+		@include inline-block;
+		color: #999;
+		width: 100%;
+	}
+	.textfield.active{ 
+		color: $form-highlight-color;
+		& input.text, & input[type=email]{ 
+			@include input-placeholder($form-highlight-color);
+		}
+	}
+	.textfield.error{
+		color: $form-error-color;		
+		& input.text, & input[type=email]{ 
+			border-bottom-color:$form-error-color;
+			@include input-placeholder($form-error-color);
+		}
+	}
+}
+
+.b-form-plain{ @include box-shadow(none); }
+
+.b-form em.error{
+	width: 100%;
+	text-align: center;
+	position: absolute;
+	font-weight: $font-weight-semibold;
+	padding: 0;
+	height: 50px;
+	line-height: 50px;
+	left: -104%;
+	top: 0;
+	@include border-radius(3px);
+	@extend .small;
+	color:#a90329;	
+	background-color:lighten(#ffe5e5, 1%);	
+	@include box-shadow(0 0 5px rgba(0, 0, 0, 0.2));
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	&:after, &:before{
+		content:" ";
+		border:10px solid transparent;
+		border-left-color: lighten(#ffe5e5, 1%);
+		position: absolute;		
+	}
+	&:after{
+		right: -20px;
+		top: 15px;
+	}
+	&:before{
+		border-width: 11px;
+		right: -22px;
+		top: 14px;	
+		border-left-color: rgba(0, 0, 0, 0.2);
+	}
+}
+
+.signup_error_land{
+	background-color: #D35400;
+	text-align: center;
+	color: #fff;
+}
+
+.domain{
+	position: relative;
+	overflow: hidden;
+}
+
+.ghostwriter_info{
+	padding:9px 9px;
+	background:none;		
+	position:absolute;
+	left:0; top:0;
+	border:0;
+	width:369px;
+	font-weight: 300;
+	height:35px;
+	color:#999999;
+	margin-top:2px;
+	padding-left:31px; 
+	cursor: text;
+}
+
+.ghostwriter_hide{
+	visibility:hidden;
+	font-weight: 300;
+	padding-right:2px;
+}
+
+.land-signup-form em.error{
+	width: 100%;
+	font-size: 14px;
+	text-align: center;
+	position: absolute;
+	font-weight: 500;
+	padding: 0;
+	height: 38px;
+	line-height: 35px;
+	left: -102%;
+	@include border-radius(3px);
+	margin-top: 8px;
+	opacity: 0.96;
+	@extend .zeta;
+	color:#a90329;	
+	background-color:lighten(#ffe5e5, 1%);
+	&:after{
+		content:" ";
+		border:10px solid transparent;
+		border-left-color: lighten(#ffe5e5, 1%);
+		position: absolute;
+		right: -20px;
+		top: 9px;
+	}
+}
+
+.land-signup-form input.error{
+	border-color:rgb(211, 136, 136);
+	background: lighten(#ffe5e5, 4%);
+	&::-webkit-input-placeholder {
+	   color: rgb(211, 136, 136);
+	}
+	&:-moz-placeholder { /* Firefox 18- */
+	   color: rgb(211, 136, 136);  
+	}
+	&::-moz-placeholder {  /* Firefox 19+ */
+	   color: rgb(211, 136, 136);  
+	}
+	&:-ms-input-placeholder {  
+	   color: rgb(211, 136, 136);  
+	}
+}
+
+#loading_data{
+	top: 23px;
+	position: absolute;
+	right: 10px;
+}
+
+.form_input{ position: relative; }
+
+.lpeRegForm{ @extend .b-form; }
+.lpeRegFormFancy{ @extend .b-form-plain; }
+.mktFormText{ @extend %text-field; }
+.modal_signup_wrapper{ @extend .top-space-medium; }
