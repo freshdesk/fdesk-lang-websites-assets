@@ -1,6 +1,7 @@
 $(document).on("ready",function(){
 	var languages = [];
 	languages.push({key:'nl', url: 'http://freshdesk.nl',value:'Dutch'});
+	languages.push({key:'no', url: 'http://freshdesk.no',value:'Norwegian'});
 	languages.push({key:'de-DE', url: 'http://freshdesk.de',value:'Deutsch'});
 	languages.push({key:'en-US', url: 'http://freshdesk.com',value:'English'}); 
 	languages.push({key:'es', url: 'http://freshdesk.es',value:'Español'});
