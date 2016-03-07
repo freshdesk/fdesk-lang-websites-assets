@@ -1,4 +1,33 @@
 window['LITERALS'] = {
+	'default' : {
+		url: 'thank-you/',
+		messages:{
+			"user[first_name]"  : {
+				required: "First name field is required"
+			},
+			"user[last_name]"  : {
+				required: "Last name field is required"
+			},
+			"account[name]"  : {
+				required: "You'll need to tell us where you work",
+				minlength: "Company name should exceed 2 characters"
+			},
+			"account[domain]": {
+				required: "Give your helpdesk a name",
+				maxlength: "Helpdesk name shouldn't exceed 25 characters",
+				subdomain:"Only letters, numbers and hyphen allowed"
+			},
+			"user[email]":{
+				required: "Please enter a valid email",
+				email:"Please enter a valid email"
+			}
+		},
+		already_exists: 'This Helpdesk already exists',
+		email_like:'This Helpdesk already exists',
+		thankyoumsg:["Setting up your self service portal", 
+					"Cranking up your knowledge base",
+					"Configuring your Community Platform", "_redirect"]
+	},
 	'en-US' : {
 		url: 'thank-you/',
 		messages:{
