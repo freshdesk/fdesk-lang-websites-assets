@@ -413,3 +413,15 @@ function checkCookie(){
 	  	jQuery.cookie('EmailId', null);
 	}
 }
+
+// Input Hidden Fields in signup form
+
+$('#signup input[type="hidden"]').remove();
+
+var hiddenInput = {
+	"items":"<noscript> <input type='hidden' name='noscript' id='no_script' value='No Script Support'> </noscript><input type='hidden' name='session_json' id='session_json' value='' /><input type='hidden' name='first_referrer' id='first_referrer' value='' /><input type='hidden' name='first_landing_url' id='first_landing_url' value='' /><input type='hidden' name='first_search_engine' id='first_search_engine' value='' /><input type='hidden' name='first_search_query' id='first_search_query' value='' /><input type='hidden' name='pre_visits' id='pre_visits' value='' />"
+};
+
+var hiddenFields = hiddenInput['items'];
+
+$('#signup #signup_error').after(hiddenFields); 
