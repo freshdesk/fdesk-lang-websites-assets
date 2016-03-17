@@ -1,0 +1,14 @@
+@charset "utf-8";
+
+// !IMPORTANT try to handle all color, background, grid, font etc. using the variables file
+@import "compass"; 						// Load Compass plugins 	http://compass-style.org/
+@import "susy";							// Susy for grid system 	http://susy.oddbird.net/ 
+@import "mixins/all";  
+@import "settings/default";
+
+// Base template CSS that can shared accross all sites
+@import "common/base"; 
+@import "common/helpers";        // Default settings for the theme
+
+// Page specific styles
+@import "page/new-casestudy";
