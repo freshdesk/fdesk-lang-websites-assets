@@ -239,7 +239,11 @@
 	left: 0;
 	color: #fff;
 	right: 14%;
-	h3{ font-weight: $font-weight-light; }
+	h3{ 
+		font-weight: $font-weight-light; 
+		width: 80%;
+		    text-align: right;
+	}
 }
 .pr-sign-link{
 	position: absolute;
