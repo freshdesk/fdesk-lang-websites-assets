@@ -1,8 +1,8 @@
 $(document).on("ready",function(){
 	var languages = [];
-	languages.push({key:'cs', url: 'http://freshdesk.cs',value:'Czech'});
+	// languages.push({key:'cs', url: 'http://freshdesk.cs',value:'Czech'});
 	languages.push({key:'nl', url: 'http://freshdesk.nl',value:'Dutch'});
-	languages.push({key:'da', url: 'http://freshdesk.da',value:'Danish'});
+	languages.push({key:'da', url: 'http://freshdesk.dk',value:'Danish'});
 	languages.push({key:'de-DE', url: 'http://freshdesk.de',value:'Deutsch'});
 	languages.push({key:'en-US', url: 'http://freshdesk.com',value:'English'}); 
 	languages.push({key:'es', url: 'http://freshdesk.es',value:'Español'});
@@ -10,9 +10,9 @@ $(document).on("ready",function(){
 	languages.push({key:'fi', url: 'http://freshdesk.fi',value:'Finnish'});
 	languages.push({key:'it', url: 'http://freshdesk.it',value:'Italiano'});
 	languages.push({key:'no', url: 'http://freshdesk.no',value:'Norwegian'});
-	languages.push({key:'pt-BR', url: 'http://freshdesk.com.br',value:'Portuguese'});
+	languages.push({key:'pt-BR', url: 'http://freshdesk.com.br',value:'Portuguès'});
 	languages.push({key:'pl', url: 'http://freshdesk.com.pl',value:'Polski'});
-	languages.push({key:'tr', url: 'http://freshdesk.tr',value:'Turkish'});
+	// languages.push({key:'tr', url: 'http://freshdesk.tr',value:'Turkish'});
 	languages.push({key:'hk', url: 'http://freshdesk.hk',value:'中文'});
 	languages.push({key:'kr', url: 'http://freshdesk.kr',value:'한국어'});
 	languages.push({key:'cn', url: 'http://freshdesk.cn',value:'中文简体‍'});
