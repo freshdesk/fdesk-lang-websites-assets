@@ -335,7 +335,7 @@ var url_origin = window.location.origin;
 		
 		var showSuccess = function(url){
 
-			url = window['signup-thankyou-url']+"?redirect=" + encodeURIComponent(url) + "&account=" + jQuery("#account_domain").val();
+			url = window['signup-thankyou-url']+"?redirect=" + encodeURIComponent(url) + "&account=" + jQuery("#account_domain").val() + "&lang=" + jQuery("html").attr('lang');
 
 			// Create a new Link
 			var a = document.createElement('a');
