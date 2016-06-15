@@ -118,6 +118,8 @@ header{padding-top: 10px;}
 	position: absolute;
 	@include box-shadow(1px 12px 25px rgba(0, 0, 0, 0.15));
 	@include border-radius(5px);
+    /*@replace: -224px*/ margin-left: 0;
+    /*@replace: right*/ text-align: left;
 
 	&:after{
 		content: "";

@@ -16,7 +16,8 @@ footer{
 		border-bottom: 1px $color-black-lite solid;
 	}
 	ul {
-		padding-top: 20px;		
+		padding-top: 20px;
+        /*@replace: right*/text-align: left;
 		li{
 			@extend .zeta; 
 			font-weight: $font-weight-light;
@@ -34,7 +35,7 @@ footer{
 				i{
 					color: $footer-section-heading;
 					@extend .epsilon;
-					margin-right: .5em;
+					/*@noflip*/margin-right: .5em;
 					&:hover{ color: lighten($footer-section-heading, 10%); }
 				}
 				&:hover{ color: $footer-link-hover; }
@@ -48,11 +49,11 @@ footer{
 	/*@noflip*/
 	i{ 
 		display: inline-block;
-		float: left;
+		/*@noflip*/float: left;
 		width: 25px;
 		padding-top: 3px;
 		@extend .zeta;
-		margin-right: 7px;
+		/*@noflip*/ margin-right: 7px;
 		color: #239f85;
 	}
 	span{ 
@@ -94,6 +95,7 @@ footer{
 		width: 255px;
 		border: 1px solid #239f85;
 		margin-bottom: 5px;
+        /*@replace: right*/float: none;
 		.mktError{
 			width: 180px;
 			input{ 
@@ -109,7 +111,7 @@ footer{
 			float: none;
 			margin: 0;
 			padding: 0;
-			margin-left: 20px;
+			/*@noflip*/margin-left: 20px;
 		}
 	} 
 }
@@ -128,7 +130,7 @@ footer{
 		padding: 0.3px 0;
 		i{
 			font-size: 16px;
-			left: 2px;
+			/*@noflip*/left: 2px;
 			top: 1px;
 		}
 		&:hover{
@@ -138,7 +140,7 @@ footer{
 	.fb{
 		i{
 			font-size: 21px;
-			left: 2px;
+			/*@noflip*/left: 2px;
 			top: 3px;
 		}
 		&:hover{
@@ -148,7 +150,7 @@ footer{
 	.twitter{
 		i{
 			font-size: 15px;
-			left: 3px;
+			/*@noflip*/left: 3px;
 			top: 2px;
 		}		
 		&:hover{
@@ -158,7 +160,7 @@ footer{
 	.youtube{
 		i{
 			font-size: 16px;
-			left: 2px;
+			/*@noflip*/left: 2px;
 			top: 2px;
 		}
 		&:hover{background-color: #cc181e;}
@@ -166,7 +168,7 @@ footer{
 	.googleplus{
 		i{
 			font-size: 21px;
-			left: -4px;
+			/*@noflip*/left: -4px;
 			top: 2px;
 		}
 		&:hover{
@@ -248,3 +250,6 @@ footer{
 .apple:hover,.android:hover{
 	opacity: 0.6;
 } 
+.app-widget{
+    /*@replace: right*/text-align: left;
+}

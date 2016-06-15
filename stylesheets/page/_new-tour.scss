@@ -182,7 +182,7 @@ only screen and (                min-resolution: 2dppx) {
 	background: url(#{$cdn_path}/images/tour/tour-banner-right-arrow.png) no-repeat;
 	background-size: 25px;
 	margin-top: -125px;
-	right: -85px;
+	/*@noflip*/right: -85px;
 }
 .left-nav{
 	background: url(#{$cdn_path}/images/tour/tour-banner-left-arrow.png) no-repeat;

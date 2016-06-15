@@ -52,6 +52,7 @@ $form-error-color: rgb(211, 136, 136);
 	input.text, input[type=email]{ 
 		@extend %text-field; 
 		padding-left: 32px;
+        /*@replace: right*/text-align: left;
 	}
 
 	textarea{

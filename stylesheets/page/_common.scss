@@ -660,3 +660,20 @@ img[src*="insight.adsrvr.org"]{
 	}
 }
 
+/* RTL Classes */
+
+.fg-7, .fg-4{
+    /*@noflip*/ float:left;
+}
+.fg-4, .fg-8{
+    /*@noflip*/ margin-right: 3.44828%;
+    /*@noflip*/ margin-left: 0;
+}
+
+.omega{
+    /*@noflip*/ float: right;
+    /*@noflip*/ margin-right: 0;
+}
+.bottom-wrapper .fg-4{
+    /*@replace: right*/ text-align: inherit;
+}
