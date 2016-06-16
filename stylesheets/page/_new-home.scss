@@ -182,12 +182,12 @@
 	height: 315px;
 	display: block;	
 	position: relative;	
-	margin-right: 0;
+	/*@noflip*/margin-right: 0;
 	margin-top: -15px;
 	.home-tour{		
 		position: relative;
 		height: 300px;
-		margin-right: 0;
+		/*@noflip*/margin-right: 0;
 		display: block;
 		.home-tour-content{
 			position: absolute;

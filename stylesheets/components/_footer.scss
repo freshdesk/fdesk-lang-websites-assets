@@ -102,8 +102,9 @@ footer{
 				width: 100%; 
 				font-weight: $font-weight-light;
 				background-color: $footer-bg;
-				border-right: 1px solid #239f85;
+				/*@noflip*/border-right: 1px solid #239f85;
 				outline: none;
+                /*@replace: right*/text-align: left;
 			}
 		}
 		button { width: 70px; } 
@@ -252,4 +253,14 @@ footer{
 } 
 .app-widget{
     /*@replace: right*/text-align: left;
+}
+
+footer{
+    .fg-8{
+        /*@replace: 0*/margin-right: 3.44828%;
+        /*@replace: 3.44828%*/margin-left: 0;
+    }
+    .omega{
+        /*@replace: left*/float: right;
+    }
 }

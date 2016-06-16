@@ -188,7 +188,7 @@ only screen and (                min-resolution: 2dppx) {
 	background: url(#{$cdn_path}/images/tour/tour-banner-left-arrow.png) no-repeat;
 	background-size: 25px;
 	margin-top: 69px;
-	left: -60px;
+	/*@noflip*/left: -60px;
 }
 .left-nav:hover,.right-nav:hover{ opacity: 1; }
 
@@ -434,7 +434,7 @@ only screen and (                min-resolution: 2dppx) {
 	background-color: #fff;
 	height: 60px;	
 	margin-bottom: 20px;
-	margin-left: -2px;
+	/*@noflip*/margin-left: -2px;
 	transform: rotate(-1deg);
 	-moz-transform: rotate(-1deg);
 	-webkit-transform: rotate(-1deg);
@@ -546,6 +546,7 @@ only screen and (                min-resolution: 2dppx) {
 .tour-content-wrapper{
 	position: relative;
 	padding-bottom: 60px;
+    /*@replace: right*/text-align: left;
 	h1{
 		font-size: 42px;
 		font-weight: $font-weight-light;
@@ -813,8 +814,8 @@ only screen and (                min-resolution: 2dppx) {
 	margin: 0 auto 20px;
 	border-bottom: 1px solid #f1f1f1;
 	.tour-author{ 
-		float: right;
-		.ta-name,.ta-comp{ color: #16a085; display: block; text-align: right;  }
+		/*@noflip*/float: right;
+		.ta-name,.ta-comp{ color: #16a085; display: block; /*@noflip*/text-align: right;  }
 		.ta-name{ font-weight: $font-weight-normal; }
 		.ta-comp{ font-weight: $font-weight-light; }
 	}
@@ -835,22 +836,22 @@ only screen and (                min-resolution: 2dppx) {
 	background-size: 85px;
 }
 .tour-right-nav{
-	background-position: -48px -1px;
-	margin-left: 25px;
+	/*@noflip*/background-position: -48px -1px;
+	/*@noflip*/margin-left: 25px;
 }
 .tour-left-nav{
-	background-position: 1px -2px;
-	margin-right: 25px;
+	/*@noflip*/background-position: 1px -2px;
+	/*@noflip*/margin-right: 25px;
 }
 .tour-previous .prev-title:after {
 	content: '';
-	border-right: 2px solid #999999;
+	/*@noflip*/border-right: 2px solid #999999;
 	height: 30px;
-	padding-left: 20px;
+	/*@noflip*/padding-left: 20px;
 }
 .tour-next .next-title:before {
 	content: '';
-	border-left: 2px solid #999999;
+	/*@noflip*/border-left: 2px solid #999999;
 	padding-right: 20px;
 }
 .tour-bottom-strip{
@@ -1933,6 +1934,10 @@ $gray: #eee;
 	-ms-animation: fadeInDown 1s;
 	-o-animation: fadeInDown 1s;
 	animation: fadeInDown 1s;
+}
+
+.emailticketing{
+    /*@replace: right*/text-align: left;
 }
 
 
