@@ -118,7 +118,7 @@ $form-error-color: rgb(211, 136, 136);
 	padding: 0;
 	height: 50px;
 	line-height: 50px;
-	left: -104%;
+	/*@noflip*/left: -104%;
 	top: 0;
 	@include border-radius(3px);
 	@extend .small;
@@ -129,18 +129,18 @@ $form-error-color: rgb(211, 136, 136);
 	&:after, &:before{
 		content:" ";
 		border:10px solid transparent;
-		border-left-color: lighten(#ffe5e5, 1%);
+		/*@noflip*/border-left-color: lighten(#ffe5e5, 1%);
 		position: absolute;		
 	}
 	&:after{
-		right: -20px;
+		/*@noflip*/right: -20px;
 		top: 15px;
 	}
 	&:before{
 		border-width: 11px;
-		right: -22px;
+		/*@noflip*/right: -22px;
 		top: 14px;	
-		border-left-color: rgba(0, 0, 0, 0.2);
+		/*@noflip*/border-left-color: rgba(0, 0, 0, 0.2);
 	}
 }
 

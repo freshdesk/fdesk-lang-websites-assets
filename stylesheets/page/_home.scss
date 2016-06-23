@@ -90,7 +90,7 @@
 
 	h3{
 		background-repeat: no-repeat;
-		padding: 0px 0px 18px 70px;
+		/*@noflip*/ padding: 0px 0px 18px 70px;
 		&.ticketing{
 			background-image: url(#{$cdn_path}/images/icons/powerful-ticketing.png);
 			background-position: 0px 2px;
@@ -112,15 +112,16 @@
 	}
 	p{
 		padding-top: 0px;
-		padding-left: 70px;
+		/*@noflip*/ padding-left: 70px;
 		margin-top: -32px;
 	}
 
 	.sc-unit{
-		display: inline-block;
+		display: block;
 		margin-bottom: 30px;
 		opacity: 0.5;
 		cursor: pointer;
+        /*@replace:right*/text-align: left;
 		&:hover{
 			opacity: 1;
 		}

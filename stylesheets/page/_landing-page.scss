@@ -51,10 +51,10 @@
 	margin-top: 12px;
 }
 .landing-left-panel{
-	padding-left: 20px;
+	/*@noflip*/padding-left: 20px;
 	padding-bottom: 40px;
-	margin-right: 0;
-	padding-right: 2%;
+	/*@noflip*/margin-right: 0;
+	/*@noflip*/padding-right: 2%;
 	background-color: #fff;
 }
 .landing-customer-info {
@@ -387,9 +387,10 @@
 /* Customer Care */
 
 .customer-care{
+    .khd{/*@replace: right*/text-align: left;}
 	h1.k-heading{ @extend .default; }
 	
-	h1{ font-size: 32px; }
+	h1{ font-size: 32px; /*@replace: right*/text-align: left;}
 
 	.mail, .forum,.social{
 		width: 60px;
@@ -423,6 +424,7 @@
 	.support-content {
 		float: left;
 		width: 85%;
+        /*@replace: right*/text-align: left;
 	}
 }
 
@@ -510,6 +512,7 @@
 	.cus-quote {
 		float: left;
 		width: 75%;
+        /*@replace:right*/text-align: left;
 		h4 {
 			font-size: 24px;
 		}
@@ -635,6 +638,9 @@
     	padding-top: 5px;
     	text-shadow: none;
 	}
+    h1.k-heading{
+        float: left;
+    }
 	.ulcont {
     	display: block;
     	height: 95px;
@@ -648,6 +654,7 @@
     	width: 550px;
 	    float: left;
  	   	padding-left: 30px;
+        /*@replace:right*/text-align: left;
  	   	a{
     		color: #4d4d4d;
     		font-size: 18px;
@@ -675,6 +682,7 @@
 	.custcomment{
 	  width:400px;
 	  float:left;
+      /*@replace: right*/text-align: left;
 	}
   	.custcomment h4 {
     	font-size:20px;
@@ -685,4 +693,71 @@
     	height:110px;
     	display:block;
   	}
+}
+
+.customer-care, .helpdesk-banner{
+    .b-form #signup .user_row.firstname {
+        width: 50%;
+        float: left; }
+    .b-form {border:5px solid #107360;}.tc-text{font-size:12px;}
+    .b-form #signup input.text:focus {
+        border-color: #1bc4a3; }
+    .b-form #signup .textfield.active input.text {
+        border-bottom-color: #1bc4a3; }
+    .b-form #signup .textfield.active.lastname::before {
+        border-left-color: #1bc4a3; }
+    .b-form #signup .textfield.error.lastname::before {
+        border-left-color: #d38888; }
+    .b-form #signup .textfield.error.active.lastname::before {
+        border-left-color: #1bc4a3; }
+    .b-form #signup .user_row.firstname .error {
+        /*@replace: -208%*/right: -308%;
+        width: 200%; }
+    .b-form #signup .user_row.lastname {
+        width: 50%;
+        float: left; }
+    .b-form #signup .user_row.lastname input {
+        padding-left: 20px; }
+    .b-form #signup .user_row.lastname::before {
+        content: '';
+        position: absolute;
+        border-left: 1px solid #e0e0e0;
+        width: 1px;
+        height: 40px;
+        left: 0;
+        top: 10px;
+        display: block; }
+    .b-form #signup .user_row.firstname .error {
+        width: 200%;
+        }
+}
+.customer-care{
+    .b-form #signup .user_row.firstname .error {
+	   	/*@replace: -308%*/left: -208%;
+    	width: 200%; 
+   }
+}
+
+.support-light{
+        
+    .b-form #signup .user_row.firstname .error {
+        /*@replace: -208%*/right: -308%;
+        width: 200%; }
+    .b-form #signup .user_row.lastname {
+        width: 50%;
+        float: left; }
+    .b-form #signup .user_row.lastname input {
+        padding-left: 20px; }
+    .b-form #signup .user_row.lastname::before {
+        content: '';
+        position: absolute;
+        border-left: 1px solid #e0e0e0;
+        width: 1px;
+        height: 40px;
+        left: 0;
+        top: 10px;
+        display: block; }
+    .b-form #signup .user_row.firstname .error {
+        width: 200%;
+        }
 }

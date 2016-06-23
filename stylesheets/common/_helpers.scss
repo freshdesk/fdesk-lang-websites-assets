@@ -111,11 +111,11 @@
 
 // Alignment options
 .align-right{
-  text-align:right;
+  /*@noflip*/text-align:right;
 }
 
 .align-left{
-  text-align:left;
+  /*@noflip*/text-align:left;
 }
 
 .align-center, .text-center{

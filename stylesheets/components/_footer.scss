@@ -46,14 +46,14 @@ footer{
 /*.footer-wrapper .parent2{ @include span-columns(4 omega, 12);}*/
 
 .f-contact{	
-	/*@noflip*/
+    text-align: left;
 	i{ 
 		display: inline-block;
-		/*@noflip*/float: left;
+		float: left;
 		width: 25px;
 		padding-top: 3px;
 		@extend .zeta;
-		/*@noflip*/ margin-right: 7px;
+		margin-right: 7px;
 		color: #239f85;
 	}
 	span{ 
@@ -201,13 +201,13 @@ footer{
 }
 
 .footer-bottom-link li{
-	float: left;
+	/*@noflip*/float: left;
 	color: #767474;
 	text-transform: uppercase;
-	margin-right: 10px;
+	/*@noflip*/margin-right: 10px;
 	&:after{
 		content:" - ";
-		padding-left: 10px;
+		/*@noflip*/padding-left: 10px;
 	}
 	&:last-child:after{ content: ""; }
 }

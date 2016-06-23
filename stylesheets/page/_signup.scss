@@ -36,6 +36,7 @@
 	@include opacity(0);
 	font-style: italic;
 	position: absolute;
+    /*@replace: right*/text-align: left;
 	blockquote{ margin-bottom: 8px; }
 	&.active{ @include opacity(1); }
 }
@@ -253,7 +254,6 @@ $teal-pl-color : rgba(204,204,204,0.6);
 	}
 	
 }
-
 
 /* form style changes */
 
@@ -891,4 +891,50 @@ $teal-pl-color : rgba(204,204,204,0.6);
 		background: transparent;
 		border-bottom: 0;
 	}
+}
+
+.b-form #signup input.text:focus { border-color: #1bc4a3; }
+	.b-form #signup .textfield.active input.text { border-bottom-color: #1bc4a3; }
+	.b-form #signup .textfield.active.lastname::before { border-left-color: #1bc4a3; }
+	.b-form #signup .textfield.error.lastname::before { border-left-color: #d38888; }
+	.b-form #signup .textfield.error.active.lastname::before { border-left-color: #1bc4a3; }
+	.b-form #signup .user_row.firstname {
+  		width: 50%;
+		float: left; 
+  	}
+   .b-form #signup .user_row.lastname {
+	  width: 50%;
+	  float: left; 
+  }
+  .b-form #signup .user_row.lastname input { padding-left: 20px; }
+  .b-form #signup .user_row.lastname::before {
+    content: '';
+    position: absolute;
+    border-left: 1px solid #e0e0e0;
+    width: 1px;
+    height: 40px;
+    left: 0;
+    top: 10px;
+    display: block; }
+
+	.domain{
+		.ghostwriter_info{ display: none; }
+		input#account_domain{
+			width: 75%;
+			display: inline-block;
+            float: left;
+		}
+		.domain-name-fixed{
+			display: inline-block;
+    		font-size: 15px;
+            position: relative;
+            top: 15px;
+		}
+		&.active{
+			.domain-name-fixed{ color: #333333; }
+		}
+	}
+
+.customer-care .domain input#account_domain{
+    width:66%;
 }

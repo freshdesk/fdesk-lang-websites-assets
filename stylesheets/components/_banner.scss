@@ -65,8 +65,8 @@
 	margin-bottom: 20px;
 }
 
-.banner-image, .banner-form{ float:right; margin-left: $gutter-width; }
-.banner-form{ width:300px; }
+.banner-image, .banner-form{ /*@noflip*/ float:right; /*@noflip*/ margin-left: $gutter-width; }
+.banner-form{ width:300px; /*@replace:30px*/margin-top: 0; }
 .banner-form .ghostwriter_info { width: 280px; }
 
 .request-invite{
