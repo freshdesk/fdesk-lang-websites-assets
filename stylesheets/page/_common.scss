@@ -648,7 +648,7 @@ img[src*="insight.adsrvr.org"]{
 		.content-wrapper{
 			max-width: 420px;
 			color: #fff;
-			h1{ @extend .gamma; display: inline-block;}
+			h1{ @extend .gamma; }
 			h2{ @extend .epsilon; }
 			.signup-big{
 				width: 95%;
@@ -662,10 +662,10 @@ img[src*="insight.adsrvr.org"]{
 
 /* RTL Classes */
 
-.fg-7, .fg-4, .fg-8, .fg-5, .fg-6{
+.fg-7, .fg-4{
     /*@noflip*/ float:left;
 }
-.fg-4, .fg-8, .fg-7, .fg-5, .fg-6{
+.fg-4, .fg-8{
     /*@noflip*/ margin-right: 3.44828%;
     /*@noflip*/ margin-left: 0;
 }
@@ -676,27 +676,4 @@ img[src*="insight.adsrvr.org"]{
 }
 .bottom-wrapper .fg-4{
     /*@replace: right*/ text-align: inherit;
-}
-
-.support-left-panel{
-    h1{
-       /*@replace: right*/ text-align: left;
-    }
-}
-
-.banner.vs{
-  padding-top:100px; 
-  padding-bottom:30px;
-    
-  .khd{/*@replace:right*/text-align: left;}
-  p{ font-size:1.125rem; font-weight:200; color: #b3cac4; line-height:1.6; /*@replace:right*/text-align: left;}
-  h2{ font-size:40px; line-height:1.2;  /*@replace:right*/text-align: left;}
-  .su-quote .quote-img,.su-quote blockquote{ display:inline-block; }
-  .su-quote blockquote{ padding-left:10px; font-weight:300; color: #b3cac4; }
-  .su-quote{
-      border-top: 1px solid #639b8e;
-      padding-top: 20px;
-      margin-top: 30px;
-    /*@replace:right*/text-align: left;
-  }
 }

@@ -226,7 +226,7 @@
 	@include transform(rotate(1.2deg));
 	display: block;
 	position: relative;
-	/*@noflip*/ left: -1px;
+	left: -1px;
 	top: 25px;
 	z-index: 2;
 	@include box-shadow(-1px -6px 0px 6px #ffffff);
@@ -236,18 +236,18 @@
 	position: absolute;
 	top: 120px;
 	margin: 0 auto;
-	/*@noflip*/left: 0;
+	left: 0;
 	color: #fff;
-	/*@replace: 27%*/right: 14%;
+	right: 14%;
 	h3{ 
 		font-weight: $font-weight-light; 
 		width: 80%;
-		    /*@noflip*/text-align: right;
+		    text-align: right;
 	}
 }
 .pr-sign-link{
 	position: absolute;
-	/*@noflip*/right: 0;
+	right: 0;
 	color: #fff;
 	height: 300px;
 	background-color: rgba(0, 0, 0, 0.05);
@@ -270,7 +270,7 @@
 		opacity: 0.5;
 		background-size: 50px;
 		position: static;
-		/*@noflip*/margin-left: 30px;
+		margin-left: 30px;
 	}
 }
 
@@ -289,9 +289,6 @@
 }
 
 .pricing-articles{
-    article{
-        /*@replace: right*/text-align: left;
-    }
 	h5{ 
 		font-size: 24px; 
 		margin: 0;
