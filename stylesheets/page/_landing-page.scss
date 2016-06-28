@@ -344,33 +344,18 @@
     font-size: 16px;
     font-weight: 300;
     border-bottom: 1px solid #ccc;
-    /*@replace: right*/text-align: left;
 }
 
 #demo-form .textfield .icon-envelope, #demo-form .textfield .icon-user, #demo-form .textfield .icon-mobile {
     font-size: 18px;
-    /*@noflip*/margin-left: 1px;
+    margin-left: 1px;
     position: absolute;
     margin-top: 8px;
-    left:17px;
 }
     
 #demo-form {
     display: none;
     width: 280px;
-}
-
-#demo-form .textfield .icon-envelope, #demo-form .textfield .icon-user, #demo-form .textfield .icon-mobile{
-		opacity: 0.6;
-	}
-.submit-btn{outline: none;}
-.mkt-check .mktInput input{cursor: pointer;}
-.mkt-check label{ /*@replace: right*/text-align:left; width: 115px; display: inline-block; font-weight:200;}
-.lpeRegForm input.team{
-    padding-left: 50px;
-}
-#demo-form .mkt-check p{
-    /*@replace: right*/text-align:left;
 }
 
 .form-invalid,.form-invalid-text,.form-valid{
