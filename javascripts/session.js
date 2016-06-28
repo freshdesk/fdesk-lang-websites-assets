@@ -66,7 +66,7 @@ var session_fetch = (function(win, doc, nav){
     if (options.use_html5_location){
       unloaded_modules.location = modules.html5_location();
     } else if (options.ipinfodb_key){
-      unloaded_modules.location = modules.ipinfodb_location(options.ipinfodb_key);
+      unloaded_modules.location =[];
     } else if (options.gapi_location){
       unloaded_modules.location = modules.gapi_location();
     }

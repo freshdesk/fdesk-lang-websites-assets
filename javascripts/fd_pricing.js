@@ -82,50 +82,72 @@
 		"AUS":{ "number": "+61 (894) 687-228" }
 	};
 	
-	try{
-			var countryEU = ["AUSTRIA", "BELGIUM", "CYPRUS", "ESTONIA", "FINLAND", "FRANCE", "GERMANY", "GREECE", "IRELAND", "ITALY", "LATVIA", "LUXEMBOURG", "MALTA", "NETHERLANDS", "PORTUGAL", "SLOVAKIA", "SLOVENIA", "SPAIN", "ANDORRA", "KOSOVO", "MONTENEGRO", "MONACO", "SAN MARINO", "THE VATICAN CITY"];
-			var countryUS = ['US', 'BR'];
-			
+	// Maxmind Code Starts
 
-			var currentLocation = $.cookie("location") || { countryCode: "US" };
-			currentLocation = JSON.parse(currentLocation);
+	var currentLocation,
+		countryCode,
+		countryName,
+		countrySelected;
 
-			var countryCode = currentLocation.countryCode,
-				countryName = currentLocation.countryName,
-				countrySelected;
-			
-			if( $.inArray(countryName, countryEU)!== -1 ) {
-				countrySelected = "EU"
-			}else if($.inArray(countryCode, countryUS)!== -1){
-				countrySelected = 'US';
-			}else{
-				countrySelected = countryCode;
-			}
+	var initialTrigger = function(locations){
+		var data = {};
+	  	data['countryCode']	= locations.message.country.iso_code;
+	  	data['countryName']	= locations.message.country.names.en;
+	  	data['cityName']  	= locations.message.city.names.en;
+	  	data['regionName']	= locations.message.subdivisions[0].names.en;
+	    return data;
+	}
 
-			var CountryPricing  = pricing[countrySelected];
-
-			$(".currency-symbol").html(CountryPricing["symbol"]);
-
-			$('.plans').each(function(){
-				$(this).html(CountryPricing[$(this).data('plan')])
-			});
-
-			// Pricing page USD
-			var us_listing = ["EU","ZAR","IN"];
-
-			if( $.inArray(countryCode, us_listing)!== -1 ) {
-				$('.pl-features #us_men').hide();
-			}else{
-				$('.pl-features #us_men').show();
-			}
-
-			// footer Phone Number
-			var phoneNumber = phone_no[countrySelected];
-
-			$(".f-contact .f-phone span").html(phoneNumber['number']);
-			
-		}catch(ex){
-
+	var pricing_geolocation = function(){
+		var countryEU = ["Austria", "Belgium", "Cyprus", "Estonia", "Finland", "France", "Germany", "Greece", "Ireland", "Italy", "Latvia", "Luxembourg", "Malta", "Netherlands", "Portugal", "Slovakia", "Slovenia", "Spain", "Andorra", "Kosovo", "Montenegro", "Monaco", "San Marino", "The Vatican City"];
+		
+		if( $.inArray(countryName, countryEU)!== -1 ) {
+			countrySelected = "EU"
+			$('.pl-features #eu_men').show();
+		}else if(countryCode === 'ZAR'){
+			countrySelected = 'ZAR'
+			$('.pl-features #us_men').hide();
+		}else if(countryCode === 'IN'){
+			countrySelected = 'IN'
+			$('.pl-features #in_men').show();
+		}else if(countryCode === 'GB'){
+			countrySelected = 'US';
+			$('.pl-features #us_men').show();
+		}else{
+			countrySelected = 'US'
+			$('.pl-features #us_men').show();
 		}
+
+		var CountryPricing  = pricing[countrySelected];
+
+		$(".currency-symbol").html(CountryPricing["symbol"]);
+
+		$('.plans').each(function(){
+			$(this).html(CountryPricing[$(this).data('plan')])
+		});
+
+		// footer Phone Number
+		var phoneNumber = phone_no[countrySelected] || phone_no['US'];
+		
+		$(".f-contact .f-phone span").html(phoneNumber['number']);
+		
+		$('#contryName').val(countryName);
+	}
+
+	// maxmind location
+	if(!localStorage.getItem('maxmind_location')){
+		$(document).on('maxmind_locationSet', function(locations){
+			currentLocation = initialTrigger(locations);
+			countryName = currentLocation.countryName;
+			countryCode = currentLocation.countryCode;
+			pricing_geolocation();
+		})
+	}else{
+		currentLocation = JSON.parse(localStorage.getItem("maxmind_location"));
+		countryName = currentLocation.countryName;
+		countryCode = currentLocation.countryCode;
+		pricing_geolocation();
+	}
+
 
 }());
