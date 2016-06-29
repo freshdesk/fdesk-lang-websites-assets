@@ -615,6 +615,7 @@
     	text-shadow: none;
     	font-weight: 400;
     	font-size: 38px;
+        clear: both;
 	}
 	h1.su-subtitle{
 		color: #4d4d4d;
@@ -680,7 +681,7 @@
   	}
 }
 
-.customer-care, .helpdesk-banner{
+.customer-care, .helpdesk-banner, .signup-banner-strip{
     .b-form #signup .user_row.firstname {
         width: 50%;
         float: left; }
@@ -716,7 +717,7 @@
         width: 200%;
         }
 }
-.customer-care{
+.customer-care, .support, .landing-right-panel, .vs-signup{
     .b-form #signup .user_row.firstname .error {
 	   	/*@replace: -308%*/left: -208%;
     	width: 200%; 
@@ -744,5 +745,6 @@
         display: block; }
     .b-form #signup .user_row.firstname .error {
         width: 200%;
+        /*@replace: -308%*/left: -208%;
         }
 }

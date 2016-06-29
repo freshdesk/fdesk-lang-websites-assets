@@ -149,15 +149,15 @@
 		}
 	}
 	.b-form em.error, .lpeRegForm em.error{
-		right: -104%;
-		left: auto;
+		/*@noflip*/right: -104%;
+		/*@noflip*/left: auto;
 		height: 90%;
-		&:before{ left: -22px; right: auto; top: 18px; border-right-color: rgba(0, 0, 0, 0.2); border-left-color: transparent; }
-		&:after{ left: -20px; right:auto; top: 19px; border-right-color: #ffeaea; border-left-color: transparent; }
+		&:before{ /*@noflip*/left: -22px; /*@noflip*/right: auto; top: 18px; /*@noflip*/border-right-color: rgba(0, 0, 0, 0.2); /*@noflip*/border-left-color: transparent; }
+		&:after{ /*@noflip*/left: -20px; /*@noflip*/right:auto; top: 19px; /*@noflip*/border-right-color: #ffeaea; /*@noflip*/border-left-color: transparent; }
 	}
 	.ghostwriter_info{
 		padding-top: 18px;
-		padding-left: 35px;
+		/*@noflip*/padding-left: 35px;
 		@extend .zeta;
 	}
 	.b-form .required{
@@ -918,13 +918,20 @@ $teal-pl-color : rgba(204,204,204,0.6);
     display: block; }
 
 	.domain{
-		.ghostwriter_info{ display: none; }
-		input#account_domain{
-			width: 75%;
-			display: inline-block;
-            float: left;
-		}
-		.domain-name-fixed{
+        .ghostwriter_info{
+            /*@replace: 100%*/width:auto;
+        }
+        .ghostwriter_info label:not(.ghostwriter_hide){
+            /*@replace: absolute*/ position: relative;
+            /*@replace: 0*/ left: inherit;
+            /*@replace: inline-block*/ display: inline;
+            background-color: #fff;
+            /*@replace: 5px*/ padding-right: 0;
+            vertical-align: top;
+            font-size: 16px;
+            line-height: 25px;
+        }
+		/*.domain-name-fixed{
 			display: inline-block;
     		font-size: 15px;
             position: relative;
@@ -932,9 +939,8 @@ $teal-pl-color : rgba(204,204,204,0.6);
 		}
 		&.active{
 			.domain-name-fixed{ color: #333333; }
-		}
+		}*/
 	}
 
-.customer-care .domain input#account_domain{
-    width:66%;
+.customer-care .domain label:not(.ghostwriter_info){
 }
