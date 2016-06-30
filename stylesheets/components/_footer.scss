@@ -215,7 +215,7 @@ footer{
 	@extend .small;
 	padding: 20px 0;
 	color: #999999;
-	text-align: right;
+	/*@noflip*/text-align: right;
 }
 
 .copy-separator { 
