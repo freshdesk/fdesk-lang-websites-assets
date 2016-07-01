@@ -553,9 +553,11 @@ only screen and (                min-resolution: 2dppx) {
 	h2{
 		@extend .gamma;
 		font-weight: $font-weight-light;
+        text-align: left;
 	}
 	p{
 		@extend .default;
+        text-align: left;
 	}
 }
 .tour-grey{
@@ -813,8 +815,8 @@ only screen and (                min-resolution: 2dppx) {
 	margin: 0 auto 20px;
 	border-bottom: 1px solid #f1f1f1;
 	.tour-author{ 
-		float: right;
-		.ta-name,.ta-comp{ color: #16a085; display: block; text-align: right;  }
+		/*@noflip*/float: right;
+		.ta-name,.ta-comp{ color: #16a085; display: block; /*@noflip*/text-align: right;  }
 		.ta-name{ font-weight: $font-weight-normal; }
 		.ta-comp{ font-weight: $font-weight-light; }
 	}
@@ -844,14 +846,14 @@ only screen and (                min-resolution: 2dppx) {
 }
 .tour-previous .prev-title:after {
 	content: '';
-	border-right: 2px solid #999999;
+	/*@noflip*/border-right: 2px solid #999999;
 	height: 30px;
-	padding-left: 20px;
+	/*@noflip*/padding-left: 20px;
 }
 .tour-next .next-title:before {
 	content: '';
-	border-left: 2px solid #999999;
-	padding-right: 20px;
+	/*@noflip*/border-left: 2px solid #999999;
+	/*@noflip*/padding-right: 20px;
 }
 .tour-bottom-strip{
 	padding: 40px 0;
@@ -1628,7 +1630,7 @@ only screen and (                min-resolution: 2dppx) {
 	width: 240px;
 	height: 200px;
 	display: inline-block;
-	margin-left: 6%;
+	/*@noflip*/margin-left: 6%;
 	margin-bottom: 5%;
 	background-color: #fff;
 	img{

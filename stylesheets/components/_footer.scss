@@ -102,7 +102,7 @@ footer{
 				width: 100%; 
 				font-weight: $font-weight-light;
 				background-color: $footer-bg;
-				border-right: 1px solid #239f85;
+				/*@noflip*/border-right: 1px solid #239f85;
 				outline: none;
 			}
 		}
