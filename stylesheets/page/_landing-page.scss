@@ -344,6 +344,7 @@
     font-size: 16px;
     font-weight: 300;
     border-bottom: 1px solid #ccc;
+    text-align: left;
 }
 
 #demo-form .textfield .icon-envelope, #demo-form .textfield .icon-user, #demo-form .textfield .icon-mobile {
@@ -351,11 +352,18 @@
     margin-left: 1px;
     position: absolute;
     margin-top: 8px;
+    left:17px;
 }
     
 #demo-form {
     display: none;
     width: 280px;
+    
+    .mkt-check{
+        .mktField{
+            /*@replace: right*/text-align: inherit;
+        }
+    }
 }
 
 .form-invalid,.form-invalid-text,.form-valid{
@@ -694,4 +702,5 @@
 
 .vs-signup{
     text-align: left;
+    padding-top: 80px !important;
 }

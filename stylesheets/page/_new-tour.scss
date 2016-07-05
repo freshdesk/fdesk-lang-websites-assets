@@ -188,7 +188,7 @@ only screen and (                min-resolution: 2dppx) {
 	background: url(#{$cdn_path}/images/tour/tour-banner-left-arrow.png) no-repeat;
 	background-size: 25px;
 	margin-top: 69px;
-	left: -60px;
+	/*@noflip*/left: -60px;
 }
 .left-nav:hover,.right-nav:hover{ opacity: 1; }
 
@@ -434,7 +434,7 @@ only screen and (                min-resolution: 2dppx) {
 	background-color: #fff;
 	height: 60px;	
 	margin-bottom: 20px;
-	margin-left: -2px;
+	/*@noflip*/margin-left: -2px;
 	transform: rotate(-1deg);
 	-moz-transform: rotate(-1deg);
 	-webkit-transform: rotate(-1deg);
@@ -448,7 +448,7 @@ only screen and (                min-resolution: 2dppx) {
 		transform: rotate(12deg);
 		-moz-transform: rotate(12deg);
 		-webkit-transform: rotate(12deg);
-		margin-left: -5px;
+		/*@noflip*/margin-left: -5px;
 	}
 	.secondary-btmlink-2{
 		width: 100%;
@@ -461,7 +461,7 @@ only screen and (                min-resolution: 2dppx) {
 		position: relative;
 		top: -58px;
 		overflow: hidden;
-		box-shadow: 6px -37px 0px 0 #fff;
+		/*@noflip*/box-shadow: 6px -37px 0px 0 #fff;
 	}
 	.secondary-btmlink-3{
 		width: 200px;
@@ -473,10 +473,10 @@ only screen and (                min-resolution: 2dppx) {
 		-webkit-transform: rotate(12deg);
 		position: absolute;
 		top: -101px;
-		right: 5px;
+		/*@noflip*/right: 5px;
 		z-index: 2;
 		padding-top: 30px;
-		box-shadow: 18px 0px 0px 0 #f1f1f1;
+		/*@noflip*/box-shadow: 18px 0px 0px 0 #f1f1f1;
 	}
 	.secondary-multibtmlink{
 		position: relative;
@@ -488,9 +488,9 @@ only screen and (                min-resolution: 2dppx) {
 		transform: rotate(12deg);
 		-moz-transform: rotate(12deg);
 		-webkit-transform: rotate(12deg);
-		margin-left: -5px;
-		left: 0;
-		box-shadow: 6px 22px 0px 0 #fff;
+		/*@noflip*/margin-left: -5px;
+		/*@noflip*/left: 0;
+		/*@noflip*/box-shadow: 6px 22px 0px 0 #fff;
 	}
 	.secondary-multibtmlink-2{
 		width: 80%;
@@ -502,9 +502,9 @@ only screen and (                min-resolution: 2dppx) {
 		-webkit-transform: rotate(-1deg);
 		position: relative;
 		top: -78%;
-		float: left;
+		/*@noflip*/float: left;
 		overflow: hidden;
-		box-shadow: 6px -52px 0px 0 #fff;
+		/*@noflip*/box-shadow: 6px -52px 0px 0 #fff;
 	}
 	.secondary-multibtmlink-3{
 		width: 20%;
@@ -516,11 +516,11 @@ only screen and (                min-resolution: 2dppx) {
 		-webkit-transform: rotate(9deg);
 		position: relative;
 		top: -103%;
-		right: 5px;
+		/*@noflip*/right: 5px;
 		z-index: 2;
-		float: right;
+		/*@noflip*/float: right;
 		padding-top: 30px;
-		box-shadow: 2px -16px 0px 10px #fff;
+		/*@noflip*/box-shadow: 2px -16px 0px 10px #fff;
 	}
 
 }
@@ -536,10 +536,10 @@ only screen and (                min-resolution: 2dppx) {
 		-webkit-transform: rotate(12deg);
 		position: absolute;
 		top: -101px;
-		right: 5px;
+		/*@noflip*/right: 5px;
 		z-index: 2;
 		padding-top: 30px;
-		box-shadow: 18px 0px 0px 0 #f1f1f1;
+		/*@noflip*/box-shadow: 18px 0px 0px 0 #f1f1f1;
 	}
 
 
@@ -790,7 +790,7 @@ only screen and (                min-resolution: 2dppx) {
 	margin-left: 3.44828%;
 	.tour-widget-header{ height: 45px; }
 	.tour-widget-img{ float: left; }
-	.tour-widget-title{ float: left; width: 265px; padding-left: 10px; }
+	.tour-widget-title{ float: left; width: 265px; padding-left: 10px; text-align: left;}
 	h4{ 
 		font-size: 24px;
 		font-weight: $font-weight-light; 
