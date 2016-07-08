@@ -25971,13 +25971,15 @@ p.pl-features-link a {
 
 .loc1 {
   top: 265px;
-  right: 180px;
+  /*@noflip*/
+  left: 180px;
 }
 
 /* line 889, ../../source/assets/stylesheets/page/_new-tour.scss */
 
 .loc2 {
-  left: 40px;
+  /*@noflip*/
+  right: 40px;
   bottom: 92px;
 }
 
@@ -25985,14 +25987,17 @@ p.pl-features-link a {
 
 .loc3 {
   bottom: 60px;
-  right: 335px;
+  /*@noflip*/
+  left: 335px;
 }
 
 /* line 897, ../../source/assets/stylesheets/page/_new-tour.scss */
 
 .loc4 {
-  right: 255px;
-  left: 0;
+  /*@noflip*/
+  left: 255px;
+  /*@noflip*/
+  right: 0;
   margin: 0 auto;
   top: 210px;
 }
@@ -26000,7 +26005,8 @@ p.pl-features-link a {
 /* line 903, ../../source/assets/stylesheets/page/_new-tour.scss */
 
 .loc5 {
-  left: -25px;
+  /*@noflip*/
+  right: -25px;
   top: 220px;
 }
 
@@ -26013,7 +26019,8 @@ p.pl-features-link a {
 /* line 909, ../../source/assets/stylesheets/page/_new-tour.scss */
 
 .pointer span {
-  padding-right: 30px;
+  /*@noflip*/
+  padding-left: 30px;
 }
 
 /* line 912, ../../source/assets/stylesheets/page/_new-tour.scss */

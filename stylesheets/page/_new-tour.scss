@@ -884,30 +884,30 @@ only screen and (                min-resolution: 2dppx) {
 }
 .loc1{
 	top: 265px;
-	left: 180px;
+	/*@noflip*/left: 180px;
 }
 .loc2{
-	right: 40px;
+	/*@noflip*/right: 40px;
 	bottom: 92px;
 }
 .loc3{
 	bottom: 60px;
-	left: 335px;
+	/*@noflip*/left: 335px;
 }
 .loc4{
-	left: 255px;
-	right: 0;
+	/*@noflip*/left: 255px;
+	/*@noflip*/right: 0;
 	margin: 0 auto;
 	top: 210px;
 }
 .loc5{
-	right: -25px;
+	/*@noflip*/right: -25px;
 	top: 220px;
 }
 .pointer{
 	visibility: hidden;
 	span{
-		padding-left: 30px;
+		/*@noflip*/padding-left: 30px;
 	}
 	.pointer-lang{
 		display: block;
