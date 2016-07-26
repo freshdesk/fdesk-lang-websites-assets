@@ -179,13 +179,18 @@
 .helpdesk-features{
 	h1{ font-size: 38px; }
 	.helpdesk-features-content{
+        span{
+            /*@replace: right*/float: none;
+        }
 		h4{
-			font-size: 24px;
+			/*@replace: 20px*/font-size: 24px;
 	    	display: inline-block;
 	    	font-weight: 400;
-	    	/*@noflip*/margin-left: 15px;
+	    	margin-left: 15px;
+            /*@replace: right*/float: none;
+            text-align: left;
 		} 
-		p{ font-size: 18px; text-align: left;}
+		p{ font-size: 18px; text-align: left; clear: both;}
 
 	}
 }
@@ -334,6 +339,9 @@
     text-align: center;
     padding: 10px;
 }
+#demo-form .demo_form input[type="number"] {
+    -moz-appearance: textfield;
+}
 
 #demo-form .textfield #LastName, #demo-form .textfield #Email, #demo-form .textfield #Phone,.textfield .team {
     outline: none;
@@ -362,6 +370,9 @@
     .mkt-check{
         .mktField{
             /*@replace: right*/text-align: inherit;
+        }
+        p{
+            text-align: left;
         }
     }
 }

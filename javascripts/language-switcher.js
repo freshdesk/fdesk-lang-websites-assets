@@ -9,7 +9,7 @@ $(document).on("ready",function(){
 	languages.push({key:'fr', url: 'http://freshdesk.fr',value:'Français'});
 	languages.push({key:'fi', url: 'http://freshdesk.fi',value:'Finnish'});
 	languages.push({key:'it', url: 'http://freshdesk.it',value:'Italiano'});
-	languages.push({key:'no', url: 'http://freshdesk.no',value:'Norwegian'});
+	languages.push({key:'nb-NO', url: 'http://freshdesk.no',value:'Norwegian'});
 	languages.push({key:'pt-BR', url: 'http://freshdesk.com.br',value:'Portuguès'});
 	languages.push({key:'pl', url: 'http://freshdesk.com.pl',value:'Polski'});
 	// languages.push({key:'tr', url: 'http://freshdesk.tr',value:'Turkish'});
