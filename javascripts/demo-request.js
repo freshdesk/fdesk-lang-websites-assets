@@ -76,6 +76,8 @@ $(document).ready(function(){
 				"Number of Agents" : $('#Number_of_Agents').val(),
 				"Country":$('#cont_name').val(),
 				"Sales Campaign": "Demo Request from Website",
+                "First Referrer":$("#first_referrer").val(($.cookie("fd_fr")||current_loc)),
+                "signup Referrer":$("#first_landing_url").val(($.cookie("fd_flu")||"")),
 				"company" : {
 					"Name" : $("#demo-company_name").val()
 				}
@@ -86,4 +88,17 @@ $(document).ready(function(){
 	        form.submit();
 	    }
   	});
+    
+    // Input Hidden Fields in Demo form
+
+    //$('#demo-form form input[type="hidden"]').remove();
+
+    var demoHiddenInput = {
+        "items":"<noscript> <input type='hidden' name='noscript' id='no_script' value='No Script Support'> </noscript><input type='hidden' name='first_referrer' id='first_referrer' value='' /><input type='hidden' name='first_landing_url' id='first_landing_url' value='' />"
+    };
+
+    var demoHiddenFields = demoHiddenInput['items'];
+
+    $('#demo-form form .lastInput').after(demoHiddenFields); 
+
 });
