@@ -1021,10 +1021,14 @@ background: url("#{$cdn_path}/images/tour/banner-images/Security-1X.png") no-rep
 {
 	font-size: 27px;
 }
-.tour-banner-content h1
+.tour-banner-content h1, .tour-banner-content h3
 {
 	font-size: 36px;
 	text-shadow:0 0 0px black;
+  
+    span{
+      font-size: 24px;
+    }
 }
 
 .ipad-top-space

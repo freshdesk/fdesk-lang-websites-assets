@@ -1385,10 +1385,14 @@
   padding-top: 15px;
 }
 
-.tour-banner-content h1 {
-    font-size: 29px;
+.tour-banner-content h1, .tour-banner-content h3 {
+    font-size: 32px;
     padding-left: 15px;
     text-align: left;
+  
+    span{
+      font-size: 24px;
+    }
 }
 
 .nav-tour-strip li a span:first-child
