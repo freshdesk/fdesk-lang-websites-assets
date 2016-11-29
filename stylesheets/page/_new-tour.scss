@@ -556,7 +556,7 @@ only screen and (                min-resolution: 2dppx) {
 .tour-content-wrapper{
 	position: relative;
 	padding-bottom: 60px;
-	h1{
+	h1, h3{
 		font-size: 42px;
 		font-weight: $font-weight-light;
 	}
