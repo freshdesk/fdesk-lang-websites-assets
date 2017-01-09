@@ -145,12 +145,14 @@ if(!localStorage.getItem('maxmind_location')){
 					$("#pre_visits").val(($.cookie("fd_vi")||0));
 					$("#account_timezone_offset").val(getLocalTimeZoneOffset());
 					$("#error_container").empty().hide();
-					var html_lang = $('html')[0].lang || 'en-US';
+					
+					var freshsales_id =  typeof freshsales != "undefined" ? freshsales.anonymous_id : "error freshsales is not defined",
+						html_lang = $('html')[0].lang || 'en-US';
 					$("form#signup").append("<input type='text' value='"+html_lang+"' id='account_lang' name='account[lang]' style='display:none'/>");
+					$("form#signup").append("<input type='text' value='"+freshsales_id+"' id='freshsales_anonymous_id' name='fs_cookie' style='display:none'/>");
 					
 					var signupString = $(form).serializeArray();	
 					var form_type = $(form).data('form-type');
-
 					if(form_type != undefined && form_type == 'old'){
 						$.each(signupString, function(i, val){
 							if(val.name == "user[name]"){
