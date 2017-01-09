@@ -76,8 +76,8 @@ $(document).ready(function(){
 				"Number of Agents" : $('#Number_of_Agents').val(),
 				"Country":$('#cont_name').val(),
 				"Sales Campaign": "Demo Request from Website",
-                "First Referrer":$("#first_referrer").val(($.cookie("fd_fr")||current_loc)),
-                "signup Referrer":$("#first_landing_url").val(($.cookie("fd_flu")||"")),
+				"First Referrer": ($.cookie("fd_fr") || window.parent.location.href),
+				"Signup Referrer": ($.cookie("fd_flu") || win.location.href),
 				"company" : {
 					"Name" : $("#demo-company_name").val()
 				}
