@@ -49,8 +49,9 @@ $(document).ready(function(){
 	              	"email": true
 	          	},
 	          	"Phone": {
-	                required: true,
-	                 minlength: 10
+	                "required": true,
+					"number": true,
+	                "minlength": 10
 	            }
 	      	},
 	      
@@ -64,7 +65,8 @@ $(document).ready(function(){
 				},
 				"Phone": {
 	                required: "Please enter your phone number",
-	                minlength: 'Please enter at least 10 digits.'
+	                minlength: 'Please enter at least 10 digits.',
+					number:"Please enter a valid number."
 	            }
 	        },
 	      
