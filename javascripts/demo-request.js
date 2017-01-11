@@ -52,7 +52,10 @@ $(document).ready(function(){
 	                "required": true,
 					"number": true,
 	                "minlength": 10
-	            }
+	            },
+			    "Number_of_Agents":{
+			  		"number": true
+		  		}
 	      	},
 	      
 	      // Specify the validation error messages
@@ -67,7 +70,10 @@ $(document).ready(function(){
 	                required: "Please enter your phone number",
 	                minlength: 'Please enter at least 10 digits.',
 					number:"Please enter a valid number."
-	            }
+	            },
+			    "Number_of_Agents":{
+			  		number:"Please enter a valid number."
+		  		}
 	        },
 	      
 	    submitHandler: function(form) {
