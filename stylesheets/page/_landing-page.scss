@@ -459,43 +459,35 @@
 		font-weight: $font-weight-light;
 	}
 
-	.sprout, .blossom, .garden, .estate {
-		width: 190px;
-		height: 185px;
-		margin: 0 auto;
-	}
-
-	.mail, .forum, .social, .sprout, .blossom, .garden, .estate{
+	.mail, .forum, .social{
 		background: url(#{$cdn_path}/images/mob-landing-page.png) no-repeat;
 		display: inline-block;
 	}
 
 	.forest{
-		width: 190px;
-		height: 185px;
-		background: url('../images/forest.png')no-repeat;
-		background-size: 185px;
-		margin: 7px auto 0;
-		display: block;
+		background: url(#{$cdn_path}/images/pricing/legacy_forest.png) no-repeat;
 	}
 	.sprout{
-		background-position: -138px 0px;
-		background-size: 330px;
+		background: url(#{$cdn_path}/images/pricing/legacy_sprout.png) no-repeat;
 	}
 
 	.blossom{
-		background-position: -138px -202px;
-		background-size: 330px;
+		background: url(#{$cdn_path}/images/pricing/legacy_blossom.png) no-repeat;
 	}
 
 	.garden{
-		background-position: -140px -415px;
-		background-size: 330px;
+		background: url(#{$cdn_path}/images/pricing/legacy_garden.png) no-repeat;
 	}
 
 	.estate{
-		background-position: -137px -619px;
-		background-size: 330px;
+		background: url(#{$cdn_path}/images/pricing/legacy_estate.png) no-repeat;
+	}
+	.sprout, .blossom, .garden, .estate ,.forest{
+		width: 190px;
+		height: 185px;
+		margin: 0 auto;
+		display: inline-block;
+		background-size: 185px;
 	}
 
 	.plan-content{
