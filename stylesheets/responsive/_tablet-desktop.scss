@@ -1910,34 +1910,12 @@ padding-top: 30px;
 
 	.f-sprout{ font-size: 24px; }
 
-	.sprout, .blossom, .garden, .estate {
+	.sprout, .blossom, .garden, .estate,.forest {
 		width: 166px;
 		height: 155px;
 		margin: 0 auto;
-	}
-	.sprout {
-		background-position: -123px 0px;
-		background-size: 290px;
-	}
-
-	.blossom {
-		background-position: -124px -179px;
-		background-size: 290px;
-	}
-
-	.garden {
-		background-position: -124px -365px;
-		background-size: 290px;
-	}
-
-	.estate{
-		background-position: -122px -544px;
-		background-size: 290px;
-	}
-	.forest{
-		width: 160px;
-		height: 155px;
-		background-size: 160px;
+		background-size: contain;
+		display: block;
 	}
 }
 
