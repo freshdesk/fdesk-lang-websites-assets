@@ -33,8 +33,10 @@
 		margin-top: 0;
 		margin-bottom: 0;
 	}
-	.agents{ 
+	.agents{
 		padding-top: 35px;
+		padding-right: 10px;
+		padding-left: 10px;
 	}
 
 	h4,.agents span{ font-weight: 600;}
@@ -168,6 +170,10 @@
 		@extend .small;
 		font-weight: $font-weight-normal;
 		margin: 0;
+	}
+	.agents {
+		padding-right: 10px;
+		padding-left: 10px;
 	}
 }
 
