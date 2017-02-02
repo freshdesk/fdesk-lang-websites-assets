@@ -154,6 +154,7 @@
 	padding-top: 20px;
 	text-align: center;
 	padding-bottom: 30px;
+	min-height: 190px;
 	/*border-bottom: 1px solid #f3f3f3;*/
 	h2{
 		@extend .beta;
@@ -169,7 +170,25 @@
 		margin: 0;
 	}
 }
-	
+
+.pr-p-list {
+	min-height: 210px;
+}
+
+// language specific min-heights start
+.ru-RU, .ar {
+	.pr-c-intro {
+		min-height: 175px;
+	}
+}
+
+.ru-RU {
+	.pr-p-list {
+		min-height: 250px;
+	}
+}
+// language specific min-heights end
+
 .pr-p-f:before,.pr-np-f:before {
 	content: " ";
 	position: absolute;
@@ -187,9 +206,14 @@
 	padding-bottom: 10px;
 	width: 80%;
 	padding-left: 30px;
+	box-sizing: border-box;
 	text-align: left;
 	font-size: 14px;
 	margin-left: 20px;
+}
+
+.pl-p-signup {
+	margin: 0 10px;
 }
 
 .pr-day-pass{
@@ -344,8 +368,6 @@
 		@extend .beta;
 	}
 }
-
-.pr-p-list{ min-height: 157px; }
 
 
 p.pl-features-link{
