@@ -139,6 +139,7 @@ header{padding-top: 10px;}
 		padding-top: 10px;
 		padding-bottom: 10px;
 		padding-left: 15px;
+        padding-right: 15px;
 		@include transition(all ease 0.25s);
 		&:hover{
 			background-color: #f7f7f7;

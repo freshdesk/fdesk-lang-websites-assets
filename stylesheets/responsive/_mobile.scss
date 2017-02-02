@@ -2474,37 +2474,12 @@ padding-bottom: 5px;
     font-weight: 400;
     margin-top: 5px;
   }
-  .sprout, .blossom, .garden, .estate{
+  .sprout, .blossom, .garden, .estate,.forest{
     width: 140px;
     height: 115px;
     float: none;
     margin: 0 auto;
-  }
-
-  .sprout{
-    background-position: -85px 0px;
-    background-size: 220px;
-  }
-
-  .blossom{
-    background-position: -85px -135px;
-    background-size: 220px;
-  }
-
-  .garden{
-    background-position: -86px -277px;
-    background-size: 220px;
-  }
-
-  .estate{
-    background-position: -86px -412px;
-    background-size: 220px;
-  }
-
-  .forest {
-    width: 125px;
-    height: 120px;
-    background-size: 125px;
+    background-size: contain;
   }
   .plan-content{
     margin-top: 10px;
@@ -2523,7 +2498,7 @@ padding-bottom: 5px;
       line-height: 1.4;
     }
     
-    span{ font-size: 20px; }
+    span{ font-size: 17px; }
   }
 
   .plans-wrapper {

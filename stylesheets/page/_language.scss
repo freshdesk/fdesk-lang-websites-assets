@@ -18,3 +18,132 @@
     width:117px;
   }
 }
+
+.ru-RU{
+  .tour-banner-content{
+    h3, h1{
+      font-size: 35px;
+      padding-right: 10%;
+      padding-left: 10%;
+      font-weight: 200;
+      
+      span{
+        font-size: 25px;
+      }
+    }
+  }
+  .tour-content-wrapper h1, .tour-content-wrapper h3, .gamma, h3, .bs-heading, .helpdesk-software .content-wrapper h1, .helpdesk-software .helpdesk-banner .content-wrapper h1, .pl-coin, .lp-plans h2, .lp-customers-feedback h2, .pr-sign-link h5, .pricing-cal h1, .secondary-title h2, .tour-secondary-banner h1, .tour-content-wrapper h2, .poly-banner .s-heading, .poly-banner .casestudy-banner h2, .casestudy-banner .poly-banner h2, .poly-center-banner .s-heading, .poly-center-banner .casestudy-banner h2, .casestudy-banner .poly-center-banner h2, .banner .s-heading, .banner .casestudy-banner h2, .casestudy-banner .banner h2, .inner-banner-strip .s-heading, .signup-banner-strip .s-heading, .inner-banner-strip .casestudy-banner h2, .casestudy-banner .inner-banner-strip h2, .signup-banner-strip .casestudy-banner h2, .casestudy-banner .signup-banner-strip h2, .fd-home-content h1, .beta, h2, .s-heading, .casestudy-banner h2, .banner.poly-customer-banner .poly-customer-content h2, .contact-wrapper h1, .pr-c-intro h2, .banner.poly-pricing-banner h2, .bottom-wrapper .fg-4 h2{
+    font-size: 35px;
+    font-weight: 200;
+  }
+  .banner h1.b-heading{
+    font-size: 42px;
+    margin-bottom: 20px;
+    font-weight: 200;
+  }
+  .left-nav{
+    margin-top: 83px;
+  }
+  .btn, #mktFrmButtons input[type="submit"], .signup_btn{
+    font-size: 14px;
+  }
+  .tour-features-strip .icon-tour-title{
+	font-size: 12px;
+    padding: 20px 10px 2px;
+  }
+  .tour-features-strip.stuck.in .tour-nav-signup{
+    font-size: 12px;
+    padding: 6px 5px;
+  }
+  .tour-bottom-strip{
+    padding:3px 15px 39px;
+  }
+  .pr-c-intro {
+    padding: 20px 5px 30px;
+  }
+  .delta, h4, .footer-strip h4, .content-strip h3, .teelbg h3, .whitebg h3, .su-subtitle, .pl-free, .lp-plans .f-sprout, .pr-c-intro h4, .pr-day-pass h3, .comparison-desk.stuck h1, .tour-globe .tour-widget h4{
+    font-size: 1.35rem;
+    font-weight: 200;
+  }
+  .fd-home-sticky .sub-menu li a, .fd-page-sticky .sub-menu li a{
+    font-size: 14px;
+  }
+  .fd-home-content p{
+    font-size: 18px;
+  }
+  .btn-block, .signup_btn_block{
+    padding:5px 10px;
+    line-height: 18px;
+    white-space: inherit;
+  }
+  .banner.support-light .banner-form {
+    margin-top: 50px;
+  }
+  .tour-features-strip.stuck.in .icon-tour-title{
+    padding-top: 0px;
+  }
+  h2.epsilon{
+    font-size: 20px;
+    font-weight: 200;
+  }
+  .landing-terms{
+    padding:20px;
+  }
+  .helpdesk-features .helpdesk-features-content{
+    h4{
+      font-size: 18px;
+      font-weight: 200;
+    }
+    p{
+      font-size: 16px;
+      margin-top: 0;
+    }
+  }
+  .landing-page-content h1, .l-content h1{
+    font-size: 30px;
+    margin-top: 0;
+    font-weight: 200;
+  }
+  .landing-right-panel .landing-signup-form{
+    margin-top: 30px;
+    margin-bottom: 15px;
+  }
+  .c-pos1{
+    top: 130px;
+  }
+  .c-pos3{
+    top: 180px;
+  }
+  .tour1-pos6 p{
+    top:-93px;
+  }
+  .tour1-pos3{
+    bottom: 47px;
+  }
+  .tour1-pos5{
+    bottom:-50px;
+  }
+  .tour1-pos4{
+    bottom:90px;
+  }
+  .helpdesk-software .helpdesk-banner{
+    padding-top: 25px;
+  }
+  #demo-form{
+    .mkt-check .mktField{
+      width:100%;
+      
+      .mktInput{
+        float: left;
+        margin-right: 10px;
+      }
+    }
+  }
+  .home-tour-wrapper .home-tour-link .tour-link-content h3{
+    font-size: 38px;
+    font-weight: 200;
+  }
+  .home-tour-wrapper .home-tour .home-tour-content p{
+    font-size: 30px;
+  }
+}

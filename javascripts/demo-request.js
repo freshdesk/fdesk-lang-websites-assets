@@ -49,9 +49,13 @@ $(document).ready(function(){
 	              	"email": true
 	          	},
 	          	"Phone": {
-	                required: true,
-	                 minlength: 10
-	            }
+	                "required": true,
+					"number": true,
+	                "minlength": 10
+	            },
+			    "Number_of_Agents":{
+			  		"number": true
+		  		}
 	      	},
 	      
 	      // Specify the validation error messages
@@ -64,8 +68,12 @@ $(document).ready(function(){
 				},
 				"Phone": {
 	                required: "Please enter your phone number",
-	                minlength: 'Please enter at least 10 digits.'
-	            }
+	                minlength: 'Please enter at least 10 digits.',
+					number:"Please enter a valid number."
+	            },
+			    "Number_of_Agents":{
+			  		number:"Please enter a valid number."
+		  		}
 	        },
 	      
 	    submitHandler: function(form) {
@@ -76,8 +84,8 @@ $(document).ready(function(){
 				"Number of Agents" : $('#Number_of_Agents').val(),
 				"Country":$('#cont_name').val(),
 				"Sales Campaign": "Demo Request from Website",
-                "First Referrer":$("#first_referrer").val(($.cookie("fd_fr")||current_loc)),
-                "signup Referrer":$("#first_landing_url").val(($.cookie("fd_flu")||"")),
+				"First Referrer": ($.cookie("fd_fr") || window.parent.location.href),
+				"Signup Referrer": ($.cookie("fd_flu") || win.location.href),
 				"company" : {
 					"Name" : $("#demo-company_name").val()
 				}

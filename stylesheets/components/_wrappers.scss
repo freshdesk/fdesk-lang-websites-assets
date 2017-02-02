@@ -8,7 +8,7 @@ $wrapper-secondary-border: #f3f3f3;
 	background-color: $wrapper-secondary; 
 	border-bottom: 1px solid $wrapper-secondary-border;
 	@include pie-clearfix;
-	padding-bottom: $wrapper-padding;
+	padding-bottom: 60px;
 }
 
 .w-price-seperator{ height: 55px; }
