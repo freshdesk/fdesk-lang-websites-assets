@@ -2,6 +2,7 @@ $(document).on("ready",function(){
 	var languages = [];
 	languages.push({key:'cs', url: 'http://cz.freshdesk.com',value:'Czech'});
 	languages.push({key:'nl', url: 'http://freshdesk.nl',value:'Dutch'});
+	languages.push({key:'nl-BE', url: 'http://freshdesk.be',value:'Flemish'});
 	languages.push({key:'da', url: 'http://freshdesk.dk',value:'Danish'});
 	languages.push({key:'de-DE', url: 'http://freshdesk.de',value:'Deutsch'});
 	languages.push({key:'en-US', url: 'http://freshdesk.com',value:'English'}); 
@@ -21,6 +22,7 @@ $(document).on("ready",function(){
 	languages.push({key:'jp', url: 'http://freshdesk.jp',value:'日本語'});
     languages.push({key:'ar', url: 'http://freshdesk.ae',value:'العربية'});
     // languages.push({key:'ar-QA', url: 'http://freshdesk.com.qa',value:'العربية'});
+
 	var current_language = $('html').attr('lang');
 	for (var i=0; i<languages.length;i++)
 	{
