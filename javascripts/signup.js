@@ -166,8 +166,9 @@ if(!localStorage.getItem('maxmind_location')){
 
 					// Posting signup to Freshdesk.
 					var signup_options = { 
-						dataType: "jsonp",
-						url 	: window['signup-url']+"?callback=?",
+						type: "POST",
+                        dataType: "json",
+						url 	: window['signup-url'],
 						data    : signupString,
 						success : signupResponse,
 						crossDomain: true
