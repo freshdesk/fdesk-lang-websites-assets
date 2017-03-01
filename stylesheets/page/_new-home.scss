@@ -306,10 +306,10 @@
 .sea-green,.dim-grey ,.navy,.light-grey,.cyan,.slate-grey{
 	img{
 		position: absolute;
-		top: 65px;
-		left: 0;
-		right: 0;
 		margin: 0 auto;
+        transform: translate(-50%,-50%);
+        /*@noflip*/left: 50%;
+        top: 50%;
 	}
 	.cb-img{ 
 		opacity: 0; 

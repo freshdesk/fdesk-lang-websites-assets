@@ -179,13 +179,18 @@
 .helpdesk-features{
 	h1{ font-size: 38px; }
 	.helpdesk-features-content{
+        span{
+            /*@replace: right*/float: none;
+        }
 		h4{
-			font-size: 24px;
+			/*@replace: 20px*/font-size: 24px;
 	    	display: inline-block;
 	    	font-weight: 400;
 	    	margin-left: 15px;
+            /*@replace: right*/float: none;
+            text-align: left;
 		} 
-		p{ font-size: 18px;  }
+		p{ font-size: 18px; text-align: left; clear: both;}
 
 	}
 }
@@ -334,6 +339,16 @@
     text-align: center;
     padding: 10px;
 }
+#demo-form .demo_form input[type=number]::-webkit-inner-spin-button, 
+#demo-form .demo_form input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+#demo-form .demo_form input[type=number]{
+    -moz-appearance: textfield;
+}
 
 #demo-form .textfield #LastName, #demo-form .textfield #Email, #demo-form .textfield #Phone,.textfield .team {
     outline: none;
@@ -344,6 +359,7 @@
     font-size: 16px;
     font-weight: 300;
     border-bottom: 1px solid #ccc;
+    text-align: left;
 }
 
 #demo-form .textfield .icon-envelope, #demo-form .textfield .icon-user, #demo-form .textfield .icon-mobile {
@@ -351,11 +367,21 @@
     margin-left: 1px;
     position: absolute;
     margin-top: 8px;
+    left:17px;
 }
     
 #demo-form {
     display: none;
     width: 280px;
+    
+    .mkt-check{
+        .mktField{
+            /*@replace: right*/text-align: inherit;
+        }
+        p{
+            text-align: left;
+        }
+    }
 }
 
 .form-invalid,.form-invalid-text,.form-valid{
@@ -433,43 +459,35 @@
 		font-weight: $font-weight-light;
 	}
 
-	.sprout, .blossom, .garden, .estate {
-		width: 190px;
-		height: 185px;
-		margin: 0 auto;
-	}
-
-	.mail, .forum, .social, .sprout, .blossom, .garden, .estate{
+	.mail, .forum, .social{
 		background: url(#{$cdn_path}/images/mob-landing-page.png) no-repeat;
 		display: inline-block;
 	}
 
 	.forest{
-		width: 190px;
-		height: 185px;
-		background: url('../images/forest.png')no-repeat;
-		background-size: 185px;
-		margin: 7px auto 0;
-		display: block;
+		background: url(#{$cdn_path}/images/pricing/legacy_forest.png) no-repeat;
 	}
 	.sprout{
-		background-position: -138px 0px;
-		background-size: 330px;
+		background: url(#{$cdn_path}/images/pricing/legacy_sprout.png) no-repeat;
 	}
 
 	.blossom{
-		background-position: -138px -202px;
-		background-size: 330px;
+		background: url(#{$cdn_path}/images/pricing/legacy_blossom.png) no-repeat;
 	}
 
 	.garden{
-		background-position: -140px -415px;
-		background-size: 330px;
+		background: url(#{$cdn_path}/images/pricing/legacy_garden.png) no-repeat;
 	}
 
 	.estate{
-		background-position: -137px -619px;
-		background-size: 330px;
+		background: url(#{$cdn_path}/images/pricing/legacy_estate.png) no-repeat;
+	}
+	.sprout, .blossom, .garden, .estate ,.forest{
+		width: 190px;
+		height: 185px;
+		margin: 0 auto;
+		display: inline-block;
+		background-size: 185px;
 	}
 
 	.plan-content{
@@ -546,8 +564,6 @@
 		.mail, .forum, .social{ margin-right: 12px; }
 
 		.support-content{ width: 80%; }
-
-		.lp-signup .b-form{ width: 270px; }
 	}
 
 	.lp-plans{
@@ -557,36 +573,39 @@
 
 		.plans-wrapper {
 			width: 30.41379%;
-			margin-right: 2.5%;
+			margin-right: 1.5%;
+            display: inline-block;
+            float: none;
+            vertical-align: top;
 		}
 
-		.sprout, .blossom, .garden, .estate {
-			width: 166px;
-			height: 155px;
-			background-size: 290px;
-			display: block;
-			margin: 0 auto;
-		}
-		.sprout {
-			background-position: -123px 0px;
-		}
+		// .sprout, .blossom, .garden, .estate {
+		// 	width: 166px;
+		// 	height: 155px;
+		// 	background-size: 290px;
+		// 	display: block;
+		// 	margin: 0 auto;
+		// }
+		// .sprout {
+		// 	background-position: -123px 0px;
+		// }
 
-		.blossom {
-			background-position: -124px -179px;
-		}
+		// .blossom {
+		// 	background-position: -124px -179px;
+		// }
 
-		.garden {
-			background-position: -124px -365px;
-		}
+		// .garden {
+		// 	background-position: -124px -365px;
+		// }
 
-		.estate{
-			background-position: -122px -544px;
-		}
-		.forest{
-			width: 160px;
-			height: 155px;
-			background-size: 160px;
-		}
+		// .estate{
+		// 	background-position: -122px -544px;
+		// }
+		// .forest{
+		// 	width: 160px;
+		// 	height: 155px;
+		// 	background-size: 160px;
+		// }
 	}
 
 	.lp-customers-feedback{
@@ -615,6 +634,8 @@
     	text-shadow: none;
     	font-weight: 400;
     	font-size: 38px;
+        clear: both;
+        text-align: left;
 	}
 	h1.su-subtitle{
 		color: #4d4d4d;
@@ -622,9 +643,11 @@
 		font-weight: 300;
     	padding-top: 5px;
     	text-shadow: none;
+        text-align: left;
 	}
     h1.k-heading{
         float: left;
+        text-align: left;
     }
 	.ulcont {
     	display: block;
@@ -680,69 +703,14 @@
   	}
 }
 
-.customer-care, .helpdesk-banner{
-    .b-form #signup .user_row.firstname {
-        width: 50%;
-        float: left; }
-    .b-form {border:5px solid #107360;}.tc-text{font-size:12px;}
-    .b-form #signup input.text:focus {
-        border-color: #1bc4a3; }
-    .b-form #signup .textfield.active input.text {
-        border-bottom-color: #1bc4a3; }
-    .b-form #signup .textfield.active.lastname::before {
-        border-left-color: #1bc4a3; }
-    .b-form #signup .textfield.error.lastname::before {
-        border-left-color: #d38888; }
-    .b-form #signup .textfield.error.active.lastname::before {
-        border-left-color: #1bc4a3; }
-    .b-form #signup .user_row.firstname .error {
-        /*@replace: -208%*/right: -308%;
-        width: 200%; }
-    .b-form #signup .user_row.lastname {
-        width: 50%;
-        float: left; }
-    .b-form #signup .user_row.lastname input {
-        padding-left: 20px; }
-    .b-form #signup .user_row.lastname::before {
-        content: '';
-        position: absolute;
-        border-left: 1px solid #e0e0e0;
-        width: 1px;
-        height: 40px;
-        left: 0;
-        top: 10px;
-        display: block; }
-    .b-form #signup .user_row.firstname .error {
-        width: 200%;
-        }
-}
-.customer-care{
-    .b-form #signup .user_row.firstname .error {
-	   	/*@replace: -308%*/left: -208%;
-    	width: 200%; 
-   }
+.helpdesk-software.crm-land .helpdesk-banner .content-wrapper h1{
+    font-size:30px;
+    margin-top:20px;
+    text-align: left;
+    clear: both;
 }
 
-.support-light{
-        
-    .b-form #signup .user_row.firstname .error {
-        /*@replace: -208%*/right: -308%;
-        width: 200%; }
-    .b-form #signup .user_row.lastname {
-        width: 50%;
-        float: left; }
-    .b-form #signup .user_row.lastname input {
-        padding-left: 20px; }
-    .b-form #signup .user_row.lastname::before {
-        content: '';
-        position: absolute;
-        border-left: 1px solid #e0e0e0;
-        width: 1px;
-        height: 40px;
-        left: 0;
-        top: 10px;
-        display: block; }
-    .b-form #signup .user_row.firstname .error {
-        width: 200%;
-        }
+.vs-signup{
+    text-align: left;
+    padding-top: 80px !important;
 }

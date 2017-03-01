@@ -20,72 +20,35 @@ if(!window['signup-url']){
 
 // Maxmind Code Starts
 
-if(!window.location.origin) {
-   window.location.origin = window.location.protocol + "//" + window.location.hostname + (window.location.port ? ":" + window.location.port : "");
+var currentLocation,
+	maxmind_location;
+
+var initialTrigger = function(locations){
+	var data = {};
+	data['ipAddress'] 	= locations.message.traits.ip_address;
+  	data['countryCode']	= locations.message.country.iso_code;
+  	data['countryName']	= locations.message.country.names.en;
+  	data['cityName']  	= locations.message.city.names.en;
+  	data['regionName']	= locations.message.subdivisions[0].names.en;
+  	data['zipCode']   	= locations.message.postal.code;
+  	data['latitude']  	= locations.message.location.latitude;
+  	data['longitude'] 	= locations.message.location.longitude;
+  	data['timeZone']  	= locations.message.location.time_zone;
+    data['source'] 		= 'maxmind';
+    return data;
 }
-var url_origin = window.location.origin;
-	
-	if (url_origin.search("freshdesk.com") >= 0 && $('form#signup').length > 0) {
 
-		var location_data, maxmind_loc;
-		var trigger_locations = function(_locations){
-			$(document).trigger({
-				type : 'maxmind_locationSet',
-				message : _locations
-			});
-		};
-
-		var onSuccess = function(location){
-			var locations = location;
-
-			localStorage.setItem( 'maxmind_local',  JSON.stringify(locations) );
-			
-			$.cookie("maxmind_location", locations, { expires : 7 });		
-			trigger_locations(locations);
-		};
-
-		if(localStorage.getItem('maxmind_local')){
-			locations = JSON.parse(localStorage.getItem("maxmind_local"))
-			setTimeout(function(){
-				trigger_locations(locations);
-			},700)
-		}else{
-			if ($.cookie('maxmind_location') == undefined && $.cookie('maxmind_location') == null){
-				geoip2.city(onSuccess);
-			}
-		}
-
-		
-		$(document).on('maxmind_locationSet', function(locations){
-            location_data = {
-              ipAddress : locations.message.traits.ip_address,
-              countryCode:locations.message.country.iso_code,
-              countryName:locations.message.country.names.en,
-              cityName  : locations.message.city.names.en,
-              regionName: locations.message.subdivisions[0].names.en,
-              zipCode   : locations.message.postal.code,
-              latitude  : locations.message.location.latitude,
-              longitude : locations.message.location.longitude,
-              timeZone  : locations.message.location.time_zone,
-              source : 'maxmind'
-            }
-
-    			//replacer function
-			function replacer(name, val) {
-		    	// convert RegExp to string
-		    	if ( name === 'location' ) {
-		        	return location_data; // remove from result
-		    	} else {
-		        	return val; // return as is
-		    	}
-			};
-
-   			// passing replacer and indent to stringify
-			maxmind_loc = JSON.stringify(session, replacer);
-        });      
-	}else{
-		maxmind_loc = JSON.stringify(session);
-	}
+if(!localStorage.getItem('maxmind_location')){
+	$(document).on('maxmind_locationSet', function(locations){
+		currentLocation = initialTrigger(locations);
+		session.location = currentLocation;
+		maxmind_location = JSON.stringify(session);
+	})
+}else{
+	currentLocation = JSON.parse(localStorage.getItem("maxmind_location"));
+	session.location = currentLocation;
+	maxmind_location = JSON.stringify(session);
+}
 
 // Maxmind Code Ends
 
@@ -174,7 +137,7 @@ var url_origin = window.location.origin;
 			if(!firstRequest){
 
 				catchSignupException(function(){
-					$("#session_json").val(maxmind_loc); // passing replacer and indent to stringify
+					$("#session_json").val(maxmind_location); // passing replacer and indent to stringify
 					$("#first_referrer").val(($.cookie("fd_fr")||current_loc));
 					$("#first_landing_url").val(($.cookie("fd_flu")||""));
 					$("#first_search_engine").val(($.cookie("fd_se")||""));
@@ -182,12 +145,14 @@ var url_origin = window.location.origin;
 					$("#pre_visits").val(($.cookie("fd_vi")||0));
 					$("#account_timezone_offset").val(getLocalTimeZoneOffset());
 					$("#error_container").empty().hide();
-					var html_lang = $('html')[0].lang || 'en-US';
+					
+					var freshsales_id =  typeof freshsales != "undefined" ? freshsales.anonymous_id : "error freshsales is not defined",
+						html_lang = $('html')[0].lang || 'en-US';
 					$("form#signup").append("<input type='text' value='"+html_lang+"' id='account_lang' name='account[lang]' style='display:none'/>");
+					$("form#signup").append("<input type='text' value='"+freshsales_id+"' id='freshsales_anonymous_id' name='fs_cookie' style='display:none'/>");
 					
 					var signupString = $(form).serializeArray();	
 					var form_type = $(form).data('form-type');
-
 					if(form_type != undefined && form_type == 'old'){
 						$.each(signupString, function(i, val){
 							if(val.name == "user[name]"){

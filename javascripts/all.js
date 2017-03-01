@@ -30,3 +30,4 @@
 //= require jquery.boxroll-slider.js
 //= require language-switcher.js
 //= require new-resources.js
+//= require countrylocation.js

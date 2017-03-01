@@ -43,15 +43,25 @@
 	color: #fff;
 	position: relative;
 	padding-top: 170px;
-	h1{
+	h1, h3{
 		font-size: 50px;
 		text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
 		font-weight: $font-weight-normal;
+        line-height: 1;
 	}
 	h2{
 		font-size: 40px;
 		font-weight: $font-weight-light;
 	}
+  
+  h3{
+    span{
+        display: block;
+        font-size: 40px;
+        font-weight: 300;
+        margin-bottom: 10px;
+    }
+  }
 }
 
 .tour-slideshow{
@@ -187,8 +197,8 @@ only screen and (                min-resolution: 2dppx) {
 .left-nav{
 	background: url(#{$cdn_path}/images/tour/tour-banner-left-arrow.png) no-repeat;
 	background-size: 25px;
-	margin-top: 69px;
-	left: -60px;
+	/*@replace:67px*/ margin-top: 69px;
+	/*@noflip*/left: -60px;
 }
 .left-nav:hover,.right-nav:hover{ opacity: 1; }
 
@@ -434,7 +444,7 @@ only screen and (                min-resolution: 2dppx) {
 	background-color: #fff;
 	height: 60px;	
 	margin-bottom: 20px;
-	margin-left: -2px;
+	/*@noflip*/margin-left: -2px;
 	transform: rotate(-1deg);
 	-moz-transform: rotate(-1deg);
 	-webkit-transform: rotate(-1deg);
@@ -448,7 +458,7 @@ only screen and (                min-resolution: 2dppx) {
 		transform: rotate(12deg);
 		-moz-transform: rotate(12deg);
 		-webkit-transform: rotate(12deg);
-		margin-left: -5px;
+		/*@noflip*/margin-left: -5px;
 	}
 	.secondary-btmlink-2{
 		width: 100%;
@@ -461,7 +471,7 @@ only screen and (                min-resolution: 2dppx) {
 		position: relative;
 		top: -58px;
 		overflow: hidden;
-		box-shadow: 6px -37px 0px 0 #fff;
+		/*@noflip*/box-shadow: 6px -37px 0px 0 #fff;
 	}
 	.secondary-btmlink-3{
 		width: 200px;
@@ -473,10 +483,10 @@ only screen and (                min-resolution: 2dppx) {
 		-webkit-transform: rotate(12deg);
 		position: absolute;
 		top: -101px;
-		right: 5px;
+		/*@noflip*/right: 5px;
 		z-index: 2;
 		padding-top: 30px;
-		box-shadow: 18px 0px 0px 0 #f1f1f1;
+		/*@noflip*/box-shadow: 18px 0px 0px 0 #f1f1f1;
 	}
 	.secondary-multibtmlink{
 		position: relative;
@@ -488,9 +498,9 @@ only screen and (                min-resolution: 2dppx) {
 		transform: rotate(12deg);
 		-moz-transform: rotate(12deg);
 		-webkit-transform: rotate(12deg);
-		margin-left: -5px;
-		left: 0;
-		box-shadow: 6px 22px 0px 0 #fff;
+		/*@noflip*/margin-left: -5px;
+		/*@noflip*/left: 0;
+		/*@noflip*/box-shadow: 6px 22px 0px 0 #fff;
 	}
 	.secondary-multibtmlink-2{
 		width: 80%;
@@ -502,9 +512,9 @@ only screen and (                min-resolution: 2dppx) {
 		-webkit-transform: rotate(-1deg);
 		position: relative;
 		top: -78%;
-		float: left;
+		/*@noflip*/float: left;
 		overflow: hidden;
-		box-shadow: 6px -52px 0px 0 #fff;
+		/*@noflip*/box-shadow: 6px -52px 0px 0 #fff;
 	}
 	.secondary-multibtmlink-3{
 		width: 20%;
@@ -516,11 +526,11 @@ only screen and (                min-resolution: 2dppx) {
 		-webkit-transform: rotate(9deg);
 		position: relative;
 		top: -103%;
-		right: 5px;
+		/*@noflip*/right: 5px;
 		z-index: 2;
-		float: right;
+		/*@noflip*/float: right;
 		padding-top: 30px;
-		box-shadow: 2px -16px 0px 10px #fff;
+		/*@noflip*/box-shadow: 2px -16px 0px 10px #fff;
 	}
 
 }
@@ -536,26 +546,28 @@ only screen and (                min-resolution: 2dppx) {
 		-webkit-transform: rotate(12deg);
 		position: absolute;
 		top: -101px;
-		right: 5px;
+		/*@noflip*/right: 5px;
 		z-index: 2;
 		padding-top: 30px;
-		box-shadow: 18px 0px 0px 0 #f1f1f1;
+		/*@noflip*/box-shadow: 18px 0px 0px 0 #f1f1f1;
 	}
 
 
 .tour-content-wrapper{
 	position: relative;
 	padding-bottom: 60px;
-	h1{
+	h1, h3{
 		font-size: 42px;
 		font-weight: $font-weight-light;
 	}
 	h2{
 		@extend .gamma;
 		font-weight: $font-weight-light;
+        text-align: left;
 	}
 	p{
 		@extend .default;
+        text-align: left;
 	}
 }
 .tour-grey{
@@ -786,9 +798,9 @@ only screen and (                min-resolution: 2dppx) {
 	width: 29.5%;
 	float: left;
 	margin-left: 3.44828%;
-	.tour-widget-header{ height: 45px; }
+	.tour-widget-header{ min-height: 45px; }
 	.tour-widget-img{ float: left; }
-	.tour-widget-title{ float: left; width: 265px; padding-left: 10px; }
+	.tour-widget-title{ float: left; width: 265px; padding-left: 10px; text-align: left;}
 	h4{ 
 		font-size: 24px;
 		font-weight: $font-weight-light; 
@@ -813,8 +825,8 @@ only screen and (                min-resolution: 2dppx) {
 	margin: 0 auto 20px;
 	border-bottom: 1px solid #f1f1f1;
 	.tour-author{ 
-		float: right;
-		.ta-name,.ta-comp{ color: #16a085; display: block; text-align: right;  }
+		/*@noflip*/float: right;
+		.ta-name,.ta-comp{ color: #16a085; display: block; /*@noflip*/text-align: right;  }
 		.ta-name{ font-weight: $font-weight-normal; }
 		.ta-comp{ font-weight: $font-weight-light; }
 	}
@@ -844,14 +856,14 @@ only screen and (                min-resolution: 2dppx) {
 }
 .tour-previous .prev-title:after {
 	content: '';
-	border-right: 2px solid #999999;
+	/*@noflip*/border-right: 2px solid #999999;
 	height: 30px;
-	padding-left: 20px;
+	/*@noflip*/padding-left: 20px;
 }
 .tour-next .next-title:before {
 	content: '';
-	border-left: 2px solid #999999;
-	padding-right: 20px;
+	/*@noflip*/border-left: 2px solid #999999;
+	/*@noflip*/padding-right: 20px;
 }
 .tour-bottom-strip{
 	padding: 40px 0;
@@ -882,30 +894,30 @@ only screen and (                min-resolution: 2dppx) {
 }
 .loc1{
 	top: 265px;
-	left: 180px;
+	/*@noflip*/left: 180px;
 }
 .loc2{
-	right: 40px;
+	/*@noflip*/right: 40px;
 	bottom: 92px;
 }
 .loc3{
 	bottom: 60px;
-	left: 335px;
+	/*@noflip*/left: 335px;
 }
 .loc4{
-	left: 255px;
-	right: 0;
+	/*@noflip*/left: 255px;
+	/*@noflip*/right: 0;
 	margin: 0 auto;
 	top: 210px;
 }
 .loc5{
-	right: -25px;
+	/*@noflip*/right: -25px;
 	top: 220px;
 }
 .pointer{
 	visibility: hidden;
 	span{
-		padding-left: 30px;
+		/*@noflip*/padding-left: 30px;
 	}
 	.pointer-lang{
 		display: block;
@@ -1628,7 +1640,7 @@ only screen and (                min-resolution: 2dppx) {
 	width: 240px;
 	height: 200px;
 	display: inline-block;
-	margin-left: 6%;
+	/*@noflip*/margin-left: 6%;
 	margin-bottom: 5%;
 	background-color: #fff;
 	img{

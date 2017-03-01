@@ -15,6 +15,9 @@
       background-image: -webkit-image-set( url(#{$cdn_path}/images/big-logo.png) 3.6x);
       margin-left: 20px;
   	}
+    em.logo{
+        display: none;
+    }
   	.header{
 	    height: auto;
 	    padding-bottom: 0;
@@ -61,6 +64,11 @@
 	    top: 0;
 	    width: auto;
 	    box-shadow: none;
+        
+        .nav-link{
+            text-align: left;
+            margin-left: 20px;
+        }
 	     .nav-menu-info{
 	      display: none !important;
 	      text-align: center;
@@ -129,7 +137,7 @@
 	  		.sc-unit{
 	  			float: left;
 	  			width: 30.03448%;
-				padding-right: 20px;
+				/*@noflip*/padding-right: 20px;
 				h3{ font-size: 24px; }
 				p {
 					font-size: 16px; 
@@ -145,7 +153,7 @@
 
   	#gcs-images{ 
   		margin-top: 0;
-  		margin-right: 125px;
+  		/*@noflip*/margin-right: 125px;
   		.img-frame  img { max-width: 100%; }
   	}
   	.content-strip .fc { padding-top: 20px; }
@@ -178,7 +186,7 @@
 	// Sign-up page
 
 	.signup-banner-strip {
-		.signup-big{ margin-right: 0; }
+		.signup-big{ /*@noflip*/margin-right: 0; }
 		.small.muted{ font-size: 11px; }
 	}
 
@@ -391,6 +399,8 @@
  .helpdesk-features .helpdesk-features-content h4{
     font-size: 20px;
     margin-left: 10px;
+     display: block;
+     text-align: left;
   }
 
   .helpdesk-pricing-feature .helpdesk-pricing .fg-3 .hp-s-list, .helpdesk-pricing-feature .helpdesk-pricing .fg-3 .hp-c-list{
@@ -452,7 +462,7 @@
 .home-banner-container{
 	background-position: 50% 50%;
 	position: static;
-	height: 600px;
+	height: 600px !important;
 	.fd-home-content{
 		h2{ width: 80%; } 
 		.signup-btn{ font-size: 18px; }
@@ -467,14 +477,14 @@
 		width: auto;
 		.fg-4{
 			width: 30%;
-			margin-right: 2%;
+			/*@noflip*/margin-right: 2%;
 		}
 	}
 }
 
 .fd-header .fd-logo{
 	margin-left: 20px;
-	background-image: url(#{$cdn_path}/images/big-logo.png);
+	//background-image: url(#{$cdn_path}/images/big-logo.png);
 }	
 
 .home-tour-wrapper{
@@ -483,7 +493,7 @@
 
 		.tour-link-content
 		{
-			margin-right: 20px;
+			/*@noflip*/margin-right: 20px;
 		}
 
 		.tour-link-content h3{
@@ -492,14 +502,14 @@
 			font-size: 32px;
 		}
 		.right-nav{ margin-top: -75px;
-			right: 0px;
-			margin-right: 20px;
+			/*@noflip*/right: 0px;
+			/*@noflip*/margin-right: 20px;
 		 }
 	}
 }
 .home-customers h1{ font-size: 42px; }
 .company-logo-blocks .company-block{
-	margin-left: 12%;
+	/*@noflip*/margin-left: 12%;
 }
 
 .company-logo-blocks{
@@ -683,7 +693,7 @@ background-color: #f1f1f1;
     display: inline-block;
     height: 174px;
     margin-bottom: 5%;
-    margin-left: 4%;
+    /*@noflip*/margin-left: 4%;
     position: relative;
     width: 200px;
 }
@@ -1011,10 +1021,14 @@ background: url("#{$cdn_path}/images/tour/banner-images/Security-1X.png") no-rep
 {
 	font-size: 27px;
 }
-.tour-banner-content h1
+.tour-banner-content h1, .tour-banner-content h3
 {
 	font-size: 36px;
 	text-shadow:0 0 0px black;
+  
+    span{
+      font-size: 24px;
+    }
 }
 
 .ipad-top-space
@@ -1091,7 +1105,7 @@ margin-top: 39px;
 }
 .right-nav
 {
-	right: 0px;
+	/*@noflip*/right: 0px;
 }
 
 .tour-signup-snipe, .bottom-bar
@@ -1182,7 +1196,7 @@ padding-top: 6px;
 
 .pr-sign-link .right-nav
 {
-	margin-left: 10px;
+	/*@noflip*/margin-left: 10px;
 }
 
 .pr-sign-link .prlink-text
@@ -1888,8 +1902,6 @@ padding-top: 30px;
 	.mail, .forum, .social{ margin-right: 12px; }
 
 	.support-content{ width: 80%; }
-
-	.lp-signup .b-form{ width: 270px; }
 }
 
 .lp-plans{
@@ -1898,34 +1910,12 @@ padding-top: 30px;
 
 	.f-sprout{ font-size: 24px; }
 
-	.sprout, .blossom, .garden, .estate {
+	.sprout, .blossom, .garden, .estate,.forest {
 		width: 166px;
 		height: 155px;
 		margin: 0 auto;
-	}
-	.sprout {
-		background-position: -123px 0px;
-		background-size: 290px;
-	}
-
-	.blossom {
-		background-position: -124px -179px;
-		background-size: 290px;
-	}
-
-	.garden {
-		background-position: -124px -365px;
-		background-size: 290px;
-	}
-
-	.estate{
-		background-position: -122px -544px;
-		background-size: 290px;
-	}
-	.forest{
-		width: 160px;
-		height: 155px;
-		background-size: 160px;
+		background-size: contain;
+		display: block;
 	}
 }
 
@@ -2139,6 +2129,11 @@ padding-top: 30px;
 		}
 	} 
 }
+    
+    .banner.support-light .banner-form{
+        float: none;
+        margin: 20px auto 0;
+    }
 
 @media only screen and (max-width: 1040px) and (min-width: 1000px){
 

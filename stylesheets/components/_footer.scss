@@ -102,8 +102,9 @@ footer{
 				width: 100%; 
 				font-weight: $font-weight-light;
 				background-color: $footer-bg;
-				border-right: 1px solid #239f85;
+				/*@noflip*/border-right: 1px solid #239f85;
 				outline: none;
+                text-align: left;
 			}
 		}
 		button { width: 70px; } 
@@ -215,7 +216,7 @@ footer{
 	@extend .small;
 	padding: 20px 0;
 	color: #999999;
-	text-align: right;
+	/*@noflip*/text-align: right;
 }
 
 .copy-separator { 

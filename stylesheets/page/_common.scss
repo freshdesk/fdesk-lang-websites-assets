@@ -72,6 +72,7 @@ a,a:hover, a:focus, a:active{ outline: none; }
 
 /* ===== Inner Pages ===== */
 .widget{
+    /*@replace: 0px !important*/border-bottom-width: 0px;
 	padding-bottom: 20px;
 	padding-top: 20px;
 	.w-title{
@@ -660,9 +661,13 @@ img[src*="insight.adsrvr.org"]{
 	}
 }
 
+.carriersLink{
+    display: none;
+}
+
 /* RTL Classes */
 
-.fg-7, .fg-4{
+.fg-7, .fg-4, .fg-8{
     /*@noflip*/ float:left;
 }
 .fg-4, .fg-8{
