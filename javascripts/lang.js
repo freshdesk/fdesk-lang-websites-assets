@@ -24,7 +24,7 @@ window['LITERALS'] = {
 		},
 		already_exists: 'This Helpdesk already exists',
 		email_like:'This Helpdesk already exists',
-		thankyoumsg:["Setting up your self service portal", 
+		thankyoumsg:["Setting up your self service portal",
 					"Cranking up your knowledge base",
 					"Configuring your Community Platform", "_redirect"]
 	},
@@ -53,7 +53,7 @@ window['LITERALS'] = {
 		},
 		already_exists: 'This Helpdesk already exists',
 		email_like:'This Helpdesk already exists',
-		thankyoumsg:["Setting up your self service portal", 
+		thankyoumsg:["Setting up your self service portal",
 					"Cranking up your knowledge base",
 					"Configuring your Community Platform", "_redirect"]
 	},
@@ -76,7 +76,7 @@ window['LITERALS'] = {
 		},
 		already_exists: 'Esse apoio técnico já existe',
 		email_like:"O e-mail deve ter a forma de um endereço de e-mail",
-		thankyoumsg:["Configurar o seu portal de auto-atendimento", 
+		thankyoumsg:["Configurar o seu portal de auto-atendimento",
 					"Acionando sua base de conhecimento",
 					"Configurando sua Plataforma Comunidade", "_redirect"]
 	},
@@ -99,7 +99,7 @@ window['LITERALS'] = {
 		},
 		already_exists: 'Dieser Helpdesk existiert bereits',
 		email_like:'Die E-Mail sollte wie eine E-Mail-Adresse aussehen',
-		thankyoumsg:["Einrichten Ihres Self-Service-Portal", 
+		thankyoumsg:["Einrichten Ihres Self-Service-Portal",
 					"Kurbelt Ihre Wissensbasis",
 					"Konfigurieren Sie Ihre Community-Plattform", "_redirect"]
 	},
@@ -122,7 +122,7 @@ window['LITERALS'] = {
 		},
 		already_exists: 'Este nombre de departamento técnico ya existe',
 		email_like:'El correo electrónico debe completarse como una dirección de correo electrónico normal',
-		thankyoumsg:["Configuración del portal de autoservicio", 
+		thankyoumsg:["Configuración del portal de autoservicio",
 					"Poniendo encima de su base de conocimientos",
 					"Configuración de la Plataforma Comunitaria", "_redirect"]
 	},
@@ -145,7 +145,7 @@ window['LITERALS'] = {
 		},
 		already_exists: 'Ce service d&#39;assistance existe déjà',
 		email_like:'L&#39;adresse e-mail doit ressembler à une adresse e-mail',
-		thankyoumsg:["Configuration de votre portail en self-service", 
+		thankyoumsg:["Configuration de votre portail en self-service",
 					"Démarrage de votre base de connaissances",
 					"Configuration de votre plate-forme communautaire", "_redirect"]
 	},
@@ -168,7 +168,30 @@ window['LITERALS'] = {
 		},
 		already_exists: 'Deze helpdesk bestaat al',
 		email_like:'E-mail moet er uitzien als een e-mailadres',
-		thankyoumsg:["Het opzetten van uw self service portal", 
+		thankyoumsg:["Het opzetten van uw self service portal",
+					"Zwengelen uw kennis",
+					"Configureren van uw Gemeenschap Platform", "_redirect"]
+	},
+	'nl-BE' : {
+		url: 'thank-you/',
+		messages:{
+			"account[name]"  : {
+				required: "U moet ons vertellen waar u werkt",
+				minlength: "Bedrijfsnaam moet uit meer dan 2 karakters bestaan"
+			},
+			"account[domain]": {
+				required: "Geef uw helpdesk een naam",
+				maxlength: "De naam van de helpdesk mag uit niet meer dan 25 tekens bestaan",
+				subdomain:"Alleen letters, cijfers en &#39;-&#39; toegestaan"
+			},
+			"user[email]":{
+				required: "Vul een geldig e-mailadres in",
+				email: "E-mail moet er uitzien als een e-mailadres"
+			}
+		},
+		already_exists: 'Deze helpdesk bestaat al',
+		email_like:'E-mail moet er uitzien als een e-mailadres',
+		thankyoumsg:["Het opzetten van uw self service portal",
 					"Zwengelen uw kennis",
 					"Configureren van uw Gemeenschap Platform", "_redirect"]
 	}
