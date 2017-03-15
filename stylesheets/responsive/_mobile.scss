@@ -2870,5 +2870,183 @@ padding-bottom: 5px;
       .landing-contact{
           display: none;
       }
+  
+    
+  // Pricing Page New design -2017
+  .banner.pricing-banner{
+    padding-top: 40px;
+  }
+
+  .pricing-plan-container{
+    padding: 0 15px;
+    .pr-plan-list{
+      width: 96%;
+      padding-bottom: 0;
+      margin: auto;
+      margin-bottom: 30px;
+      .pr-body{
+        padding: 0 35px;
+      }
+      .pr-feature-list{
+        min-height: auto;
+        p{
+          line-height: 1.4;
+        }
+        li{
+          span{
+            width: 81%;
+          }
+        }
+      }
+      &.pl-c-es{
+        width: 96%;
+        margin-top: 0;
+        margin: auto;
+        margin-bottom: 30px;
+        .pr-mob-trig{
+          p:before{
+            border-color: transparent transparent #eef8f6;
+          }
+        }
+      }
+      &.pl-c-sp,&.pl-c-ga,&.pl-c-ft{
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .pr-banner-img {
+        margin-bottom: -6px;
+        #animation_container{
+          height: 100%;
+        }
+      }
+      .pr-value{
+        border-bottom: none;
+      }
+      .pr-mob-trig{
+        border-top: 1px solid rgba(22, 160, 133, 0.3);
+        margin-top: 20px;
+        padding-bottom: 20px;
+        cursor: pointer;
+        p{
+          font-size: 14px;
+          position: relative;
+          font-weight: 400;
+          color: #666;
+          &:after{
+            content: "";
+            position: absolute;
+            display: block;
+            font-size: inherit;
+            width: 22px;
+            height: 22px;
+            left: 47%;
+            top: 28px;
+          }
+          &:after{
+            background: url(../images/pricing/view-details-down.svg)no-repeat;
+            background-size: 22px;
+            left: 46%;
+          }
+        }
+      }
+      &.active{
+        .pr-value{
+          border-bottom: 1px solid rgba(22, 160, 133, 0.3);
+        }
+        .pr-list-signup{
+          padding-top: 20px;
+        }
+        &.pl-c-es .pr-mob-trig{
+          p:before{
+            border-color: #eef8f6 transparent transparent
+          }
+        }
+        .pr-mob-trig{
+          p{
+            &:after{
+              background: url(../images/pricing/view-details-up.svg)no-repeat;
+              background-size: 22px;
+            }
+          }
+        }
+      } /* active end tag */
+      .pr-list-signup{
+        a.btn{
+          padding: 7px 14px;
+        }
+      }
+    }/* pr-plan-list end tag */
+  }
+  .pr-package{
+    &.pr-month{ left: -85px; }
+    &.pr-annual{
+      right: -95px;
+      .pr-offer{
+        display: none;
+        margin-left: 0;
+        top: 4px;
+        left: -12px;
+        &:before{
+          border-right-color: transparent;
+          border-bottom-color: #4d4d4d;
+          top: -13px;
+          left: 38%;
+        }
+      }
+    }
+  }
+  .pl-features{
+    padding: 0 15px;
+    .pl-features-link{
+      a{
+        margin-top: 10px;
+        display: block;
+        line-height: 1.1;
+      }
+    }
+  }
+  .detail-pricing-desc{ 
+    padding: 20px 10px 10px;
+    h5{
+      padding: 15px 0;
+    }
+    p{
+      font-size: 14px;
+      line-height: 1.5;
+    }
+  }
+
+  .pricing-articles .pr-faq{
+    h3{
+      padding-bottom: 0;
+    }
+    article{
+      padding-top: 0;
+      &.fg-6.omega{
+        padding-top: 20px;
+      }
+    }
+  }
+  .phone-app-download{
+    @extend %align-center;
+  }
+
+  #detailed_pricing {
+    width: 280px !important;
+    @extend %align-center;
+  }
+  #forest-form{ 
+    width: auto; 
+    .demo_form{ 
+      .textfield{ 
+        input{
+          padding: 5px 0 5px 30px;
+        }
+      }
+    }
+  }
+  .detail-pricing-wrapper {
+    display: none;
+  }
       
 } /* END TAG */

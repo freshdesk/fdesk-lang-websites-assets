@@ -2136,13 +2136,106 @@ padding-top: 30px;
     }
 
 @media only screen and (max-width: 1040px) and (min-width: 1000px){
-
 	.fd-dark-bg,.fd-teal-bg,.fd-light-bg{
 		padding-bottom: 130px;
 	}
-
-
 }
 
+  
+    // pricing page new design - 2017
+
+    .pricing-plan-container .pr-plan-list.pl-c-es{ margin-top: -27px; }
+    .pr-plan-list{
+      .pr-banner-img #animation_container{ height: 98px; }
+      &.pl-c-ft{
+        .pr-header{
+          padding: 9px 5px;
+        }
+      }
+      .pr-header{
+          padding: 15px 5px;
+          h2{
+            margin-bottom: 0;
+          }
+          p{
+            font-size: 12px;
+            line-height: 1.1;
+            padding-top: 3px;
+            margin: 0;
+          }
+       }
+       .pr-value{
+         h2{ margin-bottom: 0; }
+         .pr-value-period{
+           font-size: 12px;
+           margin: 0;
+         }
+       }
+       .pr-feature-list{
+         min-height: 340px;
+         padding-top: 10px;
+         p{
+           font-size: 12px;
+           line-height: 1.4;
+         }
+         li{
+           .pr-tick{
+             width: 15px;
+             height: 15px;
+             background-size: 15px;
+           }
+           span{
+             width: 80%;
+             line-height: 1.2;
+             font-size: 13px;
+           }
+         }
+       }/* pr-feature-list end tag */
+       .pr-list-signup{
+         padding-top: 15px;
+         a.btn{
+           font-size: 12px;
+           padding: 5px 10px;
+         }
+       }
+     }
+     @media only screen and (max-width: 1120px) and (min-width: 1000px) {
+       .pr-plan-list .pr-banner-img #animation_container{
+         height: 133px;
+       }
+       .pricing-plan-container .pr-plan-list.pl-c-es{
+         margin-top: -35px;
+       }
+       .pr-plan-list{
+         &.pl-c-ft{
+           .pr-header{
+              padding: 15px 5px;
+           }
+         }
+        .pr-feature-list{
+          min-height: 320px;
+          p{ font-size: 13px; }
+            li span {
+                width: 84%;
+            }
+        }
+         .pr-list-signup{
+           padding-top: 0;
+           a.btn{
+             font-size: 16px;
+             padding: 6px 15px;
+           }
+         }
+       }
+
+    }
+    @media only screen and (max-width: 719px) and (min-width: 500px) {
+        .pricing-plan-container .pr-plan-list .pr-mob-trig p{
+            &:before{
+                left: 46%;
+                top: 4px;
+            }
+        }
+    }
 
 }
