@@ -1145,7 +1145,8 @@
     .fd-home-sticky,.fd-page-sticky{
       .site-nav{
         z-index: 1001;
-        position: absolute;
+        position: absolute
+        top:40px;
         ul li{
           color: #333333;
         }
