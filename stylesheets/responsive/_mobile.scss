@@ -1129,8 +1129,7 @@
  * @author Arun Maxwell Jerry
  * New site responsive codes
  */
-
-
+    
 /* New Home page */
 
 .l-page{
@@ -1146,6 +1145,7 @@
       .site-nav{
         z-index: 1001;
         position: absolute;
+        top:40px;
         ul li{
           color: #333333;
         }
@@ -1253,13 +1253,13 @@
   margin: 0 auto;
 }
 
-.company-logo-blocks{
+.home-customers .company-logo-blocks{
   .company-block{
     width: 40%;
     height: 100px;
     /*@noflip*/margin-left: 6%;
     img{
-      top: 35%;
+      vertical-align: middle;
       width: 80%;
     }
     &:after{ display: none; }
