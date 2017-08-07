@@ -21,7 +21,7 @@ $(document).on("ready",function(){
 	languages.push({key:'ru', url: 'http://freshdesk.ru',value:'Pусский'});
 	languages.push({key:'ja-JP', url: 'http://freshdesk.jp',value:'日本語'});
   languages.push({key:'ar', url: 'http://freshdesk.ae',value:'العربية'});
-	languages.push({key:'he', url: 'http://freshdesk.co.il',value:'עִברִית'});
+	// languages.push({key:'he', url: 'http://freshdesk.co.il',value:'עִברִית'});
 	//languages.push({key:'ar-QA', url: 'http://freshdesk.com.qa',value:'العربية'});
 
 	var current_language = $('html').attr('lang');
