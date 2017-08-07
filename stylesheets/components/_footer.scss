@@ -19,9 +19,9 @@ footer{
 		padding-top: 20px;
         /*@replace: right*/text-align: left;
 		li{
-			@extend .zeta; 
+			@extend .zeta;
 			font-weight: $font-weight-light;
-			color: #239f85;			
+			color: #239f85;
 			span{
 				color: $footer-link;
 				text-transform: none;
@@ -45,9 +45,9 @@ footer{
 }
 /*.footer-wrapper .parent2{ @include span-columns(4 omega, 12);}*/
 
-.f-contact{	
+.f-contact{
     text-align: left;
-	i{ 
+	i{
 		display: inline-block;
 		float: left;
 		width: 25px;
@@ -56,15 +56,15 @@ footer{
 		margin-right: 7px;
 		color: #239f85;
 	}
-	span{ 
+	span{
 		display: inline-block;
 		width: 220px;
 	}
 	.f-phone{
 		color: $footer-section-heading;
 		a{
-			@extend .epsilon; 
-			font-weight: $font-weight-semibold;		
+			@extend .epsilon;
+			font-weight: $font-weight-semibold;
 		}
 		span{ width: auto; color: #8e8e8e; }
 	}
@@ -76,19 +76,20 @@ footer{
 	.f-mail-span{ padding-top: 4px;  width: 190px; }
 
 	.icon-mail{ @extend .default; }
-	
-	.f-location{ 
+
+	.f-location{
 		@extend .small;
-		b{ 
-			@extend .default; 
+		b{
+			@extend .default;
 			color: $footer-section-heading;
 		}
-	} 
+	}
 	.blog-subs{
-		padding-top: 10px; 
+		padding-top: 10px;
 		p{
 			margin: 0;
 			font-size: 12px;
+			/*@replace: right*/float:none;
 		}
 	}
 	.subscribe {
@@ -98,8 +99,8 @@ footer{
         /*@replace: right*/float: none;
 		.mktError{
 			width: 180px;
-			input{ 
-				width: 100%; 
+			input{
+				width: 100%;
 				font-weight: $font-weight-light;
 				background-color: $footer-bg;
 				/*@noflip*/border-right: 1px solid #239f85;
@@ -107,14 +108,14 @@ footer{
                 text-align: left;
 			}
 		}
-		button { width: 70px; } 
+		button { width: 70px; }
 		.icon-right{
 			float: none;
 			margin: 0;
 			padding: 0;
 			/*@noflip*/margin-left: 20px;
 		}
-	} 
+	}
 }
 
 .contact-us{
@@ -146,14 +147,14 @@ footer{
 		}
 		&:hover{
 			background-color: #3a5795;
-		}		
+		}
 	}
 	.twitter{
 		i{
 			font-size: 15px;
 			/*@noflip*/left: 3px;
 			top: 2px;
-		}		
+		}
 		&:hover{
 			background-color: #55acee;
 		}
@@ -193,7 +194,7 @@ footer{
 	}
 }
 
-.footer-illusion{ 
+.footer-illusion{
 	height: 85px;
 	margin-bottom: -126px;
 	position: relative;
@@ -219,7 +220,7 @@ footer{
 	/*@noflip*/text-align: right;
 }
 
-.copy-separator { 
+.copy-separator {
 	border-top: 1px solid #2e2d2d;
 	margin-top: 50px;
 	height: 66px;
@@ -236,10 +237,10 @@ footer{
 	}
 	.mktError{ position: relative; }
 	.splRedMessage{
-		top: 35px; 
-		position: absolute; 
-		color: rgb(155, 106, 106); 
-		width: 280px; 
+		top: 35px;
+		position: absolute;
+		color: rgb(155, 106, 106);
+		width: 280px;
 		left: 11px !important;
 		@extend .small;
 	}
@@ -250,7 +251,7 @@ footer{
 .apple,.android{opacity: 0.3}
 .apple:hover,.android:hover{
 	opacity: 0.6;
-} 
+}
 .app-widget{
     /*@replace: right*/text-align: left;
 }
