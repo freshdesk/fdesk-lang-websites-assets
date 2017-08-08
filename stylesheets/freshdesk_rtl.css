@@ -30620,6 +30620,12 @@ div#usa {
   font-size: 30px;
 }
 
+/* line 152, ../../source/assets/stylesheets/page/_language.scss */
+
+.he .contactAddress .fg-4:first-of-type {
+  display: none;
+}
+
 /* line 2, ../../source/assets/stylesheets/site/_freshdesk.scss */
 
 .nav-tour-panel {

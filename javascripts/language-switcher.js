@@ -18,7 +18,7 @@ $(document).on("ready",function(){
 	languages.push({key:'ko', url: 'http://freshdesk.kr',value:'한국어'});
 	languages.push({key:'zh-CN', url: 'http://cn.freshdesk.com',value:'中文简体‍'});
 	languages.push({key:'sv-SE', url: 'http://se.freshdesk.com',value:'Svenska'});
-	languages.push({key:'ru', url: 'http://freshdesk.ru',value:'Pусский'});
+	languages.push({key:'ru-RU', url: 'http://freshdesk.ru',value:'Pусский'});
 	languages.push({key:'ja-JP', url: 'http://freshdesk.jp',value:'日本語'});
   languages.push({key:'ar', url: 'http://freshdesk.ae',value:'العربية'});
 	// languages.push({key:'he', url: 'http://freshdesk.co.il',value:'עִברִית'});
