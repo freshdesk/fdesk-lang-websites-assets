@@ -51,7 +51,7 @@ $(document).ready(function(){
 	          	"Phone": {
 	                "required": true,
 					"number": true,
-	                "minlength": 10
+	                "minlength": 6
 	            },
 			    "Number_of_Agents":{
 			  		"number": true
@@ -68,7 +68,7 @@ $(document).ready(function(){
 				},
 				"Phone": {
 	                required: "Please enter your phone number",
-	                minlength: 'Please enter at least 10 digits.',
+	                minlength: 'Please enter at least 6 digits.',
 					number:"Please enter a valid number."
 	            },
 			    "Number_of_Agents":{
