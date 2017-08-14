@@ -89,11 +89,15 @@ $(document).ready(function(){
 				"company" : {
 					"Name" : $("#demo-company_name").val()
 				}
-				
 			}
 			var identifier = $("#Email").val();
 			freshsales.identify(identifier, demo_request);
-	        form.submit();
+	        //form.submit();
+            
+            form.on("submit", function(e) {
+                e.preventDefault();
+                return false;
+            });
 	    }
   	});
     
