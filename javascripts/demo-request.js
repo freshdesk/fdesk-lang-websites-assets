@@ -14,7 +14,7 @@ $(document).ready(function(){
 	  	data['longitude'] 	= locations.message.location.longitude;
 	  	data['timeZone']  	= locations.message.location.time_zone;
 	    data['source'] 		= 'maxmind';
-	    
+
 	    return data;
 	}
 
@@ -27,7 +27,7 @@ $(document).ready(function(){
 		$('#cont_name').val(currentLocation.countryName)
 	}
 
-	$("#demo-form .demo_form").validate({
+	$("#demo-form .demo_form , #form_validate.demo_form").validate({
 	  	highlight: function(element) {
 			$(element).parents(".textfield").addClass("error");
 	    },
@@ -37,7 +37,7 @@ $(document).ready(function(){
 	    errorPlacement: function(error, element){
 	    	$(element).parents(".textfield").append(error);
 	    },
-		errorElement: "em", 
+		errorElement: "em",
 		onkeyup: false,
 	      // Specify the validation rules
 	      rules: {
@@ -57,10 +57,10 @@ $(document).ready(function(){
 			  		"number": true
 		  		}
 	      	},
-	      
+
 	      // Specify the validation error messages
 	        messages: {
-	          	
+
 	            "Name": "Please enter your name",
 	            "Email":{
 	            	required: "Please enter a valid email",
@@ -75,11 +75,11 @@ $(document).ready(function(){
 			  		number:"Please enter a valid number."
 		  		}
 	        },
-	      
+
 	    submitHandler: function(form) {
 			var demo_request = {
 				"Last name" : $('#LastName').val(),
-				"Email": $('.sc-email').val(),
+				"Email": $('.sc-email, .wb-email').val(),
 				"Work": $('#Phone').val(),
 				"Number of Agents" : $('#Number_of_Agents').val(),
 				"Country":$('#cont_name').val(),
@@ -90,17 +90,12 @@ $(document).ready(function(){
 					"Name" : $("#demo-company_name").val()
 				}
 			}
-			var identifier = $("#Email").val();
+			var identifier = $("#Email, #emailfield").val();
 			freshsales.identify(identifier, demo_request);
-	        //form.submit();
-            
-            form.on("submit", function(e) {
-                e.preventDefault();
-                return false;
-            });
-	    }
+	    form.submit();
+		}
   	});
-    
+
     // Input Hidden Fields in Demo form
 
     //$('#demo-form form input[type="hidden"]').remove();
@@ -111,6 +106,6 @@ $(document).ready(function(){
 
     var demoHiddenFields = demoHiddenInput['items'];
 
-    $('#demo-form form .lastInput').after(demoHiddenFields); 
+    $('#demo-form form .lastInput').after(demoHiddenFields);
 
 });
