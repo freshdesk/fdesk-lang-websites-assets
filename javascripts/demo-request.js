@@ -76,7 +76,8 @@ $(document).ready(function(){
 		  		}
 	        },
 
-	    submitHandler: function(form) {
+	    submitHandler: function(form, e) {
+				e.preventDefault();
 			var demo_request = {
 				"Last name" : $('#LastName').val(),
 				"Email": $('.sc-email, .wb-email').val(),
@@ -92,13 +93,20 @@ $(document).ready(function(){
 			}
 			var identifier = $("#Email, #emailfield").val();
 			freshsales.identify(identifier, demo_request);
-	    form.submit();
 		}
   	});
 
-    // Input Hidden Fields in Demo form
 
-    //$('#demo-form form input[type="hidden"]').remove();
+		$(".demo_form").on("submit", function(e) {
+			e.preventDefault();
+				if($(".demo_form").valid()) {
+					setTimeout(function(){
+						window.location.href = '/demo-completion/';
+					},1000);
+				}
+		});
+
+    // Input Hidden Fields in Demo form
 
     var demoHiddenInput = {
         "items":"<noscript> <input type='hidden' name='noscript' id='no_script' value='No Script Support'> </noscript><input type='hidden' name='first_referrer' id='first_referrer' value='' /><input type='hidden' name='first_landing_url' id='first_landing_url' value='' />"
