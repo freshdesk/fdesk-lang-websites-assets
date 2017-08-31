@@ -77,9 +77,7 @@ $(document).ready(function() {
       }
     },
 
-    submitHandler: function(form, e) {
-      e.preventDefault();
-      //console.log(1);
+    submitHandler: function(form) {
       var demo_request = {
         "Last name": $('#LastName').val(),
         "Email": $('.sc-email, .wb-email').val(),
@@ -93,7 +91,6 @@ $(document).ready(function() {
           "Name": $("#demo-company_name").val()
         }
       };
-      //console.log(2);
 
       var identifier = $("#Email, #emailfield").val();
       freshsales.identify(identifier, demo_request);
@@ -101,13 +98,12 @@ $(document).ready(function() {
   });
 
 
-  $("#form_validate.demo_form").on("submit", function(e) {
+  $("#demo-form .demo_form, #form_validate.demo_form").on("submit", function(e) {
     e.preventDefault();
-    if ($("#form_validate.demo_form").valid()) {
-      //console.log(3);
+    if ($("#demo-form .demo_form, #form_validate.demo_form").valid()) {
       setTimeout(function() {
         window.location.href = '/demo-completion/';
-      }, 200);
+      }, 100);
     }
       return false;
   });
