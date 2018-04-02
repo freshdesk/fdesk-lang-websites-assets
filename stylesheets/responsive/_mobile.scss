@@ -1491,6 +1491,10 @@
     top: 355px;
     width: 30px;
 }
+    
+[id^=contact] .f-contact, .contactAddress .f-contact {
+  padding-left:15px;
+}
 
 .emailimg
 {
