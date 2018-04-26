@@ -371,6 +371,42 @@
 		 $('.box-slider').boxRollSlider();
 
 		$('.open-positon .roles.active .roles-status').html('Hiring now')
-      
+
+    // $(window).load(function() {
+      $('.eu-extra-info .promotional-offers input').attr('checked', false);
+      $.get("https://api.ipdata.co", function (response) {
+        var clearCookies = function () {
+          var expires = new Date();
+          expires.setMilliseconds((expires.getMilliseconds() - 1) * 864e+5);
+          document.cookie.split(';').map(function(pair) {
+            document.cookie = `${pair.split('=')[0]}=;path=/;expires=${expires.toUTCString()}`;
+          });
+        };
+        // response.continent_code = 'EU'
+        if (response.continent_code == 'EU') {
+          $('#signup .tc-text').slideUp(100);
+          $('.eu-extra-info:not(.modal-on-click)').show();
+
+          if (window.localStorage.gdpr_preference) {
+            if (window.localStorage.gdpr_preference === 'NOT_ACCEPTED') {
+              clearCookies();
+            }
+          } else {
+            $('#eu-cookie-policy-popop').fadeIn(250);
+          }
+
+          $('#eu-cookie-policy-popop .accept-cookies').click(function () {
+            window.localStorage.gdpr_preference = 'ACCEPTED';
+            $('#eu-cookie-policy-popop').fadeOut(250);
+          });
+          $('.eu-extra-info .promotional-offers input').attr('checked', true);
+        } else {
+          $('#signup .tc-text').show();
+          $('.eu-extra-info .promotional-offers input').attr('checked', false);
+          $('.eu-extra-info:not(.modal-on-click)').hide();
+        }
+      })
+    // })
+
 	});
 }(window.jQuery);
