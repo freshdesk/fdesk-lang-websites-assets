@@ -17351,7 +17351,7 @@ img[src*="insight.adsrvr.org"] {
 .fd-teal-bg .lpeRegForm .textfield.error {
   color: rgba(204, 204, 204, 0.6);
   /*em.error{
-  			color: #A11F1F;			
+  			color: #A11F1F;
   			background-color: #7AAA98;
   			border-color: rgba(255,255,255,0.5);
               font-size: 10px;
@@ -17743,7 +17743,8 @@ img[src*="insight.adsrvr.org"] {
   border-width: 2px;
   border-style: solid;
   border-top-width: 0;
-  border-right-width: 0;
+  /*@noflip*/
+  border-left-width: 0;
   border-color: #18ad90;
 }
 
