@@ -379,7 +379,7 @@
           var expires = new Date();
           expires.setMilliseconds((expires.getMilliseconds() - 1) * 864e+5);
           document.cookie.split(';').map(function(pair) {
-            document.cookie = `${pair.split('=')[0]}=;path=/;expires=${expires.toUTCString()}`;
+            document.cookie = pair.split('=')[0] + '=;path=/;expires=' + expires.toUTCString();
           });
         };
         // response.continent_code = 'EU'
