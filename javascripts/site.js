@@ -374,7 +374,7 @@
 
     // $(window).load(function() {
       $('.eu-extra-info .promotional-offers input').attr('checked', false);
-      $.get("https://api.ipdata.co", function (response) {
+      geoip2.omni(function(location) {
         var clearCookies = function () {
           var expires = new Date();
           expires.setMilliseconds((expires.getMilliseconds() - 1) * 864e+5);
@@ -382,8 +382,8 @@
             document.cookie = pair.split('=')[0] + '=;path=/;expires=' + expires.toUTCString();
           });
         };
-        // response.continent_code = 'EU'
-        if (response.continent_code == 'EU') {
+        // location.continent.code = 'EU'
+        if (location.continent.code == 'EU') {
           $('#signup .tc-text').slideUp(100);
           $('.eu-extra-info:not(.modal-on-click)').show();
 
