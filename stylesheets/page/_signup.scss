@@ -977,6 +977,23 @@ $teal-pl-color : rgba(204,204,204,0.6);
 		    padding-bottom: 10px;
 		    float: none;
 		  }
+
+			.checkbox-control-indicator {
+			  border-color: #18ad90;
+			}
+
+			.checkbox-control-indicator::after {
+				display: block;
+			}
+
+			.checkbox-control input:checked ~ .checkbox-control-indicator::after {
+			  display: none;
+			}
+
+			.checkbox-control input:checked ~ .checkbox-control-indicator {
+			  border-color: #ccc;
+			}
+
 		  .signup-terms {
 		    padding-bottom: 10px;
 		    padding-top: 10px;
