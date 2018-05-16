@@ -905,63 +905,6 @@ $teal-pl-color : rgba(204,204,204,0.6);
 	}
 }
 
-
-.checkbox-control {
-  font-size: 16px;
-  position: relative;
-  display: block;
-  margin-bottom: 5px;
-  padding-left: 32px;
-  cursor: pointer;
-  text-align: left;
-}
-
-.checkbox-control input {
-  position: absolute;
-  z-index: -1;
-  opacity: 0;
-}
-
-.checkbox-control-indicator {
-  position: absolute;
-  top: 2px;
-  left: 0;
-  width: 24px;
-  height: 24px;
-  border-radius: 2.5px;
-  background-color: white;
-  border: solid 1px #ccc;
-}
-
-/* Check mark */
-.checkbox-control-indicator::after {
-  position: absolute;
-  content: '';
-  display: none;
-  box-sizing: border-box;
-}
-
-.cb .checkbox-control-indicator::after {
-  top: 4px;
-  left: 8px;
-  width: 7px;
-  height: 12px;
-  transform: rotate(45deg);
-  border-width: 2px;
-  border-style: solid;
-  border-top-width: 0;
-  border-left-width: 0;
-  border-color: #18ad90;
-}
-
-.checkbox-control input:checked ~ .checkbox-control-indicator::after {
-  display: block;
-}
-
-.checkbox-control input:checked ~ .checkbox-control-indicator {
-  border-color: #18ad90;
-}
-
 .b-form {
 	#signup {
 		.eu-extra-info {
@@ -977,22 +920,6 @@ $teal-pl-color : rgba(204,204,204,0.6);
 		    padding-bottom: 10px;
 		    float: none;
 		  }
-
-			.checkbox-control-indicator {
-			  border-color: #18ad90;
-			}
-
-			.checkbox-control-indicator::after {
-				display: block;
-			}
-
-			.checkbox-control input:checked ~ .checkbox-control-indicator::after {
-			  display: none;
-			}
-
-			.checkbox-control input:checked ~ .checkbox-control-indicator {
-			  border-color: #ccc;
-			}
 
 		  .signup-terms {
 		    padding-bottom: 10px;

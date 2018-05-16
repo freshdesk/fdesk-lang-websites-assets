@@ -382,6 +382,7 @@
             document.cookie = pair.split('=')[0] + '=;path=/;expires=' + expires.toUTCString();
           });
         };
+        $('input[name=country]').val(location.country.names.en);
         // location.continent.code = 'EU'
         if (location.continent.code == 'EU') {
           $('#signup .tc-text').slideUp(100);
