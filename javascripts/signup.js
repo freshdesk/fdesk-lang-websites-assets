@@ -319,7 +319,7 @@ if(!localStorage.getItem('maxmind_location')){
 					'Phone': $('input[name^="user[phone]"]').val() || '',
 					'Company': $('input[name^="account[name]"]').val(),
 					// Please dont forget the !
-					'unsubscribed': !($('input[name="send_promotions"]').is(':checked')),
+					'unsubscribed': !($('#signup input[name="send_promotions"]').is(':checked')),
 					'custom': {
 					  'string--Account--URL': $('input[name^="account[domain]"]').val(),
 					  'string--Original--Referrer': $.cookie('fw_fr') || window.parent.location.href,
@@ -328,7 +328,7 @@ if(!localStorage.getItem('maxmind_location')){
 					  'string--Mailing--Country': currentLocation.countryName
 					},
 					'Type': 'fdesk',
-					'_autopilot_list': 'contactlist_' + $(form).find('.list-id').val(),
+					'_autopilot_list': 'contactlist_' + $('#signup').attr('data-list-id'),
 					'_autopilot_session_id': window.AutopilotAnywhere.sessionId
 				  }
 				}
