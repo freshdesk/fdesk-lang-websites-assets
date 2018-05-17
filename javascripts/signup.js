@@ -3,6 +3,7 @@ function catchSignupException(fn, submit_form) {
 	try {
 		return fn();
 	} catch(e) {
+		console.log(e);
 		if (typeof Bugsnag !== "undefined"){
 			Bugsnag.notifyException(e);
 		}
@@ -145,6 +146,8 @@ if(!localStorage.getItem('maxmind_location')){
 					$("#pre_visits").val(($.cookie("fd_vi")||0));
 					$("#account_timezone_offset").val(getLocalTimeZoneOffset());
 					$("#error_container").empty().hide();
+
+					
 					
 					var freshsales_id =  typeof freshsales != "undefined" ? freshsales.anonymous_id : "error freshsales is not defined",
 						html_lang = $('html')[0].lang || 'en-US';
@@ -175,6 +178,8 @@ if(!localStorage.getItem('maxmind_location')){
 					};
 
 					$.ajax(signup_options);
+
+					
 
 					$("#loading_data").show();
 					var $btn = $("#signup_button")
@@ -305,16 +310,55 @@ if(!localStorage.getItem('maxmind_location')){
 
 			url = window['signup-thankyou-url']+"?redirect=" + encodeURIComponent(url) + "&account=" + jQuery("#account_domain").val() + "&lang=" + jQuery("html").attr('lang');
 
-			// Create a new Link
-			var a = document.createElement('a');
-		    if(!a.click) { //for IE
-		         window.location = url;
-		         return;
-		    }
-		    a.setAttribute("href", url);
-		    a.style.display = "none";
-		    document.body.appendChild(a);
-		    a.click();
+			var autopilotData = {
+				'autopilotObject': {
+				  'contact': {
+					'FirstName': $('input[name^="user[first_name]"]').val(),
+					'LastName': $('input[name^="user[last_name]"]').val(),
+					'Email': $('input[name^="user[email]"]').val(),
+					'Phone': $('input[name^="user[phone]"]').val() || '',
+					'Company': $('input[name^="account[name]"]').val(),
+					// Please dont forget the !
+					'unsubscribed': !($('input[name="send_promotions"]').is(':checked')),
+					'custom': {
+					  'string--Account--URL': $('input[name^="account[domain]"]').val(),
+					  'string--Original--Referrer': $.cookie('fw_fr') || window.parent.location.href,
+					  'string--Last--Referrer': $.cookie('fw_flu') || '',
+					  'string--Signup--Referrer': window.location.href || '',
+					  'string--Mailing--Country': currentLocation.countryName
+					},
+					'Type': 'fdesk',
+					'_autopilot_list': 'contactlist_' + $(form).find('.list-id').val(),
+					'_autopilot_session_id': window.AutopilotAnywhere.sessionId
+				  }
+				}
+			  };
+
+			  $.ajax({
+				data: JSON.stringify(autopilotData),
+				type: 'POST',
+				url: 'https://alfred.freshworks.com/v1/autopilot-post',
+				crossDomain: true,
+				dataType: 'json',
+				contentType: 'application/json',
+				complete: function (event, xhr, settings){
+				  $('body').trigger('autopilotPostCompleted');
+				}
+			  });
+			
+			$('body').on('autopilotPostCompleted', function() {
+               // Create a new Link
+				var a = document.createElement('a');
+				if(!a.click) { //for IE
+					window.location = url;
+					return;
+				}
+				a.setAttribute("href", url);
+				a.style.display = "none";
+				document.body.appendChild(a);
+				a.click();
+			});
+			
 		};
 		 
 		var signupResponse = function(responseText){

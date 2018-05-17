@@ -373,7 +373,7 @@
 		$('.open-positon .roles.active .roles-status').html('Hiring now')
 
     // $(window).load(function() {
-      $('.eu-extra-info .promotional-offers input').attr('checked', false);
+      $('.eu-extra-info .promotional-offers input').attr('checked', true);
       geoip2.omni(function(location) {
         var clearCookies = function () {
           var expires = new Date();
@@ -400,10 +400,10 @@
             window.localStorage.gdpr_preference = 'ACCEPTED';
             $('#eu-cookie-policy-popop').fadeOut(250);
           });
-          $('.eu-extra-info .promotional-offers input').attr('checked', true);
+          $('.eu-extra-info .promotional-offers input').attr('checked', false);
         } else {
           $('#signup .tc-text').show();
-          $('.eu-extra-info .promotional-offers input').attr('checked', false);
+          $('.eu-extra-info .promotional-offers input').attr('checked', true);
           $('.eu-extra-info:not(.modal-on-click)').hide();
         }
       })
