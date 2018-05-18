@@ -94,6 +94,38 @@ $(document).ready(function() {
 
       var identifier = $("#Email, #emailfield").val();
       freshsales.identify(identifier, demo_request);
+
+      var autopilotData = {
+				'autopilotObject': {
+				  'contact': {
+					'FirstName': $(form).find('input[name^="Name"]').val(),
+					'LastName': "",
+					'Email': $(form).find('input[name^="Email"]').val(),
+					'Phone': $(form).find('input[name^="Phone"]').val() || '',
+					// Please dont forget the !
+					'unsubscribed': !($('#signup input[name="send_promotions"]').is(':checked')),
+					'custom': {
+            'string--Agents': $(form).find('input[name^="Number_of_Agents"]').val(),
+					  'string--Mailing--Country': currentLocation.countryName
+					},
+					'Type': 'fdesk',
+					'_autopilot_list': 'contactlist_' + 'E50472CC-E573-42AD-BE61-C78FDF870D00',
+					'_autopilot_session_id': window.AutopilotAnywhere.sessionId
+				  }
+				}
+			  };
+
+			  $.ajax({
+				data: JSON.stringify(autopilotData),
+				type: 'POST',
+				url: 'https://alfred.freshworks.com/v1/autopilot-post',
+				crossDomain: true,
+				dataType: 'json',
+				contentType: 'application/json',
+				complete: function (event, xhr, settings){
+				  $('body').trigger('autopilotPostCompleted');
+				}
+			  });
     }
   });
 
@@ -102,8 +134,10 @@ $(document).ready(function() {
     e.preventDefault();
     if ($("#demo-form .demo_form, #form_validate.demo_form").valid()) {
       setTimeout(function() {
-        window.location.href = '/demo-completion/';
-      }, 100);
+        $('body').on('autopilotPostCompleted', function() {
+          window.location.href = '/demo-completion/';
+        });
+      }, 500);
     }
       return false;
   });
