@@ -12,6 +12,29 @@
 		"use strict"
 		
 		// Attaching dom ready events
+		// GDPR Trigger
+		if (!localStorage.getItem('fw_cookie_opt_out') === 'yes') {
+			// Fire GTM Tags
+			window.dataLayer = window.dataLayer || [];
+			window.dataLayer.push({'event': 'trigger_ads'});
+
+			// Virtual hit for ReTargetting
+			try {
+				var trackers = ga.getAll();
+				for (var t = 0; t < trackers.length; t++) {
+					var trackerName = trackers[t].get('name');
+					ga(trackerName + '.set', {
+					  'page': '/cookie-opt-out',
+					  'title': 'ReTargetting Optout'
+					});
+					ga(trackerName + '.send', 'pageview', {
+					  'page': '/cookie-opt-out',
+					  'title': 'ReTargetting Optout'
+					});
+					break;
+				}
+			} catch (e) { }
+		}
 
 		// Preventing default click & event handlers for disabled or active links
 		$(".disabled")
