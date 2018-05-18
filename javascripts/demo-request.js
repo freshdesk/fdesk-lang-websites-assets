@@ -103,7 +103,7 @@ $(document).ready(function() {
 					'Email': $(form).find('input[name^="Email"]').val(),
 					'Phone': $(form).find('input[name^="Phone"]').val() || '',
 					// Please dont forget the !
-					'unsubscribed': !($('#signup input[name="send_promotions"]').is(':checked')),
+					'unsubscribed': !($('.demo_form input[name="send_promotions"]').is(':checked')),
 					'custom': {
             'string--Agents': $(form).find('input[name^="Number_of_Agents"]').val(),
 					  'string--Mailing--Country': currentLocation.countryName
