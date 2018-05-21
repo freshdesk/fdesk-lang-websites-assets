@@ -13,7 +13,7 @@
 		
 		// Attaching dom ready events
 		// GDPR Trigger
-		if (!localStorage.getItem('fw_cookie_opt_out') === 'yes') {
+		if (localStorage.getItem('fw_cookie_opt_out') !== 'yes') {
 			// Fire GTM Tags
 			window.dataLayer = window.dataLayer || [];
 			window.dataLayer.push({'event': 'trigger_ads'});
