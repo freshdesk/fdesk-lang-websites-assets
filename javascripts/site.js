@@ -15,10 +15,9 @@
 		// GDPR Trigger
 		if (localStorage.getItem('fw_cookie_opt_out') !== 'yes') {
 			// Fire GTM Tags
-			window.dataLayer = window.dataLayer || [];
-			window.dataLayer.push({'event': 'trigger_ads'});
-
-			// Virtual hit for ReTargetting
+			window.fw_trigger_ads = 'yes';
+		} else {
+          // Virtual hit for ReTargetting
 			try {
 				var trackers = ga.getAll();
 				for (var t = 0; t < trackers.length; t++) {
