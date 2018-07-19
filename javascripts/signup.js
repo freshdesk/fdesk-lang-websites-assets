@@ -177,21 +177,33 @@ if(!localStorage.getItem('maxmind_location')){
 						crossDomain: true
 					};
 
-					$.ajax(signup_options);
-
-					
-
-					$("#loading_data").show();
-					var $btn = $("#signup_button")
-					$btn.attr("disabled", true)
+					$.ajax(signup_options)
+                    .done(function (signupResponse) {
+                      if (signupResponse.success) {
+                        $("#loading_data").show();
+                        var $btn = $("#signup_button");
+                        $btn.attr("disabled", true)
 						.addClass("btn-disabled btn-loading").data("originalText", $btn.val())
 						.val($btn.data("loadingText") || "Please wait...")
 						timeoutId = setInterval(function() {
-											var text = toggleText(currentText);
-											$("#signup_button").val($btn.data("loadingText") || text );
-										}, 5000);
-
-					firstRequest = true;
+                            var text = toggleText(currentText);
+                            $("#signup_button").val($btn.data("loadingText") || text );
+                        }, 5000);
+					   firstRequest = true;
+                      }
+                    })
+                    .fail(function( jqXHR, textStatus, errorThrown ) {
+                      var err = JSON.parse(jqXHR.responseText);
+                      $('<label />')
+					.append('<em for="user_email" generated="true" class="error">' + err.errors[0] + '</em>')
+					.appendTo(".email_container");
+                    $("#email_error_container").show();
+                    $("#email_error_container").addClass("has_errors");
+                      var $btn = $("#signup_button");
+				      $btn.attr("disabled", false)
+                      .removeClass("submit-btn-disabled btn-disabled btn-loading")
+                      .val($btn.data("originalText") || "Please try again...");
+                    });
 				});
 			}
 			return false;
@@ -275,28 +287,32 @@ if(!localStorage.getItem('maxmind_location')){
 			$("#error_container").empty();
 			clearInterval(timeoutId);
 			timeoutId = 0;
-			combined_errors = {};
-			$.each(errors, function(index, value){ 
-				combined_errors['' + value[0] + ''] = value[1];
-			});
+//			combined_errors = {};
+//			$.each(errors, function(index, value){ 
+//				combined_errors['' + value[0] + ''] = value[1];
+//			});
 
-			for (key in combined_errors) {
-				var error_message = combined_errors[key];
-				if(key == "account_domain"){
-					$("#account_domain").addClass("error");
-					key = "";
-					error_message = TRANSLATED.already_exists
-				}
-				if(key == "base"){
-					$("#user_email").addClass("error");
-					key = "";
-					error_message = TRANSLATED.email_like
-				}
+//			for (key in combined_errors) {
+//				var error_message = combined_errors[key];
+//				if(key == "account_domain"){
+//					$("#account_domain").addClass("error");
+//					key = "";
+//					error_message = TRANSLATED.already_exists
+//				}
+//				if(key == "base"){
+//					$("#user_email").addClass("error");
+//					key = "";
+//					error_message = TRANSLATED.email_like
+//				}
+//              console.log(error_message);
+//				$('<label />')
+//					// .append(key)
+//					.append(" 3 "+error_message)
+//					.appendTo("#error_container");
+//			}
 				$('<label />')
-					// .append(key)
-					.append(" "+error_message)
+					.append(" "+errors[0])
 					.appendTo("#error_container");
-			}
 			$("#error_container").show();
 			$("#error_container").addClass("has_errors");
 
