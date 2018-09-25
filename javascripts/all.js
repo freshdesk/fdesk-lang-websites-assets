@@ -31,3 +31,4 @@
 //= require language-switcher.js
 //= require new-resources.js
 //= require countrylocation.js
+//= require legal.js

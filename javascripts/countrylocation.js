@@ -40,7 +40,19 @@
       	data['longitude'] 	= location.location.longitude;
       	data['timeZone']  	= location.location.time_zone;
         data['source'] 		= 'maxmind';
-        
+        data['country'] = {
+          'geoname_id': location.country.geoname_id,
+          'names': {
+            'en': location.country.names.en
+          }
+        };
+        data['subdivisions'] = [{
+          'iso_code': location.subdivisions[0].iso_code,
+          'geoname_id': location.subdivisions[0].geoname_id,
+          'names': {
+            'en': location.subdivisions[0].names.en
+          }
+        }]
         return data;
 	}
 
