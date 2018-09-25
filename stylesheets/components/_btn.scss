@@ -115,6 +115,12 @@ $btn-letter-spacing: 0.1rem;
 	}
 }
 
+.btn.btn-disabled {
+  color: #fff;
+  background-color: #888;
+  pointer-events: none;
+}
+
 .btn-banner.btn-light{
 	background-color: rgba(0, 0, 0, 0.1);
 	color: #fff;

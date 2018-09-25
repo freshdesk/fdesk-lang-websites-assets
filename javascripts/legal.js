@@ -17,7 +17,7 @@
  * tamper with the geoLocation object in the localStorage store.
  */
 
-var geoLocation = JSON.parse(localStorage.maxmind_location);
+var geoLocation = JSON.parse(localStorage.getItem("maxmind_location"));
 // console.log(`geolocation ${geoLocation.country}`)
 // console.log(geoLocation.country);
 if (
@@ -37,13 +37,12 @@ if (
     geoLocation.subdivisions[0].names.en === 'Crimea'
   )
 ) {
-  console.log('coming inside if loop')
   // Disable all submit buttons
-  jQuery('input[type="submit"]').removeClass('btn-space btn-bold').addClass('btn-disabled');
+  jQuery('input[type="submit"]').removeClass('btn-block').addClass('btn-disabled');
 
   // Remove data attributes which enable signup to prevent users
   // from trying to submit despite teh disabled buttons.
-  var attributes = ['data-signup-path'];
+  var attributes = ['action', 'data-list-id'];
   jQuery.each(attributes, function (index, value) {
     jQuery('form').removeAttr(value);
   });
