@@ -834,7 +834,7 @@
 
 /* New Pricing Page */
 
-.pl-c-sp, .pl-c-bl, .pl-c-ga, .pl-c-es, .pl-c-ft{ 
+.pl-c-sp, .pl-c-bl, .pl-c-ga, .pl-c-es, .pl-c-ft{
     float: none;
     border: none;
     border-bottom: 1px solid #f3f3f3;
@@ -1847,9 +1847,14 @@ padding-bottom: 60px;
 
 .pr-c-sp, .pr-c-bl, .pr-c-ga, .pr-c-es, .pr-c-ft
 {
+  display: block;
   width: 100%;
   padding-bottom: 20px;
   border-bottom: 1px solid #f3f3f3;
+}
+.pl-p-signup {
+  position: unset;
+  padding-bottom: 0px;
 }
 .pr-c-ga { padding-bottom: 40px; }
 .pr-c-intro

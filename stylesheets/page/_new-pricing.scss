@@ -134,10 +134,11 @@
 
 
 .pr-c-sp,.pr-c-bl,.pr-c-ga,.pr-c-es,.pr-c-ft{
+	position: relative;
+	display: table-cell;
 	width: 19.9%;
 	border-right: 1px solid #f3f3f3;
-	float: left;
-	padding-bottom: 50px;
+	padding-bottom: 80px;
 }
 
 .pr-c-es{ 
@@ -219,7 +220,12 @@
 }
 
 .pl-p-signup {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
 	margin: 0 10px;
+	padding-bottom: 25px;
 }
 
 .pr-day-pass{
@@ -438,6 +444,7 @@ p.pl-features-link{
 
 .pricing-plan-container {
 	.pr-plan-list {
+		display: table;
 		margin       : 0 0.5%;
 		border       : none;
 		border-radius: 10px;
