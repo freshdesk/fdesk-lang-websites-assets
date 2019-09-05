@@ -331,9 +331,9 @@ if (!localStorage.getItem('maxmind_location')) {
       .val($btn.data("originalText") || "Please try again...")
   };
 
-  var showSuccess = function (url) {
+  var showSuccess = function (url, aid) {
 
-    url = window['signup-thankyou-url'] + "?redirect=" + encodeURIComponent(url) + "&account=" + jQuery("#account_domain").val() + "&lang=" + jQuery("html").attr('lang');
+    url = window['signup-thankyou-url'] + "?redirect=" + encodeURIComponent(url) + "&account=" + jQuery("#account_domain").val() + "&aid=" + aid + "&lang=" + jQuery("html").attr('lang');
 
     var autopilotData = {
       'autopilotObject': {
@@ -390,7 +390,7 @@ if (!localStorage.getItem('maxmind_location')) {
     catchSignupException(function () {
 
       if (responseText.success) {
-        showSuccess(responseText.url);
+        showSuccess(responseText.url, reponseText.account_id);
       } else {
         showErrors(responseText.errors);
       }
