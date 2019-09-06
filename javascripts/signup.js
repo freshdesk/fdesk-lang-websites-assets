@@ -390,7 +390,7 @@ if (!localStorage.getItem('maxmind_location')) {
     catchSignupException(function () {
 
       if (responseText.success) {
-        showSuccess(responseText.url, reponseText.account_id);
+        showSuccess(responseText.url, responseText.account_id);
       } else {
         showErrors(responseText.errors);
       }
