@@ -67,11 +67,6 @@ if (!localStorage.getItem('maxmind_location')) {
         required: "You'll need to tell us where you work",
         minlength: "Company name should exceed 2 characters"
       },
-      "account[domain]": {
-        required: "Give your helpdesk a name",
-        maxlength: "Helpdesk name shouldn't exceed 25 characters",
-        subdomain: "Only letters, numbers and hyphen allowed"
-      },
       "user[email]": {
         required: "Please enter a valid email",
         email: "Please enter a valid email"
@@ -113,11 +108,6 @@ if (!localStorage.getItem('maxmind_location')) {
       "account[name]": {
         "required": true,
         minlength: 3
-      },
-      "account[domain]": {
-        "required": true,
-        "maxlength": 25,
-        "subdomain": true
       },
       "user[email]": {
         "required": true,
@@ -257,16 +247,6 @@ if (!localStorage.getItem('maxmind_location')) {
     );
   });
 
-  $("#account_domain").on("keyup keydown keypress change",
-    function (ev) {
-      var domain_name = $(this).val();
-      if (domain_name.trim() != '') {
-        $('#domain_url').text(domain_name);
-      } else {
-        $('#domain_url').text('domain-name');
-      }
-    });
-
   function toggleText(currentTxt) {
     return currentText = (currentTxt == "Please wait...") ? 'Creating your Account' : 'Please wait...';
   }
@@ -332,58 +312,9 @@ if (!localStorage.getItem('maxmind_location')) {
   };
 
   var showSuccess = function (url, aid) {
-
     url = window['signup-thankyou-url'] + "?redirect=" + encodeURIComponent(url) + "&account=" + jQuery("#account_domain").val() + "&aid=" + aid + "&lang=" + jQuery("html").attr('lang');
-
-    var autopilotData = {
-      'autopilotObject': {
-        'contact': {
-          'FirstName': $('input[name^="user[first_name]"]').val(),
-          'LastName': $('input[name^="user[last_name]"]').val(),
-          'Email': $('input[name^="user[email]"]').val(),
-          'Phone': $('input[name^="user[phone]"]').val() || '',
-          'Company': $('input[name^="account[name]"]').val(),
-          // Please dont forget the !
-          'unsubscribed': !($('#signup input[name="send_promotions"]').is(':checked')),
-          'custom': {
-            'string--Account--URL': $('input[name^="account[domain]"]').val(),
-            'string--Original--Referrer': $.cookie('fw_fr') || window.parent.location.href,
-            'string--Last--Referrer': $.cookie('fw_flu') || '',
-            'string--Signup--Referrer': window.location.href || '',
-            'string--Mailing--Country': currentLocation.countryName
-          },
-          'Type': 'fdesk',
-          '_autopilot_list': 'contactlist_' + $('#signup').attr('data-list-id'),
-          '_autopilot_session_id': window.AutopilotAnywhere.sessionId
-        }
-      }
-    };
-
-    $.ajax({
-      data: JSON.stringify(autopilotData),
-      type: 'POST',
-      url: 'https://alfred.freshworks.com/v1/autopilot-post',
-      crossDomain: true,
-      dataType: 'json',
-      contentType: 'application/json',
-      complete: function (event, xhr, settings) {
-        $('body').trigger('autopilotPostCompleted');
-      }
-    });
-
-    $('body').on('autopilotPostCompleted', function () {
-      // Create a new Link
-      var a = document.createElement('a');
-      if (!a.click) { //for IE
-        window.location = url;
-        return;
-      }
-      a.setAttribute("href", url);
-      a.style.display = "none";
-      document.body.appendChild(a);
-      a.click();
-    });
-
+	// redirect to thank-you page
+	window.location.href = url;
   };
 
   var signupResponse = function (responseText) {
@@ -414,17 +345,6 @@ if (!localStorage.getItem('maxmind_location')) {
     // Submitting the base form so than an email can be sent to support
     $form.get(0).submit();
   };
-
-  $("#account_name").change(function () {
-    if ($("#account_domain").val() === '') {
-      $("#account_domain").val($(this).val().toLowerCase().replace(/\W/g, ''));
-      $('#account_domain').trigger('change');
-    }
-  });
-
-  $('#account_domain').change(function () {
-    $(this).val($(this).val().toLowerCase().replace(/\W/g, ''));
-  });
 
   $('.error').removeClass('error');
 
